@@ -12,6 +12,8 @@
 		17F67ECC246FDE8600A1F211 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17F67ECA246FDE8600A1F211 /* Main.storyboard */; };
 		17F67ECE246FDE9100A1F211 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17F67ECD246FDE9100A1F211 /* Assets.xcassets */; };
 		17F67ED1246FDE9100A1F211 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17F67ECF246FDE9100A1F211 /* LaunchScreen.storyboard */; };
+		88190C2824746DC0006772B1 /* kidzone.png in Resources */ = {isa = PBXBuildFile; fileRef = 88190C2724746DC0006772B1 /* kidzone.png */; };
+		88190C2B247479FD006772B1 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88190C2A247479FD006772B1 /* Authentication.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		17F67ECD246FDE9100A1F211 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17F67ED0246FDE9100A1F211 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17F67ED2246FDE9100A1F211 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88190C2724746DC0006772B1 /* kidzone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kidzone.png; sourceTree = "<group>"; };
+		88190C2A247479FD006772B1 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +58,24 @@
 		17F67EC5246FDE8600A1F211 /* KidZoonaUserApp */ = {
 			isa = PBXGroup;
 			children = (
+				88190C2924746DD5006772B1 /* Images */,
 				17F67EC6246FDE8600A1F211 /* AppDelegate.swift */,
 				17F67EC8246FDE8600A1F211 /* ViewController.swift */,
-				17F67ECA246FDE8600A1F211 /* Main.storyboard */,
-				17F67ECD246FDE9100A1F211 /* Assets.xcassets */,
 				17F67ECF246FDE9100A1F211 /* LaunchScreen.storyboard */,
+				17F67ECA246FDE8600A1F211 /* Main.storyboard */,
+				88190C2A247479FD006772B1 /* Authentication.storyboard */,
 				17F67ED2246FDE9100A1F211 /* Info.plist */,
+				17F67ECD246FDE9100A1F211 /* Assets.xcassets */,
 			);
 			path = KidZoonaUserApp;
+			sourceTree = "<group>";
+		};
+		88190C2924746DD5006772B1 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				88190C2724746DC0006772B1 /* kidzone.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,7 +138,9 @@
 			files = (
 				17F67ED1246FDE9100A1F211 /* LaunchScreen.storyboard in Resources */,
 				17F67ECE246FDE9100A1F211 /* Assets.xcassets in Resources */,
+				88190C2824746DC0006772B1 /* kidzone.png in Resources */,
 				17F67ECC246FDE8600A1F211 /* Main.storyboard in Resources */,
+				88190C2B247479FD006772B1 /* Authentication.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

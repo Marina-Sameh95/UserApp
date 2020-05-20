@@ -18,16 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kidzone.png" translatesAutoresizingMaskIntoConstraints="NO" id="dER-m1-Xw7">
-                                <rect key="frame" x="50" y="170" width="275" height="347"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kidzone" translatesAutoresizingMaskIntoConstraints="NO" id="dER-m1-Xw7">
+                                <rect key="frame" x="16" y="286" width="343" height="95"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="dER-m1-Xw7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="HIf-c7-dsK"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dER-m1-Xw7" secondAttribute="bottom" constant="150" id="HMm-rc-nnl"/>
-                            <constraint firstItem="dER-m1-Xw7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="SSa-xd-xB6"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dER-m1-Xw7" secondAttribute="trailing" constant="50" id="fhC-TI-c0q"/>
+                            <constraint firstItem="dER-m1-Xw7" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="3e2-Es-QGq"/>
+                            <constraint firstItem="dER-m1-Xw7" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="16" id="tv9-pI-TXg"/>
+                            <constraint firstItem="dER-m1-Xw7" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="zaM-EP-44f"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -38,6 +37,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="kidzone.png" width="626" height="399"/>
+        <image name="kidzone" width="150.24000549316406" height="95.760002136230469"/>
     </resources>
 </document>

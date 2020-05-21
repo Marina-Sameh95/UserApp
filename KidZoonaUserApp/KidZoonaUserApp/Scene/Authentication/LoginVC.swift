@@ -19,13 +19,17 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupView()
+    }
+    
+    fileprivate func setupView(){
+        
         emailText.layer.cornerRadius = 15
-        emailText.layer.borderWidth = 2
+        emailText.layer.borderWidth = 1
         emailText.layer.borderColor = UIColor.lightGray.cgColor
         
         passwordText.layer.cornerRadius = 15
-        passwordText.layer.borderWidth = 2
+        passwordText.layer.borderWidth = 1
         passwordText.layer.borderColor = UIColor.lightGray.cgColor
         
         signInBtnOutlet.layer.cornerRadius = 15

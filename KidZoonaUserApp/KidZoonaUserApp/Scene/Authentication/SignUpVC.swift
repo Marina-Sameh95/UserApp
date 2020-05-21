@@ -25,30 +25,33 @@ class SignUpVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupRegView()
+        
+    }
+    
+    fileprivate func setupRegView(){
         firstNameTxt.layer.cornerRadius = 15
-        firstNameTxt.layer.borderWidth = 2
+        firstNameTxt.layer.borderWidth = 1
         firstNameTxt.layer.borderColor = UIColor.lightGray.cgColor
         
         lastNameTxt.layer.cornerRadius = 15
-        lastNameTxt.layer.borderWidth = 2
+        lastNameTxt.layer.borderWidth = 1
         lastNameTxt.layer.borderColor = UIColor.lightGray.cgColor
         
         emailRegTxt.layer.cornerRadius = 15
-        emailRegTxt.layer.borderWidth = 2
+        emailRegTxt.layer.borderWidth = 1
         emailRegTxt.layer.borderColor = UIColor.lightGray.cgColor
         
         passRegTxt.layer.cornerRadius = 15
-        passRegTxt.layer.borderWidth = 2
+        passRegTxt.layer.borderWidth = 1
         passRegTxt.layer.borderColor = UIColor.lightGray.cgColor
         
         passRegSecondTxt.layer.cornerRadius = 15
-        passRegSecondTxt.layer.borderWidth = 2
+        passRegSecondTxt.layer.borderWidth = 1
         passRegSecondTxt.layer.borderColor = UIColor.lightGray.cgColor
         
         signUpBtnOutlet.layer.cornerRadius = 15
     }
-    
     
     @IBAction func signUpBtn(_ sender: Any) {
         

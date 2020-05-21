@@ -308,31 +308,6 @@
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-=======
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Auth Header" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VQe-v6-ygr">
-                                <rect key="frame" x="-161" y="-90" width="757" height="494"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="494" id="nh3-FK-6ud"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azP-rM-mtE">
-                                <rect key="frame" x="170" y="170" width="74.333333333333314" height="24"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="M5b-03-3gu">
-                                <rect key="frame" x="32" y="218" width="350" height="45"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wge-a2-Vnt">
-                                        <rect key="frame" x="0.0" y="0.0" width="165" height="45"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JO1-Vh-kph">
-                                        <rect key="frame" x="185" y="0.0" width="165" height="45"/>
->>>>>>> ad3e0706179124cce4a8e7fea55037d0307bdab3
                                         <constraints>
                                             <constraint firstItem="ewh-JY-jrm" firstAttribute="centerX" secondItem="QLJ-to-ZU7" secondAttribute="centerX" id="0IY-Hb-bna"/>
                                             <constraint firstItem="snA-yl-CzH" firstAttribute="centerX" secondItem="4Jz-Un-CjM" secondAttribute="centerX" id="1MW-fI-Diw"/>

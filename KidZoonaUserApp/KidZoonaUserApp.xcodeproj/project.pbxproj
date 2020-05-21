@@ -14,11 +14,7 @@
 		17F67ECC246FDE8600A1F211 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17F67ECA246FDE8600A1F211 /* Main.storyboard */; };
 		17F67ECE246FDE9100A1F211 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17F67ECD246FDE9100A1F211 /* Assets.xcassets */; };
 		17F67ED1246FDE9100A1F211 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17F67ECF246FDE9100A1F211 /* LaunchScreen.storyboard */; };
-		880683302475E8F400D89D57 /* DesignCourseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8806832F2475E8F400D89D57 /* DesignCourseList.swift */; };
-		880683322475F05900D89D57 /* CourseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880683312475F05900D89D57 /* CourseListViewController.swift */; };
 		88190C2B247479FD006772B1 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88190C2A247479FD006772B1 /* Authentication.storyboard */; };
-		88BD24932475DFB30073E13A /* CourseList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88BD24922475DFB30073E13A /* CourseList.storyboard */; };
-		BAAA873B8FB82DB3074605B1 /* Pods_KidZoonaUserApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F65A2F7F2437A95A91136AD1 /* Pods_KidZoonaUserApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,13 +27,7 @@
 		17F67ECD246FDE9100A1F211 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17F67ED0246FDE9100A1F211 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17F67ED2246FDE9100A1F211 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8806832F2475E8F400D89D57 /* DesignCourseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignCourseList.swift; sourceTree = "<group>"; };
-		880683312475F05900D89D57 /* CourseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListViewController.swift; sourceTree = "<group>"; };
 		88190C2A247479FD006772B1 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
-		88BD24922475DFB30073E13A /* CourseList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CourseList.storyboard; sourceTree = "<group>"; };
-		8B7BEEF76BE8CFF136865353 /* Pods-KidZoonaUserApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidZoonaUserApp.release.xcconfig"; path = "Target Support Files/Pods-KidZoonaUserApp/Pods-KidZoonaUserApp.release.xcconfig"; sourceTree = "<group>"; };
-		A4B22BA3627EF1080AB1F920 /* Pods-KidZoonaUserApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidZoonaUserApp.debug.xcconfig"; path = "Target Support Files/Pods-KidZoonaUserApp/Pods-KidZoonaUserApp.debug.xcconfig"; sourceTree = "<group>"; };
-		F65A2F7F2437A95A91136AD1 /* Pods_KidZoonaUserApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidZoonaUserApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,25 +35,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAAA873B8FB82DB3074605B1 /* Pods_KidZoonaUserApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0856F748811DB8219E296E90 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F65A2F7F2437A95A91136AD1 /* Pods_KidZoonaUserApp.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		179D15EF2474BB9900D49CD0 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				88BD24942475DFD70073E13A /* CourseList */,
 				179D15F02474BBBD00D49CD0 /* Authentication */,
 				179D15F12474BBD800D49CD0 /* Home */,
 			);
@@ -93,7 +73,6 @@
 				17F67ECF246FDE9100A1F211 /* LaunchScreen.storyboard */,
 				17F67ECA246FDE8600A1F211 /* Main.storyboard */,
 				88190C2A247479FD006772B1 /* Authentication.storyboard */,
-				88BD24922475DFB30073E13A /* CourseList.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -127,8 +106,6 @@
 			children = (
 				17F67EC5246FDE8600A1F211 /* KidZoonaUserApp */,
 				17F67EC4246FDE8600A1F211 /* Products */,
-				5EEA43FA992F309DBAACF2A6 /* Pods */,
-				0856F748811DB8219E296E90 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,25 +129,6 @@
 			path = KidZoonaUserApp;
 			sourceTree = "<group>";
 		};
-		5EEA43FA992F309DBAACF2A6 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				A4B22BA3627EF1080AB1F920 /* Pods-KidZoonaUserApp.debug.xcconfig */,
-				8B7BEEF76BE8CFF136865353 /* Pods-KidZoonaUserApp.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		88BD24942475DFD70073E13A /* CourseList */ = {
-			isa = PBXGroup;
-			children = (
-				8806832F2475E8F400D89D57 /* DesignCourseList.swift */,
-				880683312475F05900D89D57 /* CourseListViewController.swift */,
-			);
-			path = CourseList;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -178,11 +136,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 17F67ED5246FDE9100A1F211 /* Build configuration list for PBXNativeTarget "KidZoonaUserApp" */;
 			buildPhases = (
-				F0D3C927463403400F17E39C /* [CP] Check Pods Manifest.lock */,
 				17F67EBF246FDE8600A1F211 /* Sources */,
 				17F67EC0246FDE8600A1F211 /* Frameworks */,
 				17F67EC1246FDE8600A1F211 /* Resources */,
-				62E4ECD2F2F4A950022C2F0B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -232,7 +188,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				17F67ED1246FDE9100A1F211 /* LaunchScreen.storyboard in Resources */,
-				88BD24932475DFB30073E13A /* CourseList.storyboard in Resources */,
 				17F67ECE246FDE9100A1F211 /* Assets.xcassets in Resources */,
 				17F67ECC246FDE8600A1F211 /* Main.storyboard in Resources */,
 				88190C2B247479FD006772B1 /* Authentication.storyboard in Resources */,
@@ -241,59 +196,15 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		62E4ECD2F2F4A950022C2F0B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KidZoonaUserApp/Pods-KidZoonaUserApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KidZoonaUserApp/Pods-KidZoonaUserApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KidZoonaUserApp/Pods-KidZoonaUserApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F0D3C927463403400F17E39C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-KidZoonaUserApp-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		17F67EBF246FDE8600A1F211 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				880683302475E8F400D89D57 /* DesignCourseList.swift in Sources */,
 				179D15EE2474AB4000D49CD0 /* SignUpVC.swift in Sources */,
 				179D15EC2474AAE500D49CD0 /* HomeVC.swift in Sources */,
 				17F67EC7246FDE8600A1F211 /* AppDelegate.swift in Sources */,
 				179D15EA2474AA9100D49CD0 /* LoginVC.swift in Sources */,
-				880683322475F05900D89D57 /* CourseListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,7 +346,6 @@
 		};
 		17F67ED6246FDE9100A1F211 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A4B22BA3627EF1080AB1F920 /* Pods-KidZoonaUserApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -454,7 +364,6 @@
 		};
 		17F67ED7246FDE9100A1F211 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8B7BEEF76BE8CFF136865353 /* Pods-KidZoonaUserApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

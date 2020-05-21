@@ -1,6 +1,0 @@
- platform :ios, '9.0'
-use_frameworks!
-target 'KidZoonaUserApp' do
-pod 'Cosmos', '~> 20.0'
-
-end

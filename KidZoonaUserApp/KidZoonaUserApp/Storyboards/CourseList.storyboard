@@ -33,9 +33,9 @@
                                                     <rect key="frame" x="20" y="11" width="374" height="108"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V08-vF-COO">
-                                                            <rect key="frame" x="34" y="8" width="119" height="92"/>
+                                                            <rect key="frame" x="16" y="8" width="137" height="92"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="119" id="oQw-Hx-JSt"/>
+                                                                <constraint firstAttribute="width" constant="137" id="oQw-Hx-JSt"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbJ-cc-OM3">
@@ -67,7 +67,7 @@
                                                         <constraint firstAttribute="width" constant="374" id="Tbh-LD-ykI"/>
                                                         <constraint firstAttribute="bottom" secondItem="V08-vF-COO" secondAttribute="bottom" constant="8" id="WyX-Q1-kNN"/>
                                                         <constraint firstItem="rbJ-cc-OM3" firstAttribute="leading" secondItem="aw5-NV-r2U" secondAttribute="trailing" constant="-80" id="aEw-yI-b6F"/>
-                                                        <constraint firstItem="V08-vF-COO" firstAttribute="leading" secondItem="MDg-zc-BJq" secondAttribute="leading" constant="34" id="bMh-xv-0gk"/>
+                                                        <constraint firstItem="V08-vF-COO" firstAttribute="leading" secondItem="MDg-zc-BJq" secondAttribute="leading" constant="16" id="bMh-xv-0gk"/>
                                                         <constraint firstItem="rbJ-cc-OM3" firstAttribute="leading" secondItem="V08-vF-COO" secondAttribute="trailing" constant="13" id="fqr-TA-IP7"/>
                                                         <constraint firstAttribute="bottom" secondItem="GDz-GW-4qP" secondAttribute="bottom" id="gzl-6B-7El"/>
                                                         <constraint firstItem="V08-vF-COO" firstAttribute="top" secondItem="rbJ-cc-OM3" secondAttribute="bottom" constant="-36" id="wLZ-k7-JOZ"/>

@@ -16,6 +16,10 @@
 		17F67ED1246FDE9100A1F211 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17F67ECF246FDE9100A1F211 /* LaunchScreen.storyboard */; };
 		62EF5E6ADCD61C5B599BC24D /* Pods_KidZoonaUserApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A216C5BA0151B3063F21B1B /* Pods_KidZoonaUserApp.framework */; };
 		88190C2B247479FD006772B1 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88190C2A247479FD006772B1 /* Authentication.storyboard */; };
+		88263B1D247AC6E100064461 /* CourseDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88263B1C247AC6E100064461 /* CourseDetailsViewController.swift */; };
+		88263B1F247B152D00064461 /* DesignCourseDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88263B1E247B152D00064461 /* DesignCourseDetails.swift */; };
+		88263B21247B1D3B00064461 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88263B20247B1D3B00064461 /* Profile.storyboard */; };
+		88263B24247B28C000064461 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88263B23247B28C000064461 /* ProfileViewController.swift */; };
 		884C2D3E2477D73900011B13 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 884C2D3D2477D73900011B13 /* Event.storyboard */; };
 		884C2D412477D77E00011B13 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884C2D402477D77E00011B13 /* EventViewController.swift */; };
 		8899A7BC2477C32E0077C872 /* CourseList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8899A7BB2477C32E0077C872 /* CourseList.storyboard */; };
@@ -36,6 +40,10 @@
 		3FBA4BADC316154081C96343 /* Pods-KidZoonaUserApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidZoonaUserApp.release.xcconfig"; path = "Target Support Files/Pods-KidZoonaUserApp/Pods-KidZoonaUserApp.release.xcconfig"; sourceTree = "<group>"; };
 		7A216C5BA0151B3063F21B1B /* Pods_KidZoonaUserApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidZoonaUserApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88190C2A247479FD006772B1 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
+		88263B1C247AC6E100064461 /* CourseDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsViewController.swift; sourceTree = "<group>"; };
+		88263B1E247B152D00064461 /* DesignCourseDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignCourseDetails.swift; sourceTree = "<group>"; };
+		88263B20247B1D3B00064461 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		88263B23247B28C000064461 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		884C2D3D2477D73900011B13 /* Event.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
 		884C2D402477D77E00011B13 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		8899A7BB2477C32E0077C872 /* CourseList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CourseList.storyboard; sourceTree = "<group>"; };
@@ -59,6 +67,8 @@
 		179D15EF2474BB9900D49CD0 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				88263B22247B289300064461 /* Profile */,
+				88263B1B247AC6A500064461 /* CourseDetails */,
 				884C2D3F2477D76100011B13 /* Event */,
 				8899A7BD2477C3430077C872 /* CourseList */,
 				179D15F02474BBBD00D49CD0 /* Authentication */,
@@ -92,6 +102,7 @@
 				88190C2A247479FD006772B1 /* Authentication.storyboard */,
 				8899A7BB2477C32E0077C872 /* CourseList.storyboard */,
 				884C2D3D2477D73900011B13 /* Event.storyboard */,
+				88263B20247B1D3B00064461 /* Profile.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -156,6 +167,23 @@
 				7A216C5BA0151B3063F21B1B /* Pods_KidZoonaUserApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		88263B1B247AC6A500064461 /* CourseDetails */ = {
+			isa = PBXGroup;
+			children = (
+				88263B1C247AC6E100064461 /* CourseDetailsViewController.swift */,
+				88263B1E247B152D00064461 /* DesignCourseDetails.swift */,
+			);
+			path = CourseDetails;
+			sourceTree = "<group>";
+		};
+		88263B22247B289300064461 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				88263B23247B28C000064461 /* ProfileViewController.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		884C2D3F2477D76100011B13 /* Event */ = {
@@ -249,6 +277,7 @@
 				17F67ECE246FDE9100A1F211 /* Assets.xcassets in Resources */,
 				17F67ECC246FDE8600A1F211 /* Main.storyboard in Resources */,
 				88190C2B247479FD006772B1 /* Authentication.storyboard in Resources */,
+				88263B21247B1D3B00064461 /* Profile.storyboard in Resources */,
 				884C2D3E2477D73900011B13 /* Event.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,11 +332,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8899A7C12477C8F00077C872 /* DesignCourseList.swift in Sources */,
+				88263B1F247B152D00064461 /* DesignCourseDetails.swift in Sources */,
+				88263B24247B28C000064461 /* ProfileViewController.swift in Sources */,
 				179D15EE2474AB4000D49CD0 /* SignUpVC.swift in Sources */,
 				884C2D412477D77E00011B13 /* EventViewController.swift in Sources */,
 				8899A7BF2477C3880077C872 /* CourseListViewController.swift in Sources */,
 				179D15EC2474AAE500D49CD0 /* HomeVC.swift in Sources */,
 				17F67EC7246FDE8600A1F211 /* AppDelegate.swift in Sources */,
+				88263B1D247AC6E100064461 /* CourseDetailsViewController.swift in Sources */,
 				179D15EA2474AA9100D49CD0 /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

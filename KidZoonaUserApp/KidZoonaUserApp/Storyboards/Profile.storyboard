@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Profile-->
+        <scene sceneID="IBt-Z6-E47">
+            <objects>
+                <viewController id="jVc-Ox-xq9" customClass="ProfileViewController" customModule="KidZoonaUserApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fRt-wn-oip">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ewz-Yy-1OK">
+                                <rect key="frame" x="87" y="116" width="247" height="164"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="247" id="96q-ag-ovd"/>
+                                    <constraint firstAttribute="height" constant="164" id="NwA-JU-9oL"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peter Sameh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VbC-5D-nU4">
+                                <rect key="frame" x="121" y="304" width="173" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1qQ-jj-09E">
+                                <rect key="frame" x="23" y="370" width="374" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="Mab-cl-N1e"/>
+                                    <constraint firstAttribute="width" constant="374" id="ajw-bK-Khj"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="My profile"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1qQ-jj-09E" firstAttribute="leading" secondItem="VbC-5D-nU4" secondAttribute="trailing" constant="-271" id="1r8-3Y-gaW"/>
+                            <constraint firstItem="ewz-Yy-1OK" firstAttribute="top" secondItem="GDY-AT-nvx" secondAttribute="top" constant="28" id="9Jl-gM-GyU"/>
+                            <constraint firstItem="ewz-Yy-1OK" firstAttribute="leading" secondItem="GDY-AT-nvx" secondAttribute="leading" constant="87" id="Clr-zJ-Jvt"/>
+                            <constraint firstItem="1qQ-jj-09E" firstAttribute="top" secondItem="VbC-5D-nU4" secondAttribute="bottom" constant="30" id="P1U-pD-eYg"/>
+                            <constraint firstItem="ewz-Yy-1OK" firstAttribute="leading" secondItem="VbC-5D-nU4" secondAttribute="trailing" constant="-207" id="faf-fV-ImK"/>
+                            <constraint firstItem="VbC-5D-nU4" firstAttribute="top" secondItem="ewz-Yy-1OK" secondAttribute="bottom" constant="24" id="zxi-LO-veT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GDY-AT-nvx"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Profile" id="KK5-qQ-r8a">
+                        <barButtonItem key="leftBarButtonItem" title="&lt; Setting" id="hIJ-u7-a8e"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LeK-Ug-XUs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1057.9710144927537" y="159.375"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="YnI-Yv-L5g">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8cz-dc-3y1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vft-oL-cOv">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jVc-Ox-xq9" kind="relationship" relationship="rootViewController" id="8Ba-iV-J0C"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zoo-vy-nQB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="147.82608695652175" y="159.375"/>
+        </scene>
+    </scenes>
+</document>

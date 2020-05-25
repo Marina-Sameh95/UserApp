@@ -15,6 +15,9 @@
 		17F67ECE246FDE9100A1F211 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17F67ECD246FDE9100A1F211 /* Assets.xcassets */; };
 		17F67ED1246FDE9100A1F211 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17F67ECF246FDE9100A1F211 /* LaunchScreen.storyboard */; };
 		62EF5E6ADCD61C5B599BC24D /* Pods_KidZoonaUserApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A216C5BA0151B3063F21B1B /* Pods_KidZoonaUserApp.framework */; };
+		88092FB0247C1BBE00EB3B34 /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88092FAF247C1BBE00EB3B34 /* ActivitiesViewController.swift */; };
+		88092FB2247C26CC00EB3B34 /* ProfileDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88092FB1247C26CC00EB3B34 /* ProfileDetailsViewController.swift */; };
+		88092FB4247C292100EB3B34 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88092FB3247C292100EB3B34 /* EditProfileViewController.swift */; };
 		88190C2B247479FD006772B1 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88190C2A247479FD006772B1 /* Authentication.storyboard */; };
 		88263B1D247AC6E100064461 /* CourseDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88263B1C247AC6E100064461 /* CourseDetailsViewController.swift */; };
 		88263B1F247B152D00064461 /* DesignCourseDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88263B1E247B152D00064461 /* DesignCourseDetails.swift */; };
@@ -39,6 +42,9 @@
 		17F67ED2246FDE9100A1F211 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FBA4BADC316154081C96343 /* Pods-KidZoonaUserApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidZoonaUserApp.release.xcconfig"; path = "Target Support Files/Pods-KidZoonaUserApp/Pods-KidZoonaUserApp.release.xcconfig"; sourceTree = "<group>"; };
 		7A216C5BA0151B3063F21B1B /* Pods_KidZoonaUserApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidZoonaUserApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		88092FAF247C1BBE00EB3B34 /* ActivitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
+		88092FB1247C26CC00EB3B34 /* ProfileDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailsViewController.swift; sourceTree = "<group>"; };
+		88092FB3247C292100EB3B34 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		88190C2A247479FD006772B1 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		88263B1C247AC6E100064461 /* CourseDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsViewController.swift; sourceTree = "<group>"; };
 		88263B1E247B152D00064461 /* DesignCourseDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignCourseDetails.swift; sourceTree = "<group>"; };
@@ -182,6 +188,9 @@
 			isa = PBXGroup;
 			children = (
 				88263B23247B28C000064461 /* ProfileViewController.swift */,
+				88092FAF247C1BBE00EB3B34 /* ActivitiesViewController.swift */,
+				88092FB1247C26CC00EB3B34 /* ProfileDetailsViewController.swift */,
+				88092FB3247C292100EB3B34 /* EditProfileViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -331,9 +340,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88092FB4247C292100EB3B34 /* EditProfileViewController.swift in Sources */,
 				8899A7C12477C8F00077C872 /* DesignCourseList.swift in Sources */,
 				88263B1F247B152D00064461 /* DesignCourseDetails.swift in Sources */,
 				88263B24247B28C000064461 /* ProfileViewController.swift in Sources */,
+				88092FB0247C1BBE00EB3B34 /* ActivitiesViewController.swift in Sources */,
 				179D15EE2474AB4000D49CD0 /* SignUpVC.swift in Sources */,
 				884C2D412477D77E00011B13 /* EventViewController.swift in Sources */,
 				8899A7BF2477C3880077C872 /* CourseListViewController.swift in Sources */,
@@ -341,6 +352,7 @@
 				17F67EC7246FDE8600A1F211 /* AppDelegate.swift in Sources */,
 				88263B1D247AC6E100064461 /* CourseDetailsViewController.swift in Sources */,
 				179D15EA2474AA9100D49CD0 /* LoginVC.swift in Sources */,
+				88092FB2247C26CC00EB3B34 /* ProfileDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  ProfileViewController.swift
+//  ProfileDetailsViewController.swift
 //  KidZoonaUserApp
 //
 //  Created by Marina Sameh on 5/25/20.
@@ -8,26 +8,16 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileDetailsViewController: UIViewController {
 
-    @IBOutlet weak var myProfile: UIView!
-    @IBOutlet weak var activities: UIView!
-    
+    @IBOutlet weak var editBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }
-    
-    @IBAction func switchViews(_ sender: UISegmentedControl) {
-        
-        if sender.selectedSegmentIndex == 0 {
-            myProfile.alpha = 1
-            activities.alpha = 0
-        } else {
-            myProfile.alpha = 0
-            activities.alpha = 1
-        }
+        editBtn.layer.cornerRadius = 15
+        editBtn.layer.borderWidth = 2
+        editBtn.layer.borderColor = UIColor.blue.cgColor
     }
     
 

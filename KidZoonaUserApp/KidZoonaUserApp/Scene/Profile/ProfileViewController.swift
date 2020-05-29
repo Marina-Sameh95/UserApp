@@ -30,6 +30,10 @@ class ProfileViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        myProfile.alpha = 1
+        activities.alpha = 0 
+    }
 
     /*
     // MARK: - Navigation

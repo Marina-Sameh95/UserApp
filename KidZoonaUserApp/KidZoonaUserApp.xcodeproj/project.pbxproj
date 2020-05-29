@@ -132,13 +132,13 @@
 		179D15F22474BC0700D49CD0 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				17F67ECF246FDE9100A1F211 /* LaunchScreen.storyboard */,
+				88190C2A247479FD006772B1 /* Authentication.storyboard */,
+				17F67ECA246FDE8600A1F211 /* Main.storyboard */,
 				8896A2812481472600D501E0 /* AcademyProfile.storyboard */,
 				8896A27F2481472600D501E0 /* ListOfAcademies.storyboard */,
 				8896A2802481472600D501E0 /* Settings.storyboard */,
 				8896A2822481472600D501E0 /* Wishlist.storyboard */,
-				17F67ECF246FDE9100A1F211 /* LaunchScreen.storyboard */,
-				17F67ECA246FDE8600A1F211 /* Main.storyboard */,
-				88190C2A247479FD006772B1 /* Authentication.storyboard */,
 				8899A7BB2477C32E0077C872 /* CourseList.storyboard */,
 				884C2D3D2477D73900011B13 /* Event.storyboard */,
 				88263B20247B1D3B00064461 /* Profile.storyboard */,

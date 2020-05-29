@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CourseDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CourseDetailsViewController: UIViewController {
     
 
     @IBOutlet weak var reviewTable: UITableView!
@@ -39,20 +39,27 @@ class CourseDetailsViewController: UIViewController, UITableViewDelegate, UITabl
         }
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! UITableViewCell
-        cell.contentView.backgroundColor = UIColor (white: 0.95, alpha: 1)
+   
+}
+    extension CourseDetailsViewController : UITableViewDelegate , UITableViewDataSource {
         
-        return cell
-    }
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return 8
+        }
+        
+        func numberOfSections(in tableView: UITableView) -> Int {
+            return 1
+        }
+        
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! UITableViewCell
+            cell.contentView.backgroundColor = UIColor (white: 0.95, alpha: 1)
+            
+            return cell
+        }
+}
+    
+    
     /*
     // MARK: - Navigation
 
@@ -63,4 +70,5 @@ class CourseDetailsViewController: UIViewController, UITableViewDelegate, UITabl
     }
     */
 
-}
+
+

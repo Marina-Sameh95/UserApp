@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17372EBC2480A3C100B6004D /* OffersCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17372EBB2480A3C100B6004D /* OffersCellCollectionViewCell.swift */; };
+		17372EBE2480AFF000B6004D /* EventCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17372EBD2480AFF000B6004D /* EventCellCollectionViewCell.swift */; };
 		179D15EA2474AA9100D49CD0 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179D15E92474AA9100D49CD0 /* LoginVC.swift */; };
 		179D15EC2474AAE500D49CD0 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179D15EB2474AAE500D49CD0 /* HomeVC.swift */; };
 		179D15EE2474AB4000D49CD0 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179D15ED2474AB4000D49CD0 /* SignUpVC.swift */; };
+		17C003C624806B0600D50BF1 /* headerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C003C524806B0600D50BF1 /* headerCollectionViewCell.swift */; };
 		17F67EC7246FDE8600A1F211 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F67EC6246FDE8600A1F211 /* AppDelegate.swift */; };
 		17F67ECC246FDE8600A1F211 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17F67ECA246FDE8600A1F211 /* Main.storyboard */; };
 		17F67ECE246FDE9100A1F211 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17F67ECD246FDE9100A1F211 /* Assets.xcassets */; };
@@ -31,9 +34,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17372EBB2480A3C100B6004D /* OffersCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersCellCollectionViewCell.swift; sourceTree = "<group>"; };
+		17372EBD2480AFF000B6004D /* EventCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		179D15E92474AA9100D49CD0 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		179D15EB2474AAE500D49CD0 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		179D15ED2474AB4000D49CD0 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		17C003C524806B0600D50BF1 /* headerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = headerCollectionViewCell.swift; sourceTree = "<group>"; };
 		17F67EC3246FDE8600A1F211 /* KidZoonaUserApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KidZoonaUserApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17F67EC6246FDE8600A1F211 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17F67ECB246FDE8600A1F211 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -96,6 +102,9 @@
 			isa = PBXGroup;
 			children = (
 				179D15EB2474AAE500D49CD0 /* HomeVC.swift */,
+				17C003C524806B0600D50BF1 /* headerCollectionViewCell.swift */,
+				17372EBB2480A3C100B6004D /* OffersCellCollectionViewCell.swift */,
+				17372EBD2480AFF000B6004D /* EventCellCollectionViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -344,7 +353,9 @@
 				8899A7C12477C8F00077C872 /* DesignCourseList.swift in Sources */,
 				88263B1F247B152D00064461 /* DesignCourseDetails.swift in Sources */,
 				88263B24247B28C000064461 /* ProfileViewController.swift in Sources */,
+				17372EBC2480A3C100B6004D /* OffersCellCollectionViewCell.swift in Sources */,
 				88092FB0247C1BBE00EB3B34 /* ActivitiesViewController.swift in Sources */,
+				17C003C624806B0600D50BF1 /* headerCollectionViewCell.swift in Sources */,
 				179D15EE2474AB4000D49CD0 /* SignUpVC.swift in Sources */,
 				884C2D412477D77E00011B13 /* EventViewController.swift in Sources */,
 				8899A7BF2477C3880077C872 /* CourseListViewController.swift in Sources */,
@@ -353,6 +364,7 @@
 				88263B1D247AC6E100064461 /* CourseDetailsViewController.swift in Sources */,
 				179D15EA2474AA9100D49CD0 /* LoginVC.swift in Sources */,
 				88092FB2247C26CC00EB3B34 /* ProfileDetailsViewController.swift in Sources */,
+				17372EBE2480AFF000B6004D /* EventCellCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

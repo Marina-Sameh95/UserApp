@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B0F4693247E379400E4C102 /* UIColor+Customization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0F4692247E379400E4C102 /* UIColor+Customization.swift */; };
+		0B0F4695247E37D900E4C102 /* UserReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0F4694247E37D900E4C102 /* UserReviewCell.swift */; };
+		0B0F4697247E383600E4C102 /* AcademyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0F4696247E383600E4C102 /* AcademyProfileVC.swift */; };
+		0B0F4699247E391000E4C102 /* SliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0F4698247E391000E4C102 /* SliderCell.swift */; };
+		0B5D94FB247E280F004D370B /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B5D94FA247E280F004D370B /* Settings.storyboard */; };
+		0B5D94FD247E2B2A004D370B /* ListOfAcademies.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B5D94FC247E2B2A004D370B /* ListOfAcademies.storyboard */; };
+		0B5D94FF247E2C96004D370B /* Wishlist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B5D94FE247E2C96004D370B /* Wishlist.storyboard */; };
+		0BB2F5B5247EB083003F3D31 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB2F5B4247EB083003F3D31 /* CustomButton.swift */; };
+		0BB2F5B7247EB0D0003F3D31 /* DesignReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB2F5B6247EB0D0003F3D31 /* DesignReviewCell.swift */; };
+		0BB2F5B9247EB105003F3D31 /* WishListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB2F5B8247EB105003F3D31 /* WishListVC.swift */; };
+		0BB2F5BB247EB13C003F3D31 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB2F5BA247EB13C003F3D31 /* User.swift */; };
+		0BCD17912480EA07008F381C /* RoundedBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCD17902480EA07008F381C /* RoundedBtn.swift */; };
+		0BE6EF32247E24F600241A98 /* AcademyProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BE6EF31247E24F600241A98 /* AcademyProfile.storyboard */; };
 		179D15EA2474AA9100D49CD0 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179D15E92474AA9100D49CD0 /* LoginVC.swift */; };
 		179D15EC2474AAE500D49CD0 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179D15EB2474AAE500D49CD0 /* HomeVC.swift */; };
 		179D15EE2474AB4000D49CD0 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179D15ED2474AB4000D49CD0 /* SignUpVC.swift */; };
@@ -18,6 +31,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B0F4692247E379400E4C102 /* UIColor+Customization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Customization.swift"; sourceTree = "<group>"; };
+		0B0F4694247E37D900E4C102 /* UserReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserReviewCell.swift; sourceTree = "<group>"; };
+		0B0F4696247E383600E4C102 /* AcademyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademyProfileVC.swift; sourceTree = "<group>"; };
+		0B0F4698247E391000E4C102 /* SliderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCell.swift; sourceTree = "<group>"; };
+		0B5D94FA247E280F004D370B /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		0B5D94FC247E2B2A004D370B /* ListOfAcademies.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListOfAcademies.storyboard; sourceTree = "<group>"; };
+		0B5D94FE247E2C96004D370B /* Wishlist.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Wishlist.storyboard; sourceTree = "<group>"; };
+		0BB2F5B4247EB083003F3D31 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		0BB2F5B6247EB0D0003F3D31 /* DesignReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignReviewCell.swift; sourceTree = "<group>"; };
+		0BB2F5B8247EB105003F3D31 /* WishListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListVC.swift; sourceTree = "<group>"; };
+		0BB2F5BA247EB13C003F3D31 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0BCD17902480EA07008F381C /* RoundedBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBtn.swift; sourceTree = "<group>"; };
+		0BE6EF31247E24F600241A98 /* AcademyProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AcademyProfile.storyboard; sourceTree = "<group>"; };
 		179D15E92474AA9100D49CD0 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		179D15EB2474AAE500D49CD0 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		179D15ED2474AB4000D49CD0 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
@@ -41,11 +67,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BB2F5BC247EB171003F3D31 /* Wishlist */ = {
+			isa = PBXGroup;
+			children = (
+				0BB2F5B8247EB105003F3D31 /* WishListVC.swift */,
+				0BCD17902480EA07008F381C /* RoundedBtn.swift */,
+			);
+			path = Wishlist;
+			sourceTree = "<group>";
+		};
+		0BB2F5BD247EB18C003F3D31 /* List Of Academies */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "List Of Academies";
+			sourceTree = "<group>";
+		};
+		0BB2F5BE247EB1A1003F3D31 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		0BE6EF30247E246400241A98 /* Academy Profile */ = {
+			isa = PBXGroup;
+			children = (
+				0B0F4694247E37D900E4C102 /* UserReviewCell.swift */,
+				0B0F4696247E383600E4C102 /* AcademyProfileVC.swift */,
+				0B0F4698247E391000E4C102 /* SliderCell.swift */,
+				0BB2F5B4247EB083003F3D31 /* CustomButton.swift */,
+				0BB2F5B6247EB0D0003F3D31 /* DesignReviewCell.swift */,
+			);
+			path = "Academy Profile";
+			sourceTree = "<group>";
+		};
 		179D15EF2474BB9900D49CD0 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				0BB2F5BE247EB1A1003F3D31 /* Settings */,
+				0BB2F5BD247EB18C003F3D31 /* List Of Academies */,
+				0BB2F5BC247EB171003F3D31 /* Wishlist */,
+				0BE6EF30247E246400241A98 /* Academy Profile */,
 				179D15F02474BBBD00D49CD0 /* Authentication */,
 				179D15F12474BBD800D49CD0 /* Home */,
+				0BB2F5BA247EB13C003F3D31 /* User.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -73,6 +139,10 @@
 				17F67ECF246FDE9100A1F211 /* LaunchScreen.storyboard */,
 				17F67ECA246FDE8600A1F211 /* Main.storyboard */,
 				88190C2A247479FD006772B1 /* Authentication.storyboard */,
+				0BE6EF31247E24F600241A98 /* AcademyProfile.storyboard */,
+				0B5D94FA247E280F004D370B /* Settings.storyboard */,
+				0B5D94FC247E2B2A004D370B /* ListOfAcademies.storyboard */,
+				0B5D94FE247E2C96004D370B /* Wishlist.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -81,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				17F67ECD246FDE9100A1F211 /* Assets.xcassets */,
+				0B0F4692247E379400E4C102 /* UIColor+Customization.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -188,8 +259,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				17F67ED1246FDE9100A1F211 /* LaunchScreen.storyboard in Resources */,
+				0B5D94FF247E2C96004D370B /* Wishlist.storyboard in Resources */,
 				17F67ECE246FDE9100A1F211 /* Assets.xcassets in Resources */,
 				17F67ECC246FDE8600A1F211 /* Main.storyboard in Resources */,
+				0B5D94FD247E2B2A004D370B /* ListOfAcademies.storyboard in Resources */,
+				0B5D94FB247E280F004D370B /* Settings.storyboard in Resources */,
+				0BE6EF32247E24F600241A98 /* AcademyProfile.storyboard in Resources */,
 				88190C2B247479FD006772B1 /* Authentication.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,10 +276,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B0F4695247E37D900E4C102 /* UserReviewCell.swift in Sources */,
 				179D15EE2474AB4000D49CD0 /* SignUpVC.swift in Sources */,
+				0BCD17912480EA07008F381C /* RoundedBtn.swift in Sources */,
+				0BB2F5B9247EB105003F3D31 /* WishListVC.swift in Sources */,
+				0BB2F5B5247EB083003F3D31 /* CustomButton.swift in Sources */,
+				0B0F4697247E383600E4C102 /* AcademyProfileVC.swift in Sources */,
 				179D15EC2474AAE500D49CD0 /* HomeVC.swift in Sources */,
 				17F67EC7246FDE8600A1F211 /* AppDelegate.swift in Sources */,
+				0B0F4693247E379400E4C102 /* UIColor+Customization.swift in Sources */,
+				0BB2F5BB247EB13C003F3D31 /* User.swift in Sources */,
+				0B0F4699247E391000E4C102 /* SliderCell.swift in Sources */,
 				179D15EA2474AA9100D49CD0 /* LoginVC.swift in Sources */,
+				0BB2F5B7247EB0D0003F3D31 /* DesignReviewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

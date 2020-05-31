@@ -75,30 +75,30 @@
             </objects>
             <point key="canvasLocation" x="900" y="1467"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--CourseList-->
         <scene sceneID="3lf-nl-3jS">
             <objects>
-                <viewControllerPlaceholder id="gsY-e4-U6W" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="CourseList" id="gsY-e4-U6W" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Academies" image="academy tab bar" id="WLv-o1-nmb"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TCg-fg-m5u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2278" y="599"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--Event-->
         <scene sceneID="boN-uv-QHY">
             <objects>
-                <viewControllerPlaceholder id="RW7-VD-mR0" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Event" id="RW7-VD-mR0" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Wishl List" image="wish list tab bar" id="D9b-M3-K2n"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1lG-0A-Xd7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2714" y="599"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--Profile-->
         <scene sceneID="6P2-TD-cip">
             <objects>
-                <viewControllerPlaceholder id="uym-Ia-qDy" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Profile" id="uym-Ia-qDy" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="setting tab bar" id="aal-Uv-cUD"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HaV-0e-87g" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -336,12 +336,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="76e-hD-yHq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3597.5999999999999" y="131.33433283358323"/>
+            <point key="canvasLocation" x="3649" y="130"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oxe-SE-oaZ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nTD-6T-uoe" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="rootNavHomeX" automaticallyAdjustsScrollViewInsets="NO" id="nTD-6T-uoe" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="95K-eW-Xly">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -363,6 +363,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="rhz-NR-G8a"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="T8D-ds-pKc">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

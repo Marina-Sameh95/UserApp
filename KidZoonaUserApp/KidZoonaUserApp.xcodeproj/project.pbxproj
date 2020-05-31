@@ -12,6 +12,7 @@
 		179D15EA2474AA9100D49CD0 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179D15E92474AA9100D49CD0 /* LoginVC.swift */; };
 		179D15EC2474AAE500D49CD0 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179D15EB2474AAE500D49CD0 /* HomeVC.swift */; };
 		179D15EE2474AB4000D49CD0 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179D15ED2474AB4000D49CD0 /* SignUpVC.swift */; };
+		179F3250248356FA000A9D82 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 179F324F248356F9000A9D82 /* GoogleService-Info.plist */; };
 		17C003C624806B0600D50BF1 /* headerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C003C524806B0600D50BF1 /* headerCollectionViewCell.swift */; };
 		17F67EC7246FDE8600A1F211 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F67EC6246FDE8600A1F211 /* AppDelegate.swift */; };
 		17F67ECC246FDE8600A1F211 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17F67ECA246FDE8600A1F211 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 		179D15E92474AA9100D49CD0 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		179D15EB2474AAE500D49CD0 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		179D15ED2474AB4000D49CD0 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		179F324F248356F9000A9D82 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		17C003C524806B0600D50BF1 /* headerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = headerCollectionViewCell.swift; sourceTree = "<group>"; };
 		17F67EC3246FDE8600A1F211 /* KidZoonaUserApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KidZoonaUserApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17F67EC6246FDE8600A1F211 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				17F67ED2246FDE9100A1F211 /* Info.plist */,
+				179F324F248356F9000A9D82 /* GoogleService-Info.plist */,
 			);
 			path = Configrations;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				17F67EC0246FDE8600A1F211 /* Frameworks */,
 				17F67EC1246FDE8600A1F211 /* Resources */,
 				C6FA178A16D5C26CCF7CD22E /* [CP] Embed Pods Frameworks */,
+				21CA02D66C7D961205A4A38B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -291,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17F67ED1246FDE9100A1F211 /* LaunchScreen.storyboard in Resources */,
+				179F3250248356FA000A9D82 /* GoogleService-Info.plist in Resources */,
 				8899A7BC2477C32E0077C872 /* CourseList.storyboard in Resources */,
 				17F67ECE246FDE9100A1F211 /* Assets.xcassets in Resources */,
 				17F67ECC246FDE8600A1F211 /* Main.storyboard in Resources */,
@@ -303,6 +308,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		21CA02D66C7D961205A4A38B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KidZoonaUserApp/Pods-KidZoonaUserApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KidZoonaUserApp/Pods-KidZoonaUserApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KidZoonaUserApp/Pods-KidZoonaUserApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7FE68673E3207FCF407B24D2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

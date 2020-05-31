@@ -75,30 +75,30 @@
             </objects>
             <point key="canvasLocation" x="900" y="1467"/>
         </scene>
-        <!--CourseList-->
+        <!--AcademyProfile-->
         <scene sceneID="3lf-nl-3jS">
             <objects>
-                <viewControllerPlaceholder storyboardName="CourseList" id="gsY-e4-U6W" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="AcademyProfile" id="gsY-e4-U6W" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Academies" image="academy tab bar" id="WLv-o1-nmb"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TCg-fg-m5u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2278" y="599"/>
         </scene>
-        <!--Event-->
+        <!--Wishlist-->
         <scene sceneID="boN-uv-QHY">
             <objects>
-                <viewControllerPlaceholder storyboardName="Event" id="RW7-VD-mR0" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Wishlist" id="RW7-VD-mR0" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Wishl List" image="wish list tab bar" id="D9b-M3-K2n"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1lG-0A-Xd7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2714" y="599"/>
         </scene>
-        <!--Profile-->
+        <!--Settings-->
         <scene sceneID="6P2-TD-cip">
             <objects>
-                <viewControllerPlaceholder storyboardName="Profile" id="uym-Ia-qDy" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Settings" id="uym-Ia-qDy" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="setting tab bar" id="aal-Uv-cUD"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HaV-0e-87g" userLabel="First Responder" sceneMemberID="firstResponder"/>

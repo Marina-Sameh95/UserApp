@@ -3,4 +3,12 @@ use_frameworks!
 target 'KidZoonaUserApp' do
 pod 'Cosmos', '~> 20.0'
 
+  # Pods for Login
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
+  pod 'AppAuth','~> 1.2.0'
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKLoginKit'
+
 end

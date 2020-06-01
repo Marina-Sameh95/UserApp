@@ -12,6 +12,9 @@ class CourseListViewController: UIViewController , UITableViewDelegate, UITableV
    
     @IBOutlet weak var tableView: UITableView!
     
+    var name: NSArray = []
+    var imageArray:NSArray = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,10 +22,13 @@ class CourseListViewController: UIViewController , UITableViewDelegate, UITableV
         tableView.separatorColor = UIColor(white: 0.95, alpha: 1)
         tableView.delegate = self
         tableView.dataSource = self
+        
+        name = ["Wedo","EV3","Art","Drawing","Music","Music","chess"]
+        imageArray = [UIImage(named: "course1"),UIImage(named: "course2"),UIImage(named: "course3"),UIImage(named: "course4"),UIImage(named: "course5"),UIImage(named: "course6"),UIImage(named: "course7")!]
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        return name.count
     }
     
     
@@ -34,9 +40,13 @@ class CourseListViewController: UIViewController , UITableViewDelegate, UITableV
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! UITableViewCell
         cell.contentView.backgroundColor = UIColor (white: 0.95, alpha: 1)
         
+        
         return cell
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        <#code#>
+    }
     /*
     // MARK: - Navigation
 

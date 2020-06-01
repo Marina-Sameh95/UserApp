@@ -14,9 +14,17 @@ class CourseDetailsViewController: UIViewController {
     @IBOutlet weak var reviewTable: UITableView!
     @IBOutlet weak var favBtn: UIButton!
     @IBOutlet weak var registerBtn: UIButton!
+    @IBOutlet weak var courseImg: UIImageView!
+    @IBOutlet weak var courseName: UILabel!
+    
+    var getCourseName = String()
+    var getCourseImg = UIImage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        courseName.text! = getCourseName
+        courseImg.image = getCourseImg
         
         reviewTable.separatorColor = UIColor(white: 0.95, alpha: 1)
         reviewTable.delegate = self

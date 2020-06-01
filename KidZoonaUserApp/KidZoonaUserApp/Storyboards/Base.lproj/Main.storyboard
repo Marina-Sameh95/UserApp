@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nTD-6T-uoe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nTD-6T-uoe">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -74,36 +74,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="900" y="1467"/>
-        </scene>
-        <!--AcademyList-->
-        <scene sceneID="3lf-nl-3jS">
-            <objects>
-                <viewControllerPlaceholder storyboardName="ListOfAcademies" referencedIdentifier="AcademyList" id="gsY-e4-U6W" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Academies" image="academy tab bar" id="WLv-o1-nmb"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TCg-fg-m5u" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2278" y="599"/>
-        </scene>
-        <!--WishList-->
-        <scene sceneID="boN-uv-QHY">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Wishlist" referencedIdentifier="WishList" id="RW7-VD-mR0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Wishl List" image="wish list tab bar" id="D9b-M3-K2n"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1lG-0A-Xd7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2714" y="599"/>
-        </scene>
-        <!--SettingsView-->
-        <scene sceneID="6P2-TD-cip">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Settings" referencedIdentifier="SettingsView" id="uym-Ia-qDy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="setting tab bar" id="aal-Uv-cUD"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HaV-0e-87g" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3102" y="599"/>
         </scene>
         <!--Home-->
         <scene sceneID="p4l-jJ-QBx">
@@ -341,7 +311,7 @@
         <!--Navigation Controller-->
         <scene sceneID="oxe-SE-oaZ">
             <objects>
-                <navigationController storyboardIdentifier="rootNavHomeX" automaticallyAdjustsScrollViewInsets="NO" id="nTD-6T-uoe" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="rootNavHome" automaticallyAdjustsScrollViewInsets="NO" id="nTD-6T-uoe" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="95K-eW-Xly">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -369,19 +339,49 @@
                     </tabBar>
                     <connections>
                         <segue destination="COq-7Y-usW" kind="relationship" relationship="viewControllers" id="Pbl-6E-MLh"/>
-                        <segue destination="gsY-e4-U6W" kind="relationship" relationship="viewControllers" id="uXZ-YG-KvC"/>
-                        <segue destination="RW7-VD-mR0" kind="relationship" relationship="viewControllers" id="MaQ-Yf-acA"/>
-                        <segue destination="uym-Ia-qDy" kind="relationship" relationship="viewControllers" id="VoW-Rm-gjp"/>
+                        <segue destination="oha-Jy-saA" kind="relationship" relationship="viewControllers" id="uNG-7o-Pzv"/>
+                        <segue destination="bDU-2Z-YOX" kind="relationship" relationship="viewControllers" id="igp-RX-iD3"/>
+                        <segue destination="pVo-n1-98h" kind="relationship" relationship="viewControllers" id="1yC-RP-5AX"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="usE-IU-HV6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2658.4000000000001" y="130.88455772113943"/>
         </scene>
+        <!--WishlistTabbar-->
+        <scene sceneID="InE-zG-u9a">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Wishlist" referencedIdentifier="WishlistTabbar" id="bDU-2Z-YOX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Wish List" image="wish list tab bar" id="On4-Sl-K2F"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7CR-J9-a15" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2647" y="552"/>
+        </scene>
+        <!--SettingsView-->
+        <scene sceneID="YfN-JM-Ptt">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" referencedIdentifier="SettingsView" id="pVo-n1-98h" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="setting tab bar" id="Fl9-Pg-gMd"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Epm-4h-13G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2986" y="588"/>
+        </scene>
+        <!--AcademyListTabbar-->
+        <scene sceneID="WwX-Tj-gWh">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ListOfAcademies" referencedIdentifier="AcademyListTabbar" id="oha-Jy-saA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Academies" image="academies" id="oxC-Z7-RC6"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eIt-8z-X9e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2302" y="601"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Home tab bar" width="24" height="24"/>
-        <image name="academy tab bar" width="24" height="24"/>
+        <image name="academies" width="24" height="24"/>
         <image name="heartFill" width="37" height="37"/>
         <image name="setting tab bar" width="24" height="24"/>
         <image name="wish list tab bar" width="24" height="24"/>

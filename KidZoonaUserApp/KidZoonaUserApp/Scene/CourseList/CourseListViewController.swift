@@ -45,7 +45,7 @@ class CourseListViewController: UIViewController , UITableViewDelegate, UITableV
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        <#code#>
+        return
     }
     /*
     // MARK: - Navigation

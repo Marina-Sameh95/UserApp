@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AY7-JW-n0N">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AY7-JW-n0N">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Settings View Controller-->
+        <!--Settings-->
         <scene sceneID="HcR-cQ-Yh4">
             <objects>
                 <viewController storyboardIdentifier="SettingsView" id="AY7-JW-n0N" customClass="SettingsViewController" customModule="KidZoonaUserApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -97,10 +97,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Mp0-G7-V0E"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="setting tab bar" id="fbB-wU-Odg"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ruU-kv-uJV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="986" y="-73"/>
+            <point key="canvasLocation" x="1924" y="-73.313343328335833"/>
         </scene>
         <!--ProfileView-->
         <scene sceneID="K4l-pp-r0E">
@@ -108,7 +110,7 @@
                 <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="ProfileView" id="Ixs-Qb-sNB" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gUk-Z2-50W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1569" y="-95"/>
+            <point key="canvasLocation" x="2508" y="-95.352323838080963"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="SlH-eG-Fmx">
@@ -116,12 +118,13 @@
                 <viewControllerPlaceholder storyboardName="Authentication" referencedIdentifier="LoginVC" id="O68-aP-BGg" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f3Y-gX-huf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1554" y="-47"/>
+            <point key="canvasLocation" x="2492.8000000000002" y="-47.676161919040482"/>
         </scene>
     </scenes>
     <resources>
         <image name="line sections" width="342" height="1"/>
         <image name="logout" width="24" height="24"/>
         <image name="profile" width="24" height="24"/>
+        <image name="setting tab bar" width="24" height="24"/>
     </resources>
 </document>

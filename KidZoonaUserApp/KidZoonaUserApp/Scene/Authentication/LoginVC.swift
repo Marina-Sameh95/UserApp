@@ -75,8 +75,8 @@ class LoginVC: UIViewController{
                 return
             }else if let user = user{
                 print("successfully SignIn", user.user.email ?? "")
-                let home = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "rootNavHomeX")
-                self.navigationController?.pushViewController(home, animated: true)
+//                let home = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "rootNavHomeX")
+//                self.navigationController?.pushViewController(home, animated: true)
             }
         }
     }

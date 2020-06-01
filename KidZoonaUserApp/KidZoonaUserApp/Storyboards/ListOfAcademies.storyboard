@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -105,7 +105,7 @@
         <!--Academies-->
         <scene sceneID="1uL-Ba-Sga">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5Gu-ax-oTz" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="AcademyListTabbar" automaticallyAdjustsScrollViewInsets="NO" id="5Gu-ax-oTz" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Academies" image="academies" id="OzR-AP-a1T"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="riL-xx-580">
@@ -242,7 +242,7 @@
                                                             <color key="textColor" red="0.20486063060000001" green="0.50336106469999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Excellent" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7Y-Dm-Sxl">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Excellent" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7Y-Dm-Sxl">
                                                             <rect key="frame" x="101" y="55" width="51" height="15"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <nil key="highlightedColor"/>
@@ -253,7 +253,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U91-V4-Dih" customClass="CosmosView" customModule="Cosmos">
+                                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U91-V4-Dih" customClass="CosmosView" customModule="Cosmos">
                                                             <rect key="frame" x="101" y="31" width="120" height="20"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </view>
@@ -368,9 +368,9 @@
         <image name="get-directions" width="26" height="26"/>
         <image name="gray-search" width="22" height="22"/>
         <image name="location" width="26" height="26"/>
-        <image name="usr-7" width="441" height="615"/>
+        <image name="usr-7" width="330.75" height="461.25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vFp-f6-zCh"/>
+        <segue reference="Mtp-qS-UOC"/>
     </inferredMetricsTieBreakers>
 </document>

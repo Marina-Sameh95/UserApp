@@ -10,5 +10,7 @@ pod 'Cosmos', '~> 20.0'
   pod 'AppAuth','~> 1.2.0'
   pod 'FBSDKCoreKit'
   pod 'FBSDKLoginKit'
-
+  pod 'Firebase/Database'
+  pod 'Firebase/Storage'
+  pod 'SDWebImage', '~> 5.0'
 end

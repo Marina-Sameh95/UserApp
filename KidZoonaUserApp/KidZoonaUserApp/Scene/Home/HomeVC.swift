@@ -37,6 +37,9 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        self.parent?.title = "Home"
+        
         headerCollectionView.delegate = self
         headerCollectionView.dataSource = self
         offersCollectionView.delegate = self

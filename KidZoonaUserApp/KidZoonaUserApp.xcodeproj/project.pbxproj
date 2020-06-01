@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		171FF7732484A7B400077AC0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 171FF7722484A7B300077AC0 /* GoogleService-Info.plist */; };
+		17260B532484C9B200E46F31 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88263B20247B1D3B00064461 /* Profile.storyboard */; };
 		17372EBC2480A3C100B6004D /* OffersCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17372EBB2480A3C100B6004D /* OffersCellCollectionViewCell.swift */; };
 		17372EBE2480AFF000B6004D /* EventCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17372EBD2480AFF000B6004D /* EventCellCollectionViewCell.swift */; };
 		1799A20A2483B56400DE26EE /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1799A2062483B56200DE26EE /* Settings.storyboard */; };
@@ -24,7 +26,6 @@
 		179D15EA2474AA9100D49CD0 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179D15E92474AA9100D49CD0 /* LoginVC.swift */; };
 		179D15EC2474AAE500D49CD0 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179D15EB2474AAE500D49CD0 /* HomeVC.swift */; };
 		179D15EE2474AB4000D49CD0 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179D15ED2474AB4000D49CD0 /* SignUpVC.swift */; };
-		179F3250248356FA000A9D82 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 179F324F248356F9000A9D82 /* GoogleService-Info.plist */; };
 		17C003C624806B0600D50BF1 /* headerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C003C524806B0600D50BF1 /* headerCollectionViewCell.swift */; };
 		17F67EC7246FDE8600A1F211 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F67EC6246FDE8600A1F211 /* AppDelegate.swift */; };
 		17F67ECC246FDE8600A1F211 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17F67ECA246FDE8600A1F211 /* Main.storyboard */; };
@@ -37,7 +38,6 @@
 		88190C2B247479FD006772B1 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88190C2A247479FD006772B1 /* Authentication.storyboard */; };
 		88263B1D247AC6E100064461 /* CourseDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88263B1C247AC6E100064461 /* CourseDetailsViewController.swift */; };
 		88263B1F247B152D00064461 /* DesignCourseDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88263B1E247B152D00064461 /* DesignCourseDetails.swift */; };
-		88263B21247B1D3B00064461 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88263B20247B1D3B00064461 /* Profile.storyboard */; };
 		88263B24247B28C000064461 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88263B23247B28C000064461 /* ProfileViewController.swift */; };
 		884C2D3E2477D73900011B13 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 884C2D3D2477D73900011B13 /* Event.storyboard */; };
 		884C2D412477D77E00011B13 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884C2D402477D77E00011B13 /* EventViewController.swift */; };
@@ -49,6 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		171FF7722484A7B300077AC0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		17372EBB2480A3C100B6004D /* OffersCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		17372EBD2480AFF000B6004D /* EventCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		1799A2062483B56200DE26EE /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
@@ -66,7 +67,6 @@
 		179D15E92474AA9100D49CD0 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		179D15EB2474AAE500D49CD0 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		179D15ED2474AB4000D49CD0 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
-		179F324F248356F9000A9D82 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		17C003C524806B0600D50BF1 /* headerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = headerCollectionViewCell.swift; sourceTree = "<group>"; };
 		17F67EC3246FDE8600A1F211 /* KidZoonaUserApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KidZoonaUserApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17F67EC6246FDE8600A1F211 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -201,8 +201,8 @@
 		179D15F52474BCA600D49CD0 /* Configrations */ = {
 			isa = PBXGroup;
 			children = (
+				171FF7722484A7B300077AC0 /* GoogleService-Info.plist */,
 				17F67ED2246FDE9100A1F211 /* Info.plist */,
-				179F324F248356F9000A9D82 /* GoogleService-Info.plist */,
 			);
 			path = Configrations;
 			sourceTree = "<group>";
@@ -369,14 +369,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				17F67ED1246FDE9100A1F211 /* LaunchScreen.storyboard in Resources */,
-				179F3250248356FA000A9D82 /* GoogleService-Info.plist in Resources */,
+				17260B532484C9B200E46F31 /* Profile.storyboard in Resources */,
 				8899A7BC2477C32E0077C872 /* CourseList.storyboard in Resources */,
 				17F67ECE246FDE9100A1F211 /* Assets.xcassets in Resources */,
 				1799A20B2483B56400DE26EE /* ListOfAcademies.storyboard in Resources */,
 				17F67ECC246FDE8600A1F211 /* Main.storyboard in Resources */,
 				88190C2B247479FD006772B1 /* Authentication.storyboard in Resources */,
 				1799A20A2483B56400DE26EE /* Settings.storyboard in Resources */,
-				88263B21247B1D3B00064461 /* Profile.storyboard in Resources */,
+				171FF7732484A7B400077AC0 /* GoogleService-Info.plist in Resources */,
 				884C2D3E2477D73900011B13 /* Event.storyboard in Resources */,
 				1799A20C2483B56400DE26EE /* Wishlist.storyboard in Resources */,
 			);

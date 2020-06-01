@@ -9,6 +9,8 @@
 import UIKit
 import FirebaseAuth
 import Firebase
+import FirebaseDatabase
+
 
 class SignUpVC: UIViewController {
 
@@ -75,6 +77,31 @@ class SignUpVC: UIViewController {
                 return
             } else {
                 print("Successfully SignUp")
+                guard let firstName = self.firstNameTxt.text , firstName.count > 0 else {
+                    print("you must enter your name")
+                    return
+                    
+                }
+                guard let lastName = self.lastNameTxt.text , lastName.count > 0 else {
+                    print("you must enter your name")
+                    return
+                }
+                guard let emailAddress = self.emailRegTxt.text , emailAddress.count > 0 else {
+                    print("you must enter your name")
+                    return
+                }
+                let userName = "\(firstName) \(lastName)"
+                guard let uid = Auth.auth().currentUser?.uid else {return}
+                let ref = Database.database().reference().child("User").child(uid)
+                let dicValues = ["UserName" : userName , "userEmail" : emailAddress]
+                ref.updateChildValues(dicValues, withCompletionBlock: { (error, ref ) in
+                    if let error = error {
+                        print("failed to update/push data in Database", error.localizedDescription)
+                    }else{
+                        print("suessfully update Data in DataBase")
+                    }
+                })
+                
             }
         }
     }

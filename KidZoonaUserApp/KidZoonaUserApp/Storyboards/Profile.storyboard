@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8cz-dc-3y1">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -87,6 +87,8 @@
                     <connections>
                         <outlet property="activities" destination="x6r-cJ-i5x" id="eh5-J4-GkZ"/>
                         <outlet property="myProfile" destination="Sbr-GW-0GE" id="p8s-vt-D6y"/>
+                        <outlet property="userImage" destination="ewz-Yy-1OK" id="915-WV-tSq"/>
+                        <outlet property="userName" destination="VbC-5D-nU4" id="hMI-ls-ynH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LeK-Ug-XUs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -130,6 +132,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nwA-NW-5EF">
                                 <rect key="frame" x="293" y="120" width="94" height="30"/>
                                 <state key="normal" title="Upload Photo"/>
+                                <connections>
+                                    <action selector="uploadPhoto:" destination="z8s-bI-YrM" eventType="touchUpInside" id="gHV-a1-2Mp"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Uq-vt-TK8">
                                 <rect key="frame" x="20" y="171" width="265" height="30"/>
@@ -221,6 +226,9 @@
                                 <state key="normal" title="Save">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveEditUserInfo:" destination="z8s-bI-YrM" eventType="touchUpInside" id="cFL-dy-S8X"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sc6-v1-KJR">
                                 <rect key="frame" x="129" y="24" width="156" height="126"/>
@@ -265,6 +273,7 @@
                         <outlet property="femaleBtn" destination="KZx-IC-uAn" id="yU3-gk-IZ3"/>
                         <outlet property="maleBtn" destination="ydz-VR-qH3" id="Ri4-FB-fjC"/>
                         <outlet property="saveBtn" destination="5yR-7R-ol7" id="W1o-Eh-LZR"/>
+                        <outlet property="userImageOutLet" destination="sc6-v1-KJR" id="gHt-v5-1zq"/>
                         <outlet property="userName" destination="1Uq-vt-TK8" id="at6-8d-ys1"/>
                     </connections>
                 </viewController>

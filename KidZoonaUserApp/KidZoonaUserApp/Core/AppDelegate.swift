@@ -37,8 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
                 print("user LogIn", user.email ?? "user is nil")
                 let storyB = UIStoryboard(name: "Main", bundle: nil)
-                let viewC = storyB.instantiateViewController(withIdentifier: "rootNavHomeX")
-               // let navControl = UINavigationController(rootViewController: viewC)
+                let viewC = storyB.instantiateViewController(withIdentifier: "rootNavHome")
+                //let navControl = UINavigationController(rootViewController: viewC)
                 self.window?.rootViewController = viewC
                 
             }else{

@@ -1,19 +1,23 @@
 //
-//  ActivitiesForUserTabelCell.swift
+//  WishTableViewCell.swift
 //  KidZoonaUserApp
 //
-//  Created by MacOSSierra on 6/2/20.
+//  Created by Marina Sameh on 6/2/20.
 //  Copyright © 2020 asmaa. All rights reserved.
 //
 
 import UIKit
+import Cosmos
 
-class ActivitiesForUserTabelCell: UITableViewCell {
-
-    @IBOutlet weak var courseImage: UIImageView!
-    @IBOutlet weak var academyName: UILabel!
-    @IBOutlet weak var courseName: UILabel!
+class WishTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var cardDesign: DesignCourseList!
     @IBOutlet weak var courseDate: UILabel!
+    @IBOutlet weak var courseImg: UIImageView!
+    @IBOutlet weak var academyName: UILabel!
+    @IBOutlet weak var favBtn: RoundedBtn!
+    @IBOutlet weak var courseName: UILabel!
+    @IBOutlet weak var rateView: CosmosView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

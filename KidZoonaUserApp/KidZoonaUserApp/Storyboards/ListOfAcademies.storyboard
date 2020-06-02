@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AcademyCell" rowHeight="100" id="bDL-u2-J6F">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="100" id="bDL-u2-J6F" customClass="AcademyTableViewCell" customModule="KidZoonaUserApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bDL-u2-J6F" id="klT-jt-KKF">
@@ -45,32 +45,23 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ixl-v4-kOL" customClass="CosmosView" customModule="Cosmos">
-                                                            <rect key="frame" x="130" y="30" width="186" height="19"/>
+                                                            <rect key="frame" x="130" y="32" width="186" height="19"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="186" id="oK6-du-5Zn"/>
                                                                 <constraint firstAttribute="height" constant="19" id="qIE-dq-fZX"/>
                                                             </constraints>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offer 20%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcz-NL-mml">
-                                                            <rect key="frame" x="130" y="55" width="58" height="15"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                            <color key="textColor" red="0.20486063060000001" green="0.50336106469999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstItem="ixl-v4-kOL" firstAttribute="bottom" secondItem="gNi-YD-8z3" secondAttribute="bottom" constant="25" id="2Ze-g1-I5R"/>
+                                                        <constraint firstItem="ixl-v4-kOL" firstAttribute="bottom" secondItem="gNi-YD-8z3" secondAttribute="bottom" constant="27" id="2Ze-g1-I5R"/>
                                                         <constraint firstItem="Tok-4Q-p5a" firstAttribute="leading" secondItem="fhB-8j-i9U" secondAttribute="leading" id="3bz-lq-qQ0"/>
                                                         <constraint firstItem="ixl-v4-kOL" firstAttribute="leading" secondItem="gNi-YD-8z3" secondAttribute="leading" id="3iG-zh-q60"/>
                                                         <constraint firstItem="gNi-YD-8z3" firstAttribute="leading" secondItem="Tok-4Q-p5a" secondAttribute="trailing" constant="18" id="Bwa-7X-MMP"/>
                                                         <constraint firstItem="Tok-4Q-p5a" firstAttribute="top" secondItem="fhB-8j-i9U" secondAttribute="top" id="LDC-ja-35i"/>
-                                                        <constraint firstItem="tcz-NL-mml" firstAttribute="leading" secondItem="Tok-4Q-p5a" secondAttribute="trailing" constant="18" id="Oi2-Oc-gDD"/>
-                                                        <constraint firstItem="tcz-NL-mml" firstAttribute="leading" secondItem="ixl-v4-kOL" secondAttribute="leading" id="ovD-Gh-fSX"/>
                                                         <constraint firstItem="Tok-4Q-p5a" firstAttribute="top" secondItem="gNi-YD-8z3" secondAttribute="bottom" constant="-24" id="sM7-XF-2ko"/>
                                                         <constraint firstItem="Tok-4Q-p5a" firstAttribute="height" secondItem="fhB-8j-i9U" secondAttribute="height" id="sVb-Xj-euu"/>
-                                                        <constraint firstItem="tcz-NL-mml" firstAttribute="top" secondItem="ixl-v4-kOL" secondAttribute="top" constant="25" id="scr-Rf-Lfb"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -81,8 +72,18 @@
                                                 <constraint firstAttribute="bottom" secondItem="fhB-8j-i9U" secondAttribute="bottom" constant="10.5" id="sDG-el-Qjl"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="academyImg" destination="Tok-4Q-p5a" id="3JD-fj-sEN"/>
+                                            <outlet property="academyName" destination="gNi-YD-8z3" id="G42-wu-8IT"/>
+                                            <outlet property="cardView" destination="fhB-8j-i9U" id="JpB-WL-zfT"/>
+                                            <outlet property="rateView" destination="ixl-v4-kOL" id="VQ9-TB-1ir"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BNd-ZN-7q7" id="V5q-Vj-Ma8"/>
+                                    <outlet property="delegate" destination="BNd-ZN-7q7" id="6Rl-H9-aso"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -99,6 +100,9 @@
                         <barButtonItem key="rightBarButtonItem" image="gray-search" id="AQH-tI-beW"/>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="eS8-VR-SRT" id="Tck-5k-FcQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FKS-gN-iwt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -244,7 +248,7 @@
                                                             <color key="textColor" red="0.20486063060000001" green="0.50336106469999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Excellent" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7Y-Dm-Sxl">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Excellent" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7Y-Dm-Sxl">
                                                             <rect key="frame" x="101" y="55" width="51" height="15"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <nil key="highlightedColor"/>
@@ -255,7 +259,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U91-V4-Dih" customClass="CosmosView" customModule="Cosmos">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U91-V4-Dih" customClass="CosmosView" customModule="Cosmos">
                                                             <rect key="frame" x="101" y="31" width="120" height="20"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </view>
@@ -370,9 +374,9 @@
         <image name="get-directions" width="26" height="26"/>
         <image name="gray-search" width="22" height="22"/>
         <image name="location" width="26" height="26"/>
-        <image name="usr-7" width="330.75" height="461.25"/>
+        <image name="usr-7" width="441" height="615"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Mtp-qS-UOC"/>
+        <segue reference="vFp-f6-zCh"/>
     </inferredMetricsTieBreakers>
 </document>

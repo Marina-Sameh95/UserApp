@@ -42,6 +42,8 @@
 		88263B24247B28C000064461 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88263B23247B28C000064461 /* ProfileViewController.swift */; };
 		884C2D3E2477D73900011B13 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 884C2D3D2477D73900011B13 /* Event.storyboard */; };
 		884C2D412477D77E00011B13 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884C2D402477D77E00011B13 /* EventViewController.swift */; };
+		888CD7652485E9E800C1CCC4 /* WishTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888CD7642485E9E800C1CCC4 /* WishTableViewCell.swift */; };
+		888CD7672485F35000C1CCC4 /* AcademyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888CD7662485F35000C1CCC4 /* AcademyTableViewCell.swift */; };
 		8899A7BC2477C32E0077C872 /* CourseList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8899A7BB2477C32E0077C872 /* CourseList.storyboard */; };
 		8899A7BF2477C3880077C872 /* CourseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8899A7BE2477C3880077C872 /* CourseListViewController.swift */; };
 		8899A7C12477C8F00077C872 /* DesignCourseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8899A7C02477C8F00077C872 /* DesignCourseList.swift */; };
@@ -88,6 +90,8 @@
 		88263B23247B28C000064461 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		884C2D3D2477D73900011B13 /* Event.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
 		884C2D402477D77E00011B13 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		888CD7642485E9E800C1CCC4 /* WishTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishTableViewCell.swift; sourceTree = "<group>"; };
+		888CD7662485F35000C1CCC4 /* AcademyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademyTableViewCell.swift; sourceTree = "<group>"; };
 		8899A7BB2477C32E0077C872 /* CourseList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CourseList.storyboard; sourceTree = "<group>"; };
 		8899A7BE2477C3880077C872 /* CourseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListViewController.swift; sourceTree = "<group>"; };
 		8899A7C02477C8F00077C872 /* DesignCourseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignCourseList.swift; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 			children = (
 				1799A20F2483B5C700DE26EE /* WishListVC.swift */,
 				1799A2102483B5C700DE26EE /* RoundedBtn.swift */,
+				888CD7642485E9E800C1CCC4 /* WishTableViewCell.swift */,
 			);
 			path = Wishlist;
 			sourceTree = "<group>";
@@ -297,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				88DDAA0424847E6C003ADFBF /* AcademyListViewController.swift */,
+				888CD7662485F35000C1CCC4 /* AcademyTableViewCell.swift */,
 			);
 			path = AcademyList;
 			sourceTree = "<group>";
@@ -465,9 +471,11 @@
 				88092FB0247C1BBE00EB3B34 /* ActivitiesViewController.swift in Sources */,
 				17C003C624806B0600D50BF1 /* headerCollectionViewCell.swift in Sources */,
 				179D15EE2474AB4000D49CD0 /* SignUpVC.swift in Sources */,
+				888CD7672485F35000C1CCC4 /* AcademyTableViewCell.swift in Sources */,
 				884C2D412477D77E00011B13 /* EventViewController.swift in Sources */,
 				1799A2192483B5C900DE26EE /* RoundedBtn.swift in Sources */,
 				1752DB9C2485DC05000F3213 /* ActivitiesForUserTabelCell.swift in Sources */,
+				888CD7652485E9E800C1CCC4 /* WishTableViewCell.swift in Sources */,
 				8899A7BF2477C3880077C872 /* CourseListViewController.swift in Sources */,
 				179D15EC2474AAE500D49CD0 /* HomeVC.swift in Sources */,
 				1799A21C2483B5C900DE26EE /* DesignReviewCell.swift in Sources */,

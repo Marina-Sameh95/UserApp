@@ -116,6 +116,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0Su-5h-RO0"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Wish List" image="wish list tab bar" id="fv2-DV-5Kb"/>
                     <navigationItem key="navigationItem" title="Wishlist" id="DXV-uz-WDS"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
@@ -145,6 +146,7 @@
     </scenes>
     <resources>
         <image name="empty-heart" width="37" height="37"/>
+        <image name="wish list tab bar" width="24" height="24"/>
         <image name="wishlist" width="24" height="24"/>
     </resources>
 </document>

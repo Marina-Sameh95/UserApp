@@ -26,11 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID //1
         
         //
-        do{
-            try Auth.auth().signOut()
-        }catch{
-            
-        }
+//        do{
+//            try Auth.auth().signOut()
+//        }catch{
+//            
+//        }
         //
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if let user = user{
@@ -43,6 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
             }else{
                 let storyB = UIStoryboard(name: "Authentication", bundle: nil)
+                //let viewC = storyB.instantiateViewController(withIdentifier: "LaunchScreen")
                 let viewC = storyB.instantiateViewController(withIdentifier: "rootNavAuth")
                 self.window?.rootViewController = viewC
             }

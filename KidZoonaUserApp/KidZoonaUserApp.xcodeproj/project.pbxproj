@@ -11,6 +11,7 @@
 		17260B532484C9B200E46F31 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88263B20247B1D3B00064461 /* Profile.storyboard */; };
 		17372EBC2480A3C100B6004D /* OffersCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17372EBB2480A3C100B6004D /* OffersCellCollectionViewCell.swift */; };
 		17372EBE2480AFF000B6004D /* EventCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17372EBD2480AFF000B6004D /* EventCellCollectionViewCell.swift */; };
+		1752DB9C2485DC05000F3213 /* ActivitiesForUserTabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1752DB9B2485DC05000F3213 /* ActivitiesForUserTabelCell.swift */; };
 		1799A20A2483B56400DE26EE /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1799A2062483B56200DE26EE /* Settings.storyboard */; };
 		1799A20B2483B56400DE26EE /* ListOfAcademies.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1799A2072483B56300DE26EE /* ListOfAcademies.storyboard */; };
 		1799A20C2483B56400DE26EE /* Wishlist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1799A2082483B56300DE26EE /* Wishlist.storyboard */; };
@@ -52,6 +53,7 @@
 		171FF7722484A7B300077AC0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		17372EBB2480A3C100B6004D /* OffersCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		17372EBD2480AFF000B6004D /* EventCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCellCollectionViewCell.swift; sourceTree = "<group>"; };
+		1752DB9B2485DC05000F3213 /* ActivitiesForUserTabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesForUserTabelCell.swift; sourceTree = "<group>"; };
 		1799A2062483B56200DE26EE /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		1799A2072483B56300DE26EE /* ListOfAcademies.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ListOfAcademies.storyboard; sourceTree = "<group>"; };
 		1799A2082483B56300DE26EE /* Wishlist.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Wishlist.storyboard; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 				88092FAF247C1BBE00EB3B34 /* ActivitiesViewController.swift */,
 				88092FB1247C26CC00EB3B34 /* ProfileDetailsViewController.swift */,
 				88092FB3247C292100EB3B34 /* EditProfileViewController.swift */,
+				1752DB9B2485DC05000F3213 /* ActivitiesForUserTabelCell.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				179D15EE2474AB4000D49CD0 /* SignUpVC.swift in Sources */,
 				884C2D412477D77E00011B13 /* EventViewController.swift in Sources */,
 				1799A2192483B5C900DE26EE /* RoundedBtn.swift in Sources */,
+				1752DB9C2485DC05000F3213 /* ActivitiesForUserTabelCell.swift in Sources */,
 				8899A7BF2477C3880077C872 /* CourseListViewController.swift in Sources */,
 				179D15EC2474AAE500D49CD0 /* HomeVC.swift in Sources */,
 				1799A21C2483B5C900DE26EE /* DesignReviewCell.swift in Sources */,

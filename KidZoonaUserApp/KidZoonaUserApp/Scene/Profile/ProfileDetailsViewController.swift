@@ -14,10 +14,8 @@ class ProfileDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         editBtn.layer.cornerRadius = 15
-        editBtn.layer.borderWidth = 2
-        editBtn.layer.borderColor = UIColor.blue.cgColor
+     
     }
     
 

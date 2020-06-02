@@ -42,9 +42,8 @@ class EditProfileViewController: UIViewController {
         birthDate.layer.borderColor = UIColor.lightGray.cgColor
         
         saveBtn.layer.cornerRadius = 15
-        saveBtn.layer.borderWidth = 2
-        saveBtn.layer.borderColor = UIColor.blue.cgColor
-        
+        saveBtn.layer.borderWidth = 1
+        saveBtn.layer.borderColor = UIColor.lightGray.cgColor
         createDatePicker()
     }
     

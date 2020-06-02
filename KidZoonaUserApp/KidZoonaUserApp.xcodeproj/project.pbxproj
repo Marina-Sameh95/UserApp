@@ -49,6 +49,7 @@
 		8899A7C12477C8F00077C872 /* DesignCourseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8899A7C02477C8F00077C872 /* DesignCourseList.swift */; };
 		88DDAA0224847BE4003ADFBF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DDAA0124847BE4003ADFBF /* SettingsViewController.swift */; };
 		88DDAA0524847E6C003ADFBF /* AcademyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DDAA0424847E6C003ADFBF /* AcademyListViewController.swift */; };
+		88E50268248640F000D8597A /* UserDataprofile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E50267248640F000D8597A /* UserDataprofile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +98,7 @@
 		8899A7C02477C8F00077C872 /* DesignCourseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignCourseList.swift; sourceTree = "<group>"; };
 		88DDAA0124847BE4003ADFBF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		88DDAA0424847E6C003ADFBF /* AcademyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademyListViewController.swift; sourceTree = "<group>"; };
+		88E50267248640F000D8597A /* UserDataprofile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataprofile.swift; sourceTree = "<group>"; };
 		B19BF1231C3B10BCE470C343 /* Pods-KidZoonaUserApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidZoonaUserApp.debug.xcconfig"; path = "Target Support Files/Pods-KidZoonaUserApp/Pods-KidZoonaUserApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,10 +139,10 @@
 		179D15EF2474BB9900D49CD0 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				88E502662486404A00D8597A /* Pojo */,
 				88DDAA0324847E39003ADFBF /* AcademyList */,
 				88DDAA0024847BB9003ADFBF /* Settings */,
 				1799A2112483B5C800DE26EE /* Academy Profile */,
-				1799A2172483B5C900DE26EE /* User.swift */,
 				1799A20E2483B5C700DE26EE /* Wishlist */,
 				88263B22247B289300064461 /* Profile */,
 				88263B1B247AC6A500064461 /* CourseDetails */,
@@ -305,6 +307,15 @@
 				888CD7662485F35000C1CCC4 /* AcademyTableViewCell.swift */,
 			);
 			path = AcademyList;
+			sourceTree = "<group>";
+		};
+		88E502662486404A00D8597A /* Pojo */ = {
+			isa = PBXGroup;
+			children = (
+				1799A2172483B5C900DE26EE /* User.swift */,
+				88E50267248640F000D8597A /* UserDataprofile.swift */,
+			);
+			path = Pojo;
 			sourceTree = "<group>";
 		};
 		D47CDF0D298D6220EDB1AB7C /* Pods */ = {
@@ -472,6 +483,7 @@
 				17C003C624806B0600D50BF1 /* headerCollectionViewCell.swift in Sources */,
 				179D15EE2474AB4000D49CD0 /* SignUpVC.swift in Sources */,
 				888CD7672485F35000C1CCC4 /* AcademyTableViewCell.swift in Sources */,
+				88E50268248640F000D8597A /* UserDataprofile.swift in Sources */,
 				884C2D412477D77E00011B13 /* EventViewController.swift in Sources */,
 				1799A2192483B5C900DE26EE /* RoundedBtn.swift in Sources */,
 				1752DB9C2485DC05000F3213 /* ActivitiesForUserTabelCell.swift in Sources */,

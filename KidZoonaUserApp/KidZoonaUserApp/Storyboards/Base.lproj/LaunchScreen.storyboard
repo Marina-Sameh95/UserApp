@@ -19,15 +19,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="USER" translatesAutoresizingMaskIntoConstraints="NO" id="Pb2-g9-f6B">
-                                <rect key="frame" x="0.0" y="5" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Pb2-g9-f6B" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="AvB-ah-ag3"/>
-                            <constraint firstItem="Pb2-g9-f6B" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Ml5-Lm-nhD"/>
-                            <constraint firstItem="Pb2-g9-f6B" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="iGV-jZ-IVR"/>
-                            <constraint firstItem="Pb2-g9-f6B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rFx-jt-oPr"/>
+                            <constraint firstItem="Pb2-g9-f6B" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7rn-CJ-bRL"/>
+                            <constraint firstAttribute="bottom" secondItem="Pb2-g9-f6B" secondAttribute="bottom" id="ehq-Us-wai"/>
+                            <constraint firstItem="Pb2-g9-f6B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kJS-l3-f4Y"/>
+                            <constraint firstItem="Pb2-g9-f6B" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="obt-Hp-MMC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

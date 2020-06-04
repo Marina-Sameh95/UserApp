@@ -21,7 +21,7 @@ class HomeVC: UIViewController {
     
     
     //array of Offers still static array
-    let arrayTest = ["Offers", "Events", "Music", "Robotics", "Swimming", "Chess"]
+    let arrayTest = ["Offers", "Events", "Music", "Drawing", "Robotics", "Chess", "Science"]
     
     
     //array of (course`s image & name & discount) offers will come from count of courses in courses list -> child offer in it
@@ -38,7 +38,6 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         
         
-        self.parent?.title = "Home"
         
         headerCollectionView.delegate = self
         headerCollectionView.dataSource = self
@@ -49,6 +48,11 @@ class HomeVC: UIViewController {
         
         navigationController?.navigationBar.barTintColor = UIColor(red: 37/255 , green: 128/255 , blue: 219/255 , alpha: 1)
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.parent?.title = "Home"
+
     }
     
 

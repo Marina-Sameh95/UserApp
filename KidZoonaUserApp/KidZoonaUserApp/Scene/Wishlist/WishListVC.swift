@@ -37,6 +37,11 @@ class WishListVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.parent?.title = "Wish List"
+        
+    }
+    
     private func setUpNavigationBarItems(){
         let barTitle = "Wishlist"
         navigationItem.title = barTitle

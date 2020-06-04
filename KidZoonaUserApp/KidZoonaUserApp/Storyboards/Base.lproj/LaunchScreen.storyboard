@@ -13,31 +13,31 @@
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LaunchScreen" id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kidzone.png" translatesAutoresizingMaskIntoConstraints="NO" id="dER-m1-Xw7">
-                                <rect key="frame" x="50" y="194" width="314" height="518"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="USER" translatesAutoresizingMaskIntoConstraints="NO" id="Pb2-g9-f6B">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="dER-m1-Xw7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="HIf-c7-dsK"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dER-m1-Xw7" secondAttribute="bottom" constant="150" id="HMm-rc-nnl"/>
-                            <constraint firstItem="dER-m1-Xw7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="SSa-xd-xB6"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dER-m1-Xw7" secondAttribute="trailing" constant="50" id="fhC-TI-c0q"/>
+                            <constraint firstItem="Pb2-g9-f6B" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7rn-CJ-bRL"/>
+                            <constraint firstAttribute="bottom" secondItem="Pb2-g9-f6B" secondAttribute="bottom" id="ehq-Us-wai"/>
+                            <constraint firstItem="Pb2-g9-f6B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kJS-l3-f4Y"/>
+                            <constraint firstItem="Pb2-g9-f6B" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="obt-Hp-MMC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+            <point key="canvasLocation" x="50.724637681159422" y="374.33035714285711"/>
         </scene>
     </scenes>
     <resources>
-        <image name="kidzone.png" width="626" height="399"/>
+        <image name="USER" width="375" height="812"/>
     </resources>
 </document>

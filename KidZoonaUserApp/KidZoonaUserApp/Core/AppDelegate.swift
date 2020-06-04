@@ -7,6 +7,12 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import GoogleSignIn
+import AppAuth
+import FBSDKCoreKit
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +21,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        FirebaseApp.configure()
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID //1
+        
+        
+//        do{
+//            try Auth.auth().signOut()
+//        }catch{
+//            
+//        }
+        
+        Auth.auth().addStateDidChangeListener { (auth, user) in
+            if let user = user{
+                
+                print("user LogIn", user.email ?? "user is nil")
+                let storyB = UIStoryboard(name: "Main", bundle: nil)
+                let viewC = storyB.instantiateViewController(withIdentifier: "rootNavHome")
+                //let navControl = UINavigationController(rootViewController: viewC)
+                self.window?.rootViewController = viewC
+                
+            }else{
+                let storyB = UIStoryboard(name: "Authentication", bundle: nil)
+                //let viewC = storyB.instantiateViewController(withIdentifier: "LaunchScreen")
+                let viewC = storyB.instantiateViewController(withIdentifier: "rootNavAuth")
+                self.window?.rootViewController = viewC
+            }
+        }
+        
         return true
     }
 
@@ -41,6 +74,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    //GmailSignIn
+    
+    //2
+    func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:])
+        -> Bool {
+            
+            let handled: Bool = ApplicationDelegate.shared.application(application, open: url, sourceApplication: options[.sourceApplication] as? String, annotation: options[.annotation])
+            return handled
+            
+    }
 
 }
 

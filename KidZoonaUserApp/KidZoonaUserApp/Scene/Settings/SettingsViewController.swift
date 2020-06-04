@@ -13,10 +13,13 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //self.navigationController?.title = "Settings"
+        
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.parent?.title = "Settings"
+    }
 
     /*
     // MARK: - Navigation

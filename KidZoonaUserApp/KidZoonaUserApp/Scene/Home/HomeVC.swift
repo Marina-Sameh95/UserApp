@@ -52,7 +52,7 @@ class HomeVC: UIViewController {
         
         navigationController?.navigationBar.barTintColor = UIColor(red: 37/255 , green: 128/255 , blue: 219/255 , alpha: 1)
         
-        retrieveData()
+    //    retrieveData()
         
     }
     

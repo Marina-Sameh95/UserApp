@@ -19,7 +19,6 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var activities: UIView!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
-    
     @IBOutlet weak var events: UIView!
     
     var userData = [UserData]()
@@ -50,7 +49,7 @@ class ProfileViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         myProfile.alpha = 1
         activities.alpha = 0
-       // events.alpha = 0
+        events.alpha = 0
     }
     
     fileprivate func retrieveData() {

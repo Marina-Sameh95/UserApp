@@ -15,4 +15,8 @@ class UserReviewCell: UITableViewCell {
     @IBOutlet weak var userImgView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var overviewRating: UILabel!
+    @IBOutlet weak var reviewDate: UILabel!
+    
+    let rating = ["Excllent","Very Good", "Good", "Fair","Weak"]
+
 }

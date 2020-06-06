@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -42,7 +42,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVI-XM-zZf">
                                                     <rect key="frame" x="320" y="184" width="37" height="37"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <state key="normal" image="empty-heart"/>
+                                                    <state key="normal" image="red-empty-heart"/>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f6h-BN-djX">
                                                     <rect key="frame" x="0.0" y="-9" width="377" height="239"/>
@@ -86,14 +86,14 @@
                                     <constraint firstAttribute="height" constant="20" id="ciL-Vq-oba"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="vLg-ye-5aX">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green-location-icon" translatesAutoresizingMaskIntoConstraints="NO" id="vLg-ye-5aX">
                                 <rect key="frame" x="16" y="347" width="28" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="QQO-aV-gV2"/>
                                     <constraint firstAttribute="width" constant="28" id="oa7-au-22Q"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="get-directions" translatesAutoresizingMaskIntoConstraints="NO" id="sdN-uf-ky8">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green-get-direction-icon" translatesAutoresizingMaskIntoConstraints="NO" id="sdN-uf-ky8">
                                 <rect key="frame" x="14" y="378" width="33" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="33" id="NMd-6g-cUV"/>
@@ -108,7 +108,7 @@
                                     <constraint firstAttribute="width" constant="376" id="ltG-7M-Bji"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReviewCell" rowHeight="80" id="dTh-8w-GEm">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReviewCell" rowHeight="80" id="dTh-8w-GEm" customClass="UserReviewCell" customModule="KidZoonaUserApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="376" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dTh-8w-GEm" id="ebh-fv-emt">
@@ -139,7 +139,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19/5/2020" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ey4-ne-9ja">
                                                             <rect key="frame" x="263" y="6" width="63" height="16"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U91-V4-Dih" customClass="CosmosView" customModule="Cosmos">
@@ -170,6 +170,13 @@
                                                 <constraint firstItem="9O2-LB-OaT" firstAttribute="top" secondItem="ebh-fv-emt" secondAttribute="top" id="q6i-og-S7H"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cellView" destination="9O2-LB-OaT" id="E6z-VL-Oj4"/>
+                                            <outlet property="overviewRating" destination="r7Y-Dm-Sxl" id="WCd-FN-8c1"/>
+                                            <outlet property="reviewDate" destination="ey4-ne-9ja" id="Gk8-Kb-IHM"/>
+                                            <outlet property="userImgView" destination="XVX-qg-VSQ" id="0C3-tl-sFt"/>
+                                            <outlet property="userNameLabel" destination="IuI-fS-a3V" id="laj-cx-Udw"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -182,7 +189,9 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YFq-yU-ogP">
                                 <rect key="frame" x="55" y="377" width="91" height="30"/>
-                                <state key="normal" title="Get Direction"/>
+                                <state key="normal" title="Get Direction">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Garden, Alex, Egypt" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qkr-Gd-Kv1">
                                 <rect key="frame" x="52" y="347" width="136" height="18"/>
@@ -216,11 +225,12 @@
                         <viewLayoutGuide key="safeArea" id="l16-8G-7Xt"/>
                     </view>
                     <navigationItem key="navigationItem" id="Wet-K0-YTQ">
-                        <barButtonItem key="leftBarButtonItem" title="Academies" image="academyProfile" id="5eS-6A-bb1"/>
+                        <barButtonItem key="leftBarButtonItem" title="Academies" image="white-academies" id="5eS-6A-bb1"/>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="IMs-hD-NRo" id="GR8-zC-Y9S"/>
                         <outlet property="pageControl" destination="EEC-lJ-Ypq" id="LWw-BV-4OR"/>
+                        <outlet property="rateAcademy" destination="YWO-c9-DtH" id="Qqb-Ze-8Qc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n5o-AF-rDW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -230,22 +240,28 @@
         <!--Navigation Controller-->
         <scene sceneID="3KH-Go-5Zb">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="14h-8p-dCR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="L3C-wJ-wvh" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4vu-nx-q0j">
+                    <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4vu-nx-q0j">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.43921568630000002" green="0.65490196079999996" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.43921568630000002" green="0.65490196079999996" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="bub-9U-svz" kind="relationship" relationship="rootViewController" id="5sQ-85-iTx"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="14h-8p-dCR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4231.1999999999998" y="-432.23388305847078"/>
         </scene>
-        <!--Academy-->
+        <!--Academies-->
         <scene sceneID="Ytg-n9-Ium">
             <objects>
                 <viewController storyboardIdentifier="WishList" id="8zg-Z5-Cxt" customClass="AcademyListViewController" customModule="KidZoonaUserApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -274,8 +290,8 @@
                                                                 <constraint firstAttribute="width" constant="100" id="xZr-0r-qxc"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Art Course" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTu-Ny-c5e">
-                                                            <rect key="frame" x="116" y="26" width="68" height="16"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Child Academy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTu-Ny-c5e">
+                                                            <rect key="frame" x="116" y="26" width="93" height="16"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -330,7 +346,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="866-hp-rsc"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Academy" image="academy tab bar" id="SIh-8g-uvy"/>
+                    <tabBarItem key="tabBarItem" title="Academies" image="academy tab bar" id="SIh-8g-uvy"/>
                     <navigationItem key="navigationItem" id="XCR-Nx-8iu"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -349,6 +365,12 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eJN-Su-gpz">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.43921568630000002" green="0.65490196079999996" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.43921568630000002" green="0.65490196079999996" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -362,10 +384,10 @@
     </scenes>
     <resources>
         <image name="academy tab bar" width="24" height="24"/>
-        <image name="academyProfile" width="99" height="21"/>
-        <image name="empty-heart" width="37" height="37"/>
-        <image name="get-directions" width="26" height="26"/>
-        <image name="location" width="26" height="26"/>
-        <image name="usr-7" width="441" height="615"/>
+        <image name="green-get-direction-icon" width="26" height="26"/>
+        <image name="green-location-icon" width="26" height="26"/>
+        <image name="red-empty-heart" width="37" height="37"/>
+        <image name="usr-7" width="330.75" height="461.25"/>
+        <image name="white-academies" width="95.5" height="22"/>
     </resources>
 </document>

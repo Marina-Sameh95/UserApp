@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -71,10 +71,10 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30, June, 2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fA1-cv-bFC">
                                                 <rect key="frame" x="20" y="227" width="139" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon -time" translatesAutoresizingMaskIntoConstraints="NO" id="AaM-Dm-OCg">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green-time-icon" translatesAutoresizingMaskIntoConstraints="NO" id="AaM-Dm-OCg">
                                                 <rect key="frame" x="20" y="259" width="52" height="43"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="43" id="9GW-uB-rh8"/>
@@ -87,7 +87,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon - location" translatesAutoresizingMaskIntoConstraints="NO" id="7KN-6r-kXk">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green-location-icon" translatesAutoresizingMaskIntoConstraints="NO" id="7KN-6r-kXk">
                                                 <rect key="frame" x="20" y="313" width="52" height="47"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="52" id="uZT-2k-DHz"/>
@@ -100,7 +100,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Direction" translatesAutoresizingMaskIntoConstraints="NO" id="kBH-us-1wk">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green-get-direction-icon" translatesAutoresizingMaskIntoConstraints="NO" id="kBH-us-1wk">
                                                 <rect key="frame" x="20" y="368" width="52" height="43"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="52" id="LqX-qq-rlH"/>
@@ -110,9 +110,11 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISw-fe-woi">
                                                 <rect key="frame" x="80" y="373" width="107" height="33"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <state key="normal" title="Get Direction"/>
+                                                <state key="normal" title="Get Direction">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
                                             </button>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-money" translatesAutoresizingMaskIntoConstraints="NO" id="yhg-Xq-CCg">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green-fees-icon" translatesAutoresizingMaskIntoConstraints="NO" id="yhg-Xq-CCg">
                                                 <rect key="frame" x="20" y="419" width="52" height="41"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="41" id="H10-gK-oYs"/>
@@ -128,8 +130,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registered People: 5/15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wv7-Yh-ddr">
-                                                <rect key="frame" x="20" y="460" width="182" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registered People(s) : 5/15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wv7-Yh-ddr">
+                                                <rect key="frame" x="20" y="460" width="207" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -173,7 +175,7 @@
                                                     <constraint firstAttribute="height" constant="65" id="z6i-f8-IWR"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                                <state key="normal" title="Button" image="heartEmpty"/>
+                                                <state key="normal" title="Button" image="red-empty-heart"/>
                                                 <state key="selected" image="heartFill"/>
                                                 <connections>
                                                     <action selector="favouriteBtn:" destination="BuC-pm-gf4" eventType="touchUpInside" id="PVj-Qv-2WI"/>
@@ -225,12 +227,13 @@
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lS2-SL-fTM">
                                         <rect key="frame" x="70" y="703" width="252" height="43"/>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.96295267340000001" green="0.83730345959999997" blue="0.055017702279999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="43" id="Dlh-YB-RfG"/>
                                             <constraint firstAttribute="width" constant="252" id="gSB-on-Zvm"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="tintColor" red="0.96295267343521118" green="0.83730345964431763" blue="0.055017702281475067" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Register">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -279,6 +282,12 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Tax-19-gql">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.4392156862745098" green="0.65490196078431373" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.43921568630000002" green="0.65490196079999996" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -291,13 +300,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Direction" width="26" height="26"/>
-        <image name="heartEmpty" width="37" height="37"/>
+        <image name="green-fees-icon" width="26" height="26"/>
+        <image name="green-get-direction-icon" width="26" height="26"/>
+        <image name="green-location-icon" width="26" height="26"/>
+        <image name="green-time-icon" width="26" height="26"/>
         <image name="heartFill" width="37" height="37"/>
         <image name="homeBtn" width="68" height="24"/>
-        <image name="icon - location" width="26" height="26"/>
-        <image name="icon -time" width="26" height="26"/>
-        <image name="icon-money" width="26" height="26"/>
         <image name="line sections" width="342" height="1"/>
+        <image name="red-empty-heart" width="37" height="37"/>
     </resources>
 </document>

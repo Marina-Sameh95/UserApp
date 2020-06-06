@@ -46,9 +46,6 @@ class AcademyListViewController: UIViewController , UITableViewDelegate, UITable
         cell.academyName.text! = academyName[indexPath.row] as! String
         //   cell.cardDesign.viewWithTag(1) = cardView[indexPath.row] as! DesignCourseList
         
-        
-        
-        
         return cell
     }
     

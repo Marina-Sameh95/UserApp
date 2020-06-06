@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        do{
 //            try Auth.auth().signOut()
 //        }catch{
-//            
+//
 //        }
         
         Auth.auth().addStateDidChangeListener { (auth, user) in

@@ -112,7 +112,7 @@ class EditProfileViewController: UIViewController {
 //                print("succefully upload profile image \(profileImagUrl)")
 //
 //                guard let uid = Auth.auth().currentUser?.uid else {return}
-//                let ref = Database.database().reference().child("User").child(uid)
+//                let ref = Database.database().reference().child("User").child(uid).child("Information")
 //                let dicValue = ["profileImage": profileImagUrl]
 //                ref.updateChildValues(dicValue, withCompletionBlock: { (err, ref) in
 //                    if let err = err {

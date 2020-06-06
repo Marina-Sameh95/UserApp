@@ -27,8 +27,10 @@ class EventViewController: UIViewController , UICollectionViewDelegate, UICollec
 
         // Do any additional setup after loading the view.
         registerBtn.layer.cornerRadius = 15
-        registerBtn.layer.borderWidth = 2
-        registerBtn.layer.borderColor = UIColor.blue.cgColor
+        
+        registerBtn.layer.shadowOpacity = 0.25
+        registerBtn.layer.shadowRadius = 5
+        registerBtn.layer.shadowOffset = CGSize(width: 0, height: 10)
     }
     
   
@@ -70,14 +72,5 @@ class EventViewController: UIViewController , UICollectionViewDelegate, UICollec
     func collectionView(_collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int)-> CGFloat{
         return 0.0
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

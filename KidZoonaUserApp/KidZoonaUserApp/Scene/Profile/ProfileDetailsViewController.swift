@@ -33,7 +33,7 @@ class ProfileDetailsViewController: UIViewController {
         ref = Database.database().reference()
         
         guard let userId = Auth.auth().currentUser?.uid else {return}
-        ref.child("User").child(userId).observeSingleEvent(of: .value) { (snapshot) in
+        ref.child("User").child(userId).child("Information").observeSingleEvent(of: .value) { (snapshot) in
             
             
             guard let value = snapshot.value as? [String: Any] else {return}

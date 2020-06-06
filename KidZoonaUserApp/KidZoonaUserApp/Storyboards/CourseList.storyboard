@@ -234,10 +234,10 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uRI-0o-qhM" customClass="DesignCourseDetails" customModule="KidZoonaUserApp" customModuleProvider="target">
-                                                                    <rect key="frame" x="20" y="10.999999999999996" width="326" height="62.666666666666657"/>
+                                                                    <rect key="frame" x="20" y="10.999999999999996" width="374" height="62.666666666666657"/>
                                                                     <subviews>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="H4Z-uQ-BNj">
-                                                                            <rect key="frame" x="16" y="8" width="294" height="20"/>
+                                                                            <rect key="frame" x="16" y="8" width="342" height="20"/>
                                                                             <subviews>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avq-vH-H8b">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="140" height="20"/>
@@ -249,7 +249,7 @@
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/5/2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Unh-dq-t6w">
-                                                                                    <rect key="frame" x="180" y="0.0" width="114" height="20"/>
+                                                                                    <rect key="frame" x="180" y="0.0" width="162" height="20"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
@@ -259,7 +259,7 @@
                                                                                 <constraint firstAttribute="height" constant="20" id="SyO-RD-1ec"/>
                                                                             </constraints>
                                                                         </stackView>
-                                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uQe-O7-0mV" customClass="CosmosView" customModule="Cosmos">
+                                                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uQe-O7-0mV" customClass="CosmosView" customModule="Cosmos">
                                                                             <rect key="frame" x="103" y="36" width="120" height="20"/>
                                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </view>

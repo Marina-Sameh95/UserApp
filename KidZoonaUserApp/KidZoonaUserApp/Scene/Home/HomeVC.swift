@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class HomeVC: UIViewController {
 
@@ -21,7 +23,7 @@ class HomeVC: UIViewController {
     
     
     //array of Offers still static array
-    let arrayTest = ["Offers", "Events", "Music", "Drawing", "Robotics", "Chess", "Science"]
+    let arrayTest = ["Offers", "Music", "Drawing", "Robotics", "Chess", "Science"]
     
     
     //array of (course`s image & name & discount) offers will come from count of courses in courses list -> child offer in it
@@ -33,6 +35,8 @@ class HomeVC: UIViewController {
     
     ////////////////// will change after Database  ////////
     var arrayOfEventsNames = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,10 +100,19 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource {
             // IMAGE & eventName ... come from count of Events in events list -> image child offer in it
             cell?.eventNameInEventCollection.text = arrayOfEventsNames[indexPath.row]
             return cell!
+            
         }
 
     }
+
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == eventsCollectionView{
+            let eventView = UIStoryboard(name: "Event", bundle: nil).instantiateViewController(withIdentifier: "EventViewController")
+            
+            self.navigationController?.pushViewController(eventView, animated: true)
+        }
+    }
     
 }
+

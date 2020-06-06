@@ -15,9 +15,7 @@ import FirebaseStorage
 class ProfileDetailsViewController: UIViewController {
 
     @IBOutlet weak var editBtn: UIButton!
-    
-    @IBOutlet weak var userNameDetails: UILabel!
-    
+        
     @IBOutlet weak var userEmailDetails: UILabel!
     
      var userData = [UserData]()
@@ -35,14 +33,12 @@ class ProfileDetailsViewController: UIViewController {
         ref = Database.database().reference()
         
         guard let userId = Auth.auth().currentUser?.uid else {return}
-        ref.child("User").child(userId).observeSingleEvent(of: .value) { (snapshot) in
+        ref.child("User").child(userId).child("Information").observeSingleEvent(of: .value) { (snapshot) in
             
             
             guard let value = snapshot.value as? [String: Any] else {return}
             let dataUser = UserData(dictionary: value)
             self.userData.append(dataUser)
-            guard let username = self.userData.first?.fullName else {return}
-            self.userNameDetails.text = username
 //            guard let imageUrl = self.userData.first?.userImage else {return}
 //            print(imageUrl)
             

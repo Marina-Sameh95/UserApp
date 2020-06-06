@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FirebaseDatabase
 import Cosmos
 
 class AcademyProfileVC: UIViewController {
@@ -16,11 +15,20 @@ class AcademyProfileVC: UIViewController {
     
     @IBOutlet weak var pageControl: UIPageControl!
     
+    @IBOutlet weak var ratingView: CosmosView!
+    
+    
+    @IBOutlet weak var academyLocationLbl: UILabel!
+    
+    
+    @IBOutlet weak var getDirectionOfAcademyFromMapBtn: UIButton!
+    
+    
     @IBOutlet weak var tableHeaderView: UIView!
     
-    @IBOutlet weak var rateAcademy: CosmosView! // to push then get in the cell
+
     
-    var rate : String?
+    let rating = ["Excllent", "Good", "Fair","Weak"]
     
     let imgs = [
         UIImage(named: "img_1"),
@@ -47,42 +55,45 @@ class AcademyProfileVC: UIViewController {
     
     var timer : Timer?
     
-    //    var academies = [Academy]()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        setUpTableView()
+//        setUpNavigationBarItems()
+//        setUpTableView()
         
         view.backgroundColor  = .whiteTwo
         
         pageControl.numberOfPages = imgs.count
         
-        startTimer()
-        
-//        retrieveData()
-        setUpCosmosUIView()
+//        startTimer()
     }
     
-    private func setUpTableView(){
-        tableHeaderView.backgroundColor = .whiteThree
-        tableHeaderView.addSubview(lineImage)
-        tableHeaderView.addSubview(headerLabel)
-        
-    }
-
+//    private func setUpTableView(){
+//        tableHeaderView.backgroundColor = .whiteThree
+//        tableHeaderView.addSubview(lineImage)
+//        tableHeaderView.addSubview(headerLabel)
+//
+//    }
+//
+//    private func setUpNavigationBarItems(){
+//        let barTitle = "Learn Academy"
+//        navigationItem.title = barTitle
+//        navigationController?.navigationBar.barTintColor = .warmGrey
+//        navigationController?.navigationBar.isTranslucent = false
+//
+//    }
     
-    private func startTimer(){
-        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
-    }
-    
-    @objc func timerAction(){
-        
-        let desiredScrollPosition = (currentIndex < imgs.count - 1 ) ? currentIndex + 1 : 0
-        
-        collectionView.scrollToItem(at: IndexPath(item: desiredScrollPosition, section: 0), at: .centeredHorizontally, animated: true)
-    }
+//    private func startTimer(){
+//        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+//    }
+//
+//    @objc func timerAction(){
+//
+//        let desiredScrollPosition = (currentIndex < imgs.count - 1 ) ? currentIndex + 1 : 0
+//
+//        collectionView.scrollToItem(at: IndexPath(item: desiredScrollPosition, section: 0), at: .centeredHorizontally, animated: true)
+//    }
     
     /*
      // MARK: - Navigation
@@ -121,52 +132,4 @@ extension AcademyProfileVC: UICollectionViewDelegate, UICollectionViewDataSource
     }
     
     
-}
-
-extension AcademyProfileVC {
-
-    
-    fileprivate func retrieveData() {
-        
-        let ref :  DatabaseReference!
-        ref = Database.database().reference()
-        
-        ref.child("Academies").queryOrderedByKey().observeSingleEvent(of: .childAdded) { (snapshot) in
-            
-            
-            let email = snapshot.childSnapshot(forPath: "email").value as! String
-            let image = snapshot.childSnapshot(forPath: "image").value as! String
-            let location = snapshot.childSnapshot(forPath: "location").value as! String
-//            self.locationLabel.text = location
-            let name = snapshot.childSnapshot(forPath: "name").value as! String
-            self.setUpNavigationBarItems(title: name)
-            let papers = snapshot.childSnapshot(forPath: "papers").value as! String
-            let password = snapshot.childSnapshot(forPath: "password").value as! String
-            let phone = snapshot.childSnapshot(forPath: "phone").value as! String
-            let rate = snapshot.childSnapshot(forPath: "rate").value as! String
-            
-            
-            let currentAcademy = Academy(email: email, image: image, location: location, name: name, papers: [papers], password: password, phone: phone, rate: rate)
-            
-//            self.academies.append(currentAcademy)
-        }
-    }
-    
-    
-    private func setUpNavigationBarItems(title : String){
-        let barTitle = title
-        navigationItem.title = barTitle
-        //        navigationController?.navigationBar.barTintColor = .warmGrey
-        navigationController?.navigationBar.isTranslucent = false
-        
-    }
-    
-    private func setUpCosmosUIView(){
-        rateAcademy.settings.fillMode = .full
-        cosmosUIView.didTouchCosmos = {rating in
-            print("rate is\(rating)")
-            self.rate = "\(rating)"
-        }
-        
-    }
 }

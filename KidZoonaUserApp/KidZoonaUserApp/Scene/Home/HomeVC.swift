@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class HomeVC: UIViewController {
 
@@ -21,7 +23,7 @@ class HomeVC: UIViewController {
     
     
     //array of Offers still static array
-    let arrayTest = ["Offers", "Events", "Music", "Robotics", "Swimming", "Chess"]
+    let arrayTest = ["Offers", "Music", "Drawing", "Robotics", "Chess", "Science"]
     
     
     //array of (course`s image & name & discount) offers will come from count of courses in courses list -> child offer in it
@@ -34,11 +36,12 @@ class HomeVC: UIViewController {
     ////////////////// will change after Database  ////////
     var arrayOfEventsNames = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
     
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        self.parent?.title = "Home"
         
         headerCollectionView.delegate = self
         headerCollectionView.dataSource = self
@@ -49,6 +52,11 @@ class HomeVC: UIViewController {
         
         navigationController?.navigationBar.barTintColor = UIColor(red: 37/255 , green: 128/255 , blue: 219/255 , alpha: 1)
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.parent?.title = "Home"
+
     }
     
 
@@ -92,10 +100,19 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource {
             // IMAGE & eventName ... come from count of Events in events list -> image child offer in it
             cell?.eventNameInEventCollection.text = arrayOfEventsNames[indexPath.row]
             return cell!
+            
         }
 
     }
+
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == eventsCollectionView{
+            let eventView = UIStoryboard(name: "Event", bundle: nil).instantiateViewController(withIdentifier: "EventViewController")
+            
+            self.navigationController?.pushViewController(eventView, animated: true)
+        }
+    }
     
 }
+

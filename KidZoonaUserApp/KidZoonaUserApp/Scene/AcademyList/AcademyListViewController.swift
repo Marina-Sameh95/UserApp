@@ -30,6 +30,11 @@ class AcademyListViewController: UIViewController , UITableViewDelegate, UITable
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.parent?.title = "Academy"
+        
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return academyName.count
     }
@@ -49,14 +54,15 @@ class AcademyListViewController: UIViewController , UITableViewDelegate, UITable
         return cell
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 144
     }
-    */
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      let academyDetails = UIStoryboard(name: "ListOfAcademies", bundle: nil).instantiateViewController(withIdentifier: "AcademyProfile")
+        
+        self.navigationController?.pushViewController(academyDetails, animated: true)
+
+    }
 
 }

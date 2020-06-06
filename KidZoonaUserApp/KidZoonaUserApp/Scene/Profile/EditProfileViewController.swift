@@ -15,7 +15,6 @@ class EditProfileViewController: UIViewController {
 
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var birthDate: UITextField!
-    @IBOutlet weak var email: UITextField!
     
     @IBOutlet weak var maleBtn: UIButton!
     @IBOutlet weak var femaleBtn: UIButton!
@@ -32,18 +31,13 @@ class EditProfileViewController: UIViewController {
         userName.layer.cornerRadius = 15
         userName.layer.borderWidth = 1
         userName.layer.borderColor = UIColor.lightGray.cgColor
-        
-        email.layer.cornerRadius = 15
-        email.layer.borderWidth = 1
-        email.layer.borderColor = UIColor.lightGray.cgColor
-        
+  
         birthDate.layer.cornerRadius = 15
         birthDate.layer.borderWidth = 1
         birthDate.layer.borderColor = UIColor.lightGray.cgColor
         
         saveBtn.layer.cornerRadius = 15
-        saveBtn.layer.borderWidth = 1
-        saveBtn.layer.borderColor = UIColor.lightGray.cgColor
+
         createDatePicker()
     }
     
@@ -118,7 +112,7 @@ class EditProfileViewController: UIViewController {
 //                print("succefully upload profile image \(profileImagUrl)")
 //
 //                guard let uid = Auth.auth().currentUser?.uid else {return}
-//                let ref = Database.database().reference().child("User").child(uid)
+//                let ref = Database.database().reference().child("User").child(uid).child("Information")
 //                let dicValue = ["profileImage": profileImagUrl]
 //                ref.updateChildValues(dicValue, withCompletionBlock: { (err, ref) in
 //                    if let err = err {

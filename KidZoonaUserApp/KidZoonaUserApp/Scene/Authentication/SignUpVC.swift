@@ -92,7 +92,7 @@ class SignUpVC: UIViewController {
                 }
                 let userName = "\(firstName) \(lastName)"
                 guard let uid = Auth.auth().currentUser?.uid else {return}
-                let ref = Database.database().reference().child("User").child(uid)
+                let ref = Database.database().reference().child("User").child(uid).child("Information")
                 let dicValues = ["UserName" : userName , "userEmail" : emailAddress]
                 ref.updateChildValues(dicValues, withCompletionBlock: { (error, ref ) in
                     if let error = error {

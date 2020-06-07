@@ -32,7 +32,7 @@
                                         <rect key="frame" x="48" y="0.0" width="54" height="35"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <state key="normal" title="Profile">
-                                            <color key="titleColor" red="0.96295267340000001" green="0.83730345959999997" blue="0.055017702279999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
                                             <action selector="profileBtnAction:" destination="AY7-JW-n0N" eventType="touchUpInside" id="mR5-Mp-zm0"/>
@@ -65,7 +65,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Log Out">
-                                            <color key="titleColor" red="0.96295267340000001" green="0.83730345959999997" blue="0.055017702279999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
                                             <action selector="logOutAction:" destination="AY7-JW-n0N" eventType="touchUpInside" id="9wy-Fz-u9E"/>

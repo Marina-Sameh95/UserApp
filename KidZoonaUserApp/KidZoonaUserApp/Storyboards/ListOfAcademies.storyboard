@@ -87,7 +87,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="pMX-mq-LyV">
                                 <rect key="frame" x="60" y="306" width="255" height="26"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="vLg-ye-5aX">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green-location-icon" translatesAutoresizingMaskIntoConstraints="NO" id="vLg-ye-5aX">
                                         <rect key="frame" x="0.0" y="0.0" width="27" height="26"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="26" id="ZpD-rB-ezo"/>
@@ -112,7 +112,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="nSE-Z6-Y91">
                                 <rect key="frame" x="60" y="340" width="255" height="26"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="get-directions" translatesAutoresizingMaskIntoConstraints="NO" id="sdN-uf-ky8">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green-get-direction-icon" translatesAutoresizingMaskIntoConstraints="NO" id="sdN-uf-ky8">
                                         <rect key="frame" x="0.0" y="0.0" width="26" height="26"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="26" id="JHk-WQ-P3J"/>
@@ -368,8 +368,8 @@
     </scenes>
     <resources>
         <image name="academy tab bar" width="24" height="24"/>
-        <image name="get-directions" width="26" height="26"/>
-        <image name="location" width="26" height="26"/>
+        <image name="green-get-direction-icon" width="26" height="26"/>
+        <image name="green-location-icon" width="26" height="26"/>
         <image name="red-empty-heart" width="37" height="37"/>
     </resources>
 </document>

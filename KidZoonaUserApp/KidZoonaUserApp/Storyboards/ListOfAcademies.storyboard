@@ -133,7 +133,7 @@
                                 <rect key="frame" x="0.0" y="398.5" width="375" height="268.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReviewCell" rowHeight="85" id="dTh-8w-GEm">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReviewCell" rowHeight="85" id="dTh-8w-GEm" customClass="UserReviewCell" customModule="KidZoonaUserApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dTh-8w-GEm" id="ebh-fv-emt">
@@ -171,7 +171,7 @@
                                                                 <constraint firstAttribute="height" constant="16" id="HwV-rV-Hk7"/>
                                                             </constraints>
                                                         </stackView>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U91-V4-Dih" customClass="CosmosView" customModule="Cosmos">
+                                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U91-V4-Dih" customClass="CosmosView" customModule="Cosmos">
                                                             <rect key="frame" x="113.5" y="48" width="120" height="20"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
@@ -196,6 +196,11 @@
                                                 <constraint firstItem="9O2-LB-OaT" firstAttribute="top" secondItem="ebh-fv-emt" secondAttribute="top" id="q6i-og-S7H"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="rateView" destination="U91-V4-Dih" id="BmD-rE-SKl"/>
+                                            <outlet property="reviewDate" destination="ey4-ne-9ja" id="dx5-xM-Kzg"/>
+                                            <outlet property="userNameLabel" destination="IuI-fS-a3V" id="fmf-LU-f0y"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

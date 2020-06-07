@@ -33,7 +33,7 @@ class WishListVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
         academyName = ["Metanoia", "Treasures", "Metanonia", "KDC"]
         date = ["1/6/2020", "5/6/2020", "10/6/2020", "12/6/2020"]
         
-        setUpNavigationBarItems()
+//        setUpNavigationBarItems()
         
     }
     
@@ -42,13 +42,13 @@ class WishListVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
         
     }
     
-    private func setUpNavigationBarItems(){
-        let barTitle = "Wishlist"
-        navigationItem.title = barTitle
-        navigationController?.navigationBar.barTintColor = .warmGrey
-        navigationController?.navigationBar.isTranslucent = false
-        
-    }
+//    private func setUpNavigationBarItems(){
+//        let barTitle = "Wishlist"
+//        navigationItem.title = barTitle
+//        navigationController?.navigationBar.barTintColor = .warmGrey
+//        navigationController?.navigationBar.isTranslucent = false
+//
+//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return name.count

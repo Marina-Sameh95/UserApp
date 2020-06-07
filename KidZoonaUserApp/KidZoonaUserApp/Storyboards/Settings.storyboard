@@ -19,9 +19,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="jjO-DO-ItE">
-                                <rect key="frame" x="32" y="68" width="97" height="35"/>
+                                <rect key="frame" x="32" y="68" width="102" height="35"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="zNw-2p-VZa">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green-profile-icon" translatesAutoresizingMaskIntoConstraints="NO" id="zNw-2p-VZa">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="gvC-VS-k06"/>
@@ -29,10 +29,10 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vyS-wd-Nsu">
-                                        <rect key="frame" x="48" y="0.0" width="49" height="35"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="48" y="0.0" width="54" height="35"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <state key="normal" title="Profile">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" red="0.96295267340000001" green="0.83730345959999997" blue="0.055017702279999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="profileBtnAction:" destination="AY7-JW-n0N" eventType="touchUpInside" id="mR5-Mp-zm0"/>
@@ -50,7 +50,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="1nV-kc-1HH">
                                 <rect key="frame" x="24" y="128" width="130" height="35"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logout" translatesAutoresizingMaskIntoConstraints="NO" id="qJL-n2-LqE">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green-log-out-icon" translatesAutoresizingMaskIntoConstraints="NO" id="qJL-n2-LqE">
                                         <rect key="frame" x="0.0" y="0.0" width="45" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="LD8-eB-X6l"/>
@@ -63,8 +63,9 @@
                                             <constraint firstAttribute="width" constant="70" id="4cR-zm-9rv"/>
                                             <constraint firstAttribute="height" constant="35" id="wN7-ND-vPy"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Log Out">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" red="0.96295267340000001" green="0.83730345959999997" blue="0.055017702279999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="logOutAction:" destination="AY7-JW-n0N" eventType="touchUpInside" id="9wy-Fz-u9E"/>
@@ -111,9 +112,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="green-log-out-icon" width="24" height="24"/>
+        <image name="green-profile-icon" width="24" height="24"/>
         <image name="line sections" width="342" height="1"/>
-        <image name="logout" width="24" height="24"/>
-        <image name="profile" width="24" height="24"/>
         <image name="setting tab bar" width="24" height="24"/>
     </resources>
 </document>

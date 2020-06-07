@@ -103,7 +103,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="gWq-kG-oj5">
-                                <rect key="frame" x="104.00000000000001" y="700" width="210.33333333333337" height="28"/>
+                                <rect key="frame" x="101.33333333333333" y="700" width="215.33333333333337" height="28"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don`t have an Account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWh-He-dCS">
                                         <rect key="frame" x="0.0" y="0.0" width="146.33333333333334" height="28"/>
@@ -112,8 +112,8 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gHK-Vp-M2S">
-                                        <rect key="frame" x="160.33333333333331" y="0.0" width="50" height="28"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <rect key="frame" x="160.33333333333337" y="0.0" width="55" height="28"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                         <state key="normal" title="Register"/>
                                         <connections>
                                             <action selector="registerBtn:" destination="O1L-Sf-4tu" eventType="touchUpInside" id="79l-Ha-Vvy"/>

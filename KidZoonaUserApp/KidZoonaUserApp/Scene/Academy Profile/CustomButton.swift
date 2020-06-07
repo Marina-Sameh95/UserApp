@@ -28,11 +28,11 @@ class CustomButton: UIButton {
         //        setTitle("Academy Courses", for: .normal)
         setTitleColor(.white, for: .normal)
         
-        backgroundColor = .darkSkyBlue
+        backgroundColor = .goldenYellow
         titleLabel?.font = UIFont(name: "AvenirNext-DemiBold", size: 18)
         layer.cornerRadius = 25
         layer.borderWidth = 3.0
-        layer.borderColor = UIColor.darkSkyBlue.cgColor
+        layer.borderColor = UIColor.goldenYellow.cgColor
     }
     
     private func setupShadow(){

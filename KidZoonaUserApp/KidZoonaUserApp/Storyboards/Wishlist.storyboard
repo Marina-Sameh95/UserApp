@@ -44,7 +44,7 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="37" id="ohj-75-YyA"/>
                                                             </constraints>
-                                                            <state key="normal" image="fill-heart">
+                                                            <state key="normal" image="red-fill-heart">
                                                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
                                                         </button>
@@ -152,7 +152,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="fill-heart" width="37" height="37"/>
+        <image name="red-fill-heart" width="37" height="37"/>
         <image name="wish list tab bar" width="24" height="24"/>
     </resources>
 </document>

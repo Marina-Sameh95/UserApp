@@ -171,9 +171,9 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="up to 50%" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u2b-sG-2Cu">
-                                                                    <rect key="frame" x="91" y="369" width="58" height="14.5"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                                    <nil key="textColor"/>
+                                                                    <rect key="frame" x="89.5" y="369" width="61" height="14.5"/>
+                                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                                    <color key="textColor" red="0.89164179560000001" green="0.2502275705" blue="0.22392901779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGq-Qc-Y3Z">
@@ -182,7 +182,7 @@
                                                                         <constraint firstAttribute="width" constant="37" id="ETG-mR-hw4"/>
                                                                         <constraint firstAttribute="height" constant="37" id="T2a-vY-Un9"/>
                                                                     </constraints>
-                                                                    <state key="normal" image="fill-heart"/>
+                                                                    <state key="normal" image="red-fill-heart"/>
                                                                     <connections>
                                                                         <action selector="favoriteBtnInOffersCollAction:" destination="nNl-sz-xzJ" eventType="touchUpInside" id="PPs-yi-yBd"/>
                                                                     </connections>
@@ -398,7 +398,7 @@
         <image name="academies" width="24" height="24"/>
         <image name="course6" width="180" height="120.48000335693359"/>
         <image name="event1" width="800" height="502"/>
-        <image name="fill-heart" width="37" height="37"/>
+        <image name="red-fill-heart" width="37" height="37"/>
         <image name="setting tab bar" width="24" height="24"/>
         <image name="wish list tab bar" width="24" height="24"/>
     </resources>

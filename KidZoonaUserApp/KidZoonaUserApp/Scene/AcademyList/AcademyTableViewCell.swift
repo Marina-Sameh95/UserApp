@@ -18,15 +18,19 @@ class AcademyTableViewCell: UITableViewCell {
     @IBOutlet weak var rateView: CosmosView!
     @IBOutlet weak var academyName: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    var rate : String?
+    
+
+}
+
+extension AcademyTableViewCell {
+    
+    func setUpCosmosUIView(){
+        rateView.settings.fillMode = .full
+        rateView.didTouchCosmos = {rating in
+            print("rate is\(rating)")
+            self.rate = "\(rating)"
+        }
+        
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

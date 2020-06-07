@@ -11,11 +11,14 @@ import Cosmos
 
 class AcademyProfileVC: UIViewController {
     
+    var currentAcademy : Academy?
+
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var pageControl: UIPageControl!
     
-    @IBOutlet weak var ratingView: CosmosView!
+    @IBOutlet weak var ratingView: CosmosView! // to get rating
     
     
     @IBOutlet weak var academyLocationLbl: UILabel!
@@ -26,9 +29,7 @@ class AcademyProfileVC: UIViewController {
     
     @IBOutlet weak var tableHeaderView: UIView!
     
-
-    
-    let rating = ["Excllent", "Good", "Fair","Weak"]
+    var rate : String?
     
     let imgs = [
         UIImage(named: "img_1"),
@@ -65,6 +66,8 @@ class AcademyProfileVC: UIViewController {
         view.backgroundColor  = .whiteTwo
         
         pageControl.numberOfPages = imgs.count
+        
+        setUpCosmosUIView()
         
 //        startTimer()
     }
@@ -130,6 +133,21 @@ extension AcademyProfileVC: UICollectionViewDelegate, UICollectionViewDataSource
         
         pageControl.currentPage = currentIndex
     }
+}
+
+extension AcademyProfileVC{
+    
+    private func setUpCosmosUIView(){
+        ratingView.settings.fillMode = .full
+        ratingView.didTouchCosmos = {rating in
+            print("rate is\(rating)")
+            self.rate = "\(rating)"
+        }
+    }
     
     
+    private func pushRating(){
+        //get currentAcademyID 
+        
+    }
 }

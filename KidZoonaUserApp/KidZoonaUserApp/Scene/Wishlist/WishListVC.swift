@@ -81,3 +81,7 @@ class WishListVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
     
 }
 
+extension WishListVC{
+    
+}
+

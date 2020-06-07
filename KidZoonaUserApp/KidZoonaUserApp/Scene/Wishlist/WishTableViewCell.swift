@@ -8,6 +8,7 @@
 
 import UIKit
 import Cosmos
+import Firebase
 
 class WishTableViewCell: UITableViewCell {
     
@@ -30,4 +31,12 @@ class WishTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+}
+
+extension WishTableViewCell{
+    
+    func updateComsmos(){
+        
+    }
+    
 }

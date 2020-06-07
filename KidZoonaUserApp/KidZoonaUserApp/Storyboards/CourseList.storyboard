@@ -148,7 +148,7 @@
                                                     <constraint firstAttribute="height" constant="40" id="Xe2-Yz-kJv"/>
                                                     <constraint firstAttribute="width" constant="41" id="Xwd-oR-XcL"/>
                                                 </constraints>
-                                                <state key="normal" title="Button" image="heartEmpty"/>
+                                                <state key="normal" title="Button" image="red-empty-heart"/>
                                                 <state key="selected" image="heartFill"/>
                                                 <connections>
                                                     <action selector="favouriteBtn:" destination="lGb-B5-vaM" eventType="touchUpInside" id="JoN-Rj-phr"/>
@@ -262,7 +262,7 @@
                                                                                 <constraint firstAttribute="height" constant="20" id="SyO-RD-1ec"/>
                                                                             </constraints>
                                                                         </stackView>
-                                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uQe-O7-0mV" customClass="CosmosView" customModule="Cosmos">
+                                                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uQe-O7-0mV" customClass="CosmosView" customModule="Cosmos">
                                                                             <rect key="frame" x="127" y="36" width="120" height="20"/>
                                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </view>
@@ -402,8 +402,8 @@
         <image name="green-date-icon" width="26" height="26"/>
         <image name="green-fees-icon" width="26" height="26"/>
         <image name="green-get-direction-icon" width="26" height="26"/>
-        <image name="heartEmpty" width="37" height="37"/>
         <image name="heartFill" width="37" height="37"/>
         <image name="line sections" width="342" height="1"/>
+        <image name="red-empty-heart" width="37" height="37"/>
     </resources>
 </document>

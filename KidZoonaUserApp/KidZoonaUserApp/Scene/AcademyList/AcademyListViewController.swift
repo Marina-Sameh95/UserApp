@@ -8,8 +8,12 @@
 
 import UIKit
 import Cosmos
+import Firebase
 
 class AcademyListViewController: UIViewController , UITableViewDelegate, UITableViewDataSource {
+    
+    var dbRef : DatabaseReference?
+    var academiesArr = [Academy]()
 
     
     @IBOutlet weak var tableView: UITableView!
@@ -32,6 +36,8 @@ class AcademyListViewController: UIViewController , UITableViewDelegate, UITable
     
     override func viewWillAppear(_ animated: Bool) {
         self.parent?.title = "Academy"
+        
+        dbRef = Database.database().reference()
         
     }
     
@@ -65,4 +71,21 @@ class AcademyListViewController: UIViewController , UITableViewDelegate, UITable
 
     }
 
+}
+
+extension AcademyListViewController{
+    
+    fileprivate func getAcademiesData(){
+        let academiesRef = dbRef?.child("Academies")
+        academiesRef?.queryOrderedByKey().observe(.value, with: { (snapshot) in
+            let infoSnap = snapshot.childSnapshot(forPath: "Information")
+            let academyDict = infoSnap.value as! [String : Any]
+            let academyData = Academy(dictionary: academyDict)
+            self.academiesArr.append(academyData)
+            
+//            let academyName = academyDict["name"] as! String
+//            let academyImg = academyDict["image"] as! String
+//            let academyRate = academyDict["rate"] as! String
+        })
+    }
 }

@@ -8,8 +8,11 @@
 
 import UIKit
 import Cosmos
+import Firebase
 
 class CourseDetailsViewController: UIViewController {
+    
+    var dbRoot : DatabaseReference?
     
 
     @IBOutlet weak var reviewTable: UITableView!
@@ -45,6 +48,15 @@ class CourseDetailsViewController: UIViewController {
     @IBAction func favouriteBtn(_ sender: UIButton) {
         if sender.isSelected{
             sender.isSelected = false
+            
+            dbRoot = Database.database().reference()
+//            let userId = Auth.auth().currentUser?.uid
+            let usersRoot = dbRoot?.child("User")
+            let wishlistRoot = usersRoot?.child("Wishlist").childByAutoId()
+//            let courseId =
+            
+
+            
         } else {
             sender.isSelected = true
         }
@@ -52,7 +64,7 @@ class CourseDetailsViewController: UIViewController {
     
    
 }
-    extension CourseDetailsViewController : UITableViewDelegate , UITableViewDataSource {
+extension CourseDetailsViewController : UITableViewDelegate , UITableViewDataSource {
 
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return 8
@@ -68,6 +80,15 @@ class CourseDetailsViewController: UIViewController {
 
             return cell
         }
+}
+
+extension CourseDetailsViewController {
+    
+    fileprivate func getCourseDetails(){
+        
+        let acadmiesRef = dbRoot?.child("Acadmies")
+//        let acadmyId =
+    }
 }
 
 

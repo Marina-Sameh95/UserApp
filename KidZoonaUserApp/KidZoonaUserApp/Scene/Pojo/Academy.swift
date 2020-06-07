@@ -19,26 +19,27 @@ class Academy {
     var phone : String
     var rate : String
 
-//    init(dictionary: [String: Any]){
-//        self.name = dictionary["name"] as! String
-//        self.email = dictionary["email"] as! String
-//        self.location = dictionary["location"] as! String
-//        self.papers = [dictionary["papers"] as! String]
-//        self.image = dictionary["image"] as! String
-//        self.phone = dictionary["phone"] as! String
-//        self.password = dictionary["password"] as! String
-//    }
-    
-    init(email : String, image : String, location : String, name : String, papers : [String], password : String, phone : String, rate: String ) {
-        
-        self.email = email
-        self.image = image
-        self.location = location
-        self.name = name
-        self.papers = papers
-        self.password = password
-        self.phone = phone
-        self.rate = rate
+    init(dictionary: [String: Any]){
+        self.name = dictionary["name"] as! String
+        self.email = dictionary["email"] as! String
+        self.location = dictionary["location"] as! String
+        self.papers = [dictionary["papers"] as! String]
+        self.image = dictionary["image"] as! String
+        self.phone = dictionary["phone"] as! String
+        self.password = dictionary["password"] as! String
+        self.rate = dictionary["rate"] as! String
     }
+    
+//    init(email : String, image : String, location : String, name : String, papers : [String], password : String, phone : String, rate: String ) {
+//
+//        self.email = email
+//        self.image = image
+//        self.location = location
+//        self.name = name
+//        self.papers = papers
+//        self.password = password
+//        self.phone = phone
+//        self.rate = rate
+//    }
     
 }

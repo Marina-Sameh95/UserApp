@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
+import FirebaseDatabase
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet weak var logOutLayout: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,14 +25,19 @@ class SettingsViewController: UIViewController {
         self.parent?.title = "Settings"
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func profileBtnAction(_ sender: Any) {
+//        let profileVc = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "ProfileVC")
+//        self.navigationController?.pushViewController(profileVc, animated: true)
     }
-    */
-
+    
+    @IBAction func logOutAction(_ sender: Any) {
+                do{
+                    try Auth.auth().signOut()
+                    let LoginVc = UIStoryboard(name: "Authentication", bundle: nil).instantiateViewController(withIdentifier: "LoginVC")
+                    self.navigationController?.pushViewController(LoginVc, animated: true)
+                }catch{
+                    print("error .. can not LogOut From user Account", error.localizedDescription)
+                }
+    }
+    
 }

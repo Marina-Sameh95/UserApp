@@ -19,8 +19,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var activities: UIView!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var events: UIView!
     
-
     var userData = [UserData]()
     
     override func viewDidLoad() {
@@ -34,15 +34,22 @@ class ProfileViewController: UIViewController {
         if sender.selectedSegmentIndex == 0 {
             myProfile.alpha = 1
             activities.alpha = 0
-        } else {
+            events.alpha = 0
+        } else if sender.selectedSegmentIndex == 1{
             myProfile.alpha = 0
             activities.alpha = 1
+            events.alpha = 0
+        } else{
+            myProfile.alpha = 0
+            activities.alpha = 0
+            events.alpha = 1
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         myProfile.alpha = 1
         activities.alpha = 0
+        events.alpha = 0
     }
     
     fileprivate func retrieveData() {

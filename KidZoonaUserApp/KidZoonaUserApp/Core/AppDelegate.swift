@@ -24,13 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         FirebaseApp.configure()
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID //1
-        
-        
-//        do{
-//            try Auth.auth().signOut()
-//        }catch{
-//
-//        }
+
         
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if let user = user{

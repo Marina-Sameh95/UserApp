@@ -52,6 +52,8 @@ class HomeVC: UIViewController {
         
         navigationController?.navigationBar.barTintColor = UIColor(red: 37/255 , green: 128/255 , blue: 219/255 , alpha: 1)
         
+    //    retrieveData()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -116,3 +118,56 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource {
     
 }
 
+//extension HomeVC {
+//    fileprivate func retrieveData() {
+//        let ref :  DatabaseReference!
+//        ref = Database.database().reference()
+//
+//        //guard let userId = Auth.auth().currentUser?.uid else {return}
+//        ref.child("Academies").observe(.value, with: { (snapshot) in
+//            
+//            
+//            snapshot.children.forEach({ (data) in
+//               // print(data)
+//                let snap = data as! DataSnapshot
+//                let dic = snap.value as! [String:Any]
+//                let event = dic["Events"] as? Any
+//                
+////                let test = Test(dic: event as! [String : Any])
+////                print("name: \(test.name)")
+//                print(event)
+//            })
+//            
+//            
+////            if let dic = snapshot.value as? [String:Any]{
+////                print(dic)
+////
+////                let test = Test(dic: dic)
+////
+////                print("events: \(test.events)")
+////            }
+//            
+//            
+//            
+//        }, withCancel: nil)
+//
+//         
+//
+//    
+//
+//    
+//    }
+//}
+//
+//class Test {
+//    
+//    var name: String
+//    var location: String
+//  
+//    
+//    init(dic: [String:Any]){
+//        self.name = dic["name"] as? String ?? ""
+//        self.location = dic["location"] as? String ?? ""
+//    }
+//    
+//}

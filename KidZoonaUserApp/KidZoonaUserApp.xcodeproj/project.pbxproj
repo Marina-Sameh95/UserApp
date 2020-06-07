@@ -44,6 +44,8 @@
 		88263B24247B28C000064461 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88263B23247B28C000064461 /* ProfileViewController.swift */; };
 		884C2D3E2477D73900011B13 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 884C2D3D2477D73900011B13 /* Event.storyboard */; };
 		884C2D412477D77E00011B13 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884C2D402477D77E00011B13 /* EventViewController.swift */; };
+		88830B4C248BDE840065D6E9 /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88830B4B248BDE830065D6E9 /* EventTableViewController.swift */; };
+		88830B4E248BEAC20065D6E9 /* EventSegmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88830B4D248BEAC20065D6E9 /* EventSegmentTableViewCell.swift */; };
 		888CD7652485E9E800C1CCC4 /* WishTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888CD7642485E9E800C1CCC4 /* WishTableViewCell.swift */; };
 		888CD7672485F35000C1CCC4 /* AcademyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888CD7662485F35000C1CCC4 /* AcademyTableViewCell.swift */; };
 		8899A7BC2477C32E0077C872 /* CourseList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8899A7BB2477C32E0077C872 /* CourseList.storyboard */; };
@@ -95,6 +97,8 @@
 		88263B23247B28C000064461 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		884C2D3D2477D73900011B13 /* Event.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
 		884C2D402477D77E00011B13 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		88830B4B248BDE830065D6E9 /* EventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
+		88830B4D248BEAC20065D6E9 /* EventSegmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSegmentTableViewCell.swift; sourceTree = "<group>"; };
 		888CD7642485E9E800C1CCC4 /* WishTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishTableViewCell.swift; sourceTree = "<group>"; };
 		888CD7662485F35000C1CCC4 /* AcademyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademyTableViewCell.swift; sourceTree = "<group>"; };
 		8899A7BB2477C32E0077C872 /* CourseList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CourseList.storyboard; sourceTree = "<group>"; };
@@ -276,6 +280,8 @@
 				88092FB1247C26CC00EB3B34 /* ProfileDetailsViewController.swift */,
 				88092FB3247C292100EB3B34 /* EditProfileViewController.swift */,
 				1752DB9B2485DC05000F3213 /* ActivitiesForUserTabelCell.swift */,
+				88830B4B248BDE830065D6E9 /* EventTableViewController.swift */,
+				88830B4D248BEAC20065D6E9 /* EventSegmentTableViewCell.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -497,6 +503,7 @@
 				1752DB9C2485DC05000F3213 /* ActivitiesForUserTabelCell.swift in Sources */,
 				888CD7652485E9E800C1CCC4 /* WishTableViewCell.swift in Sources */,
 				8899A7BF2477C3880077C872 /* CourseListViewController.swift in Sources */,
+				88830B4C248BDE840065D6E9 /* EventTableViewController.swift in Sources */,
 				179D15EC2474AAE500D49CD0 /* HomeVC.swift in Sources */,
 				1799A21C2483B5C900DE26EE /* DesignReviewCell.swift in Sources */,
 				17F67EC7246FDE8600A1F211 /* AppDelegate.swift in Sources */,
@@ -504,6 +511,7 @@
 				179D15EA2474AA9100D49CD0 /* LoginVC.swift in Sources */,
 				88092FB2247C26CC00EB3B34 /* ProfileDetailsViewController.swift in Sources */,
 				1723FEEA2488BC49001804ED /* CourseListCell.swift in Sources */,
+				88830B4E248BEAC20065D6E9 /* EventSegmentTableViewCell.swift in Sources */,
 				88DDAA0224847BE4003ADFBF /* SettingsViewController.swift in Sources */,
 				1799A2212483B5FF00DE26EE /* UIColor+Customization.swift in Sources */,
 				17372EBE2480AFF000B6004D /* EventCellCollectionViewCell.swift in Sources */,

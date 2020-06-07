@@ -35,7 +35,8 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="Ixs-Qb-sNB" kind="show" id="9yN-HT-vyO"/>
+                                            <action selector="profileBtnAction:" destination="AY7-JW-n0N" eventType="touchUpInside" id="mR5-Mp-zm0"/>
+                                            <segue destination="acy-gZ-Yit" kind="show" id="3B9-WF-BST"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -65,6 +66,9 @@
                                         <state key="normal" title="Log Out">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="logOutAction:" destination="AY7-JW-n0N" eventType="touchUpInside" id="9wy-Fz-u9E"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -89,18 +93,21 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="setting tab bar" id="fbB-wU-Odg"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="logOutLayout" destination="tzc-6W-0VF" id="UtT-rJ-Mvj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ruU-kv-uJV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1924" y="-73.313343328335833"/>
         </scene>
-        <!--ProfileView-->
-        <scene sceneID="K4l-pp-r0E">
+        <!--ProfileVC-->
+        <scene sceneID="dPT-L7-i8Z">
             <objects>
-                <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="ProfileView" id="Ixs-Qb-sNB" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gUk-Z2-50W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="ProfileVC" id="acy-gZ-Yit" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HqM-cR-QW6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2508" y="-95.352323838080963"/>
+            <point key="canvasLocation" x="2481" y="-309"/>
         </scene>
     </scenes>
     <resources>

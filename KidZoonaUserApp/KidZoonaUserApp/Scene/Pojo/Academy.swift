@@ -17,7 +17,7 @@ class Academy {
     var image : String
     var password : String
     var phone : String
-    var rate : String
+//    var rate : String
 
     init(dictionary: [String: Any]){
         self.id = dictionary["key"] as! String
@@ -28,7 +28,7 @@ class Academy {
         self.image = dictionary["image"] as! String
         self.phone = dictionary["phone"] as! String
         self.password = dictionary["password"] as! String
-        self.rate = dictionary["rate"] as! String
+//        self.rate = dictionary["rate"] as! String
     }
     
 //    init(email : String, image : String, location : String, name : String, papers : [String], password : String, phone : String, rate: String ) {

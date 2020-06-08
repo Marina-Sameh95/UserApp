@@ -25,7 +25,7 @@ class AcademyListViewController: UIViewController , UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        tableView.separatorColor = UIColor(white: 0.95, alpha: 1)
+//        tableView.separatorColor = UIColor(white: 0.95, alpha: 1)
         tableView.delegate = self
         tableView.dataSource = self
 
@@ -63,7 +63,8 @@ class AcademyListViewController: UIViewController , UITableViewDelegate, UITable
         // TODO
 //        cell.academyImage.image = academiesInfoArr[indexPath.row].image
         //rating
-        cell.academyRateView.rating = Double(academiesInfoArr[indexPath.row].rate)!
+//        cell.academyRateView.rating = Double(academiesInfoArr[indexPath.row].rate)!
+        
         return cell
     }
     
@@ -150,36 +151,36 @@ extension AcademyListViewController{
     }
     
     
-    func calcAvgRatesForAcadmies(rates : [Double] ) -> Double{
-        let sumArr = rates.reduce(0 , +)
-        let avgRates = Double(sumArr) / Double(rates.count)
-        
-        return avgRates
-    }
+//    func calcAvgRatesForAcadmies(rates : [Double] ) -> Double{
+//        let sumArr = rates.reduce(0 , +)
+//        let avgRates = Double(sumArr) / Double(rates.count)
+//
+//        return avgRates
+//    }
     
-    private func upadateAcadmyRateWithDefultValue(){
-        let rateDictValue = ["rate" : 2.5]
-        
-        let academiesRef = dbRef?.child("Academies")
-        academiesRef?.observe(.childAdded, with: { (snapshot) in
-            
-            if let academiesList = snapshot.value as? [String : Any]{
-                
-                let academiesIds = academiesList.keys
-                print("AllKey\(academiesIds)")
-                for id in academiesIds{
-                    let infoRef = academiesRef?.child(id).child("Information")
-                    infoRef?.updateChildValues(rateDictValue, withCompletionBlock: { (error, dbRef) in
-                        if let err = error {
-                            print("Cannot Push defult rate Value", err.localizedDescription)
-                        }
-                        print("Rate's defult Value pushed Successfully")
-                    })
-                    
-                }
-            }
-            
-        })
+//    private func upadateAcadmyRateWithDefultValue(){
+//        let rateDictValue = ["rate" : 2.5]
+//
+//        let academiesRef = dbRef?.child("Academies")
+//        academiesRef?.observe(.childAdded, with: { (snapshot) in
+//
+//            if let academiesList = snapshot.value as? [String : Any]{
+//
+//                let academiesIds = academiesList.keys
+//                print("AllKey\(academiesIds)")
+//                for id in academiesIds{
+//                    let infoRef = academiesRef?.child(id).child("Information")
+//                    infoRef?.updateChildValues(rateDictValue, withCompletionBlock: { (error, dbRef) in
+//                        if let err = error {
+//                            print("Cannot Push defult rate Value", err.localizedDescription)
+//                        }
+//                        print("Rate's defult Value pushed Successfully")
+//                    })
+//
+//                }
+//            }
+//
+//        })
 
         
 //        infoRef?.updateChildValues(rateDictValue, withCompletionBlock: { (error, dbRef) in
@@ -191,7 +192,7 @@ extension AcademyListViewController{
 //            print("Rate pushed Successfully")
 //        })
         
-    }
+//    }
 
     
 }

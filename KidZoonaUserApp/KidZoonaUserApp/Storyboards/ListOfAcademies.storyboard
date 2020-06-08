@@ -171,7 +171,7 @@
                                                                 <constraint firstAttribute="height" constant="16" id="HwV-rV-Hk7"/>
                                                             </constraints>
                                                         </stackView>
-                                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U91-V4-Dih" customClass="CosmosView" customModule="Cosmos">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U91-V4-Dih" customClass="CosmosView" customModule="Cosmos">
                                                             <rect key="frame" x="113.5" y="48" width="120" height="20"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
@@ -332,8 +332,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="academyImage" destination="cSe-sG-Mbt" id="4JX-R7-ASf"/>
                                             <outlet property="academyImg" destination="cSe-sG-Mbt" id="whT-If-Fqs"/>
                                             <outlet property="academyName" destination="gTu-Ny-c5e" id="pRH-JP-x5j"/>
+                                            <outlet property="academyRateView" destination="21K-VZ-bOG" id="pym-lt-lC4"/>
                                             <outlet property="cardView" destination="uqk-i2-ca3" id="VQM-1O-NAz"/>
                                             <outlet property="rateView" destination="21K-VZ-bOG" id="Pom-NF-yEg"/>
                                         </connections>

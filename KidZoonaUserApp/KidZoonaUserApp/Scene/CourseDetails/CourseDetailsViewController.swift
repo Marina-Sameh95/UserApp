@@ -81,16 +81,3 @@ extension CourseDetailsViewController : UITableViewDelegate , UITableViewDataSou
             return cell
         }
 }
-
-extension CourseDetailsViewController {
-    
-    fileprivate func getCourseDetails(){
-        
-        let acadmiesRef = dbRoot?.child("Acadmies")
-//        let acadmyId =
-    }
-}
-
-
-
-

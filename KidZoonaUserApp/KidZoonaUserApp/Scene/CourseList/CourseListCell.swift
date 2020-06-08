@@ -16,28 +16,38 @@ class CourseListCell: UITableViewCell {
     @IBOutlet weak var cosmosRateView: CosmosView!
     @IBOutlet weak var courseImage: UIImageView!
     
+//    var cosmosVar : CosmosView!{
+//        didSet{
+//            cosmosVar.settings.updateOnTouch = false
+//            cosmosVar.settings.totalStars = 5
+//            cosmosVar.settings.fillMode = .precise
+//            cosmosVar.rating = 2.5
+//            cosmosRateView = cosmosVar
+//        }
+//    }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-        setUpCosmosView(defultRateValue: 2.5)
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//        // Initialization code
+//        setUpCosmosView(defultRateValue: 2.5)
+//    }
+//
+//    override func setSelected(_ selected: Bool, animated: Bool) {
+//        super.setSelected(selected, animated: animated)
+//
+//        // Configure the view for the selected state
+//    }
 
 }
-
-extension CourseListCell{
-    
-    func setUpCosmosView(defultRateValue : Double){
-        cosmosRateView.settings.updateOnTouch = false
-        cosmosRateView.settings.totalStars = 5
-        cosmosRateView.settings.fillMode = .precise
-        cosmosRateView.rating = defultRateValue
-    }
-}
+//
+//extension CourseListCell{
+//    
+////    func setUpCosmosView(defultRateValue : Double){
+////        cosmosRateView.settings.updateOnTouch = false
+////        cosmosRateView.settings.totalStars = 5
+////        cosmosRateView.settings.fillMode = .precise
+////        cosmosRateView.rating = defultRateValue
+////    }
+//}
 

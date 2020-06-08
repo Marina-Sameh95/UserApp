@@ -21,19 +21,15 @@ class UserReviewCell: UITableViewCell {
     
     let rating = ["Excllent","Very Good", "Good", "Fair","Weak"]
     
-    var rate : String?
-
+    var rate : Double?
 }
 
 extension UserReviewCell{
     
-    private func setUpCosmosUIView(){
+    func setUpCosmosView(){
         rateView.settings.fillMode = .full
-        rateView.didTouchCosmos = {rating in
-            print("rate is\(rating)")
-            self.rate = "\(rating)"
-        }
-        
+        rateView.settings.updateOnTouch = false
+        rateView.rating = rate!
     }
     
     private func getUserData(){

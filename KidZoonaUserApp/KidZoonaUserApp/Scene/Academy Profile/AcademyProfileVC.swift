@@ -8,11 +8,12 @@
 
 import UIKit
 import Cosmos
+import Firebase
 
 class AcademyProfileVC: UIViewController {
     
     var currentAcademy : Academy?
-
+    var dbRef : DatabaseReference?
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -62,6 +63,8 @@ class AcademyProfileVC: UIViewController {
         // Do any additional setup after loading the view.
 //        setUpNavigationBarItems()
 //        setUpTableView()
+        
+        dbRef = Database.database().reference()
         
         view.backgroundColor  = .whiteTwo
         
@@ -140,14 +143,45 @@ extension AcademyProfileVC{
     private func setUpCosmosUIView(){
         ratingView.settings.fillMode = .full
         ratingView.didTouchCosmos = {rating in
+            
+            let userReviewCell = UserReviewCell()
+            userReviewCell.rate = rating
+            
             print("rate is\(rating)")
+            
             self.rate = "\(rating)"
         }
     }
     
     
     private func pushRating(){
-        //get currentAcademyID 
+        //get currentAcademyID
+        guard let academyRate = rate else {
+            print("Cannot find academy rate")
+            return
+        }
+//        guard let userId = Auth.auth().currentUser?.uid else {
+//            print("cannot find userId")
+//            return
+//        }
+//
+        let rateDictValue = ["rate" : academyRate]
+        
+        let academiesRef = dbRef?.child("Academies")
+        let academyId = currentAcademy?.id
+        
+        let infoRef = academiesRef?.child(academyId!).child("Information")
+        
+        infoRef?.updateChildValues(rateDictValue, withCompletionBlock: { (error, dbRef) in
+            
+            if let err = error {
+                print("Cannot Push rate Value", err.localizedDescription)
+            }
+            
+            print("Rate pushed Successfully")
+        })
+        
+        currentAcademy?.rate = rate!
         
     }
 }

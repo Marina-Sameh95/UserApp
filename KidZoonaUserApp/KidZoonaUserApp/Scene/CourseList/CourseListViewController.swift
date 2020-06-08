@@ -7,28 +7,42 @@
 //
 
 import UIKit
+import Firebase
 
 class CourseListViewController: UIViewController , UITableViewDelegate, UITableViewDataSource{
-   
+    
+    var dbRef : DatabaseReference?
+    var coursesArr = [Course]()
+    
     @IBOutlet weak var tableView: UITableView!
     
-    var name: NSArray = []
-    var imageArray:NSArray = []
+//    var name: NSArray = []
+//    var imageArray:NSArray = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
         tableView.separatorColor = UIColor(white: 0.95, alpha: 1)
         tableView.delegate = self
         tableView.dataSource = self
         
-        name = ["Wedo","EV3","Art","Drawing","Music","Music","chess"]
-        imageArray = [UIImage(named: "course1"),UIImage(named: "course2"),UIImage(named: "course3"),UIImage(named: "course4"),UIImage(named: "course5"),UIImage(named: "course6"),UIImage(named: "course7")!]
+//        name = ["Wedo","EV3","Art","Drawing","Music","Music","chess"]
+//        imageArray = [UIImage(named: "course1"),UIImage(named: "course2"),UIImage(named: "course3"),UIImage(named: "course4"),UIImage(named: "course5"),UIImage(named: "course6"),UIImage(named: "course7")!]
+        
+        
+        dbRef = Database.database().reference()
+        
+        getCoursesDtata()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.parent?.title = "Courses"
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return name.count
+//        return name.count
+        return coursesArr.count
     }
     
     
@@ -39,6 +53,8 @@ class CourseListViewController: UIViewController , UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CourseCell", for: indexPath) as! CourseListCell
         cell.contentView.backgroundColor = UIColor (white: 0.95, alpha: 1)
+        
+        cell.courseNameLabel.text! = coursesArr[indexPath.row].name
         
         
         return cell
@@ -53,7 +69,45 @@ class CourseListViewController: UIViewController , UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 144
     }
-    
-    
+}
 
+extension CourseListViewController{
+    
+    func getCoursesDtata(){
+        
+        let academiesRef = dbRef?.child("Academies")
+        academiesRef?.observe(.childAdded, with: { (snapshot) in
+            let coursesSnapshot = snapshot.childSnapshot(forPath: "courses")
+            var coursesKeysArr : [String] = []
+            for courseChild in coursesSnapshot.children{
+                let courseSnap = courseChild as! DataSnapshot
+                print("courseNode\(courseSnap)")
+                let courseKey = courseSnap.key
+                coursesKeysArr.append(courseKey)
+                
+                let courseInfoSnap = coursesSnapshot.childSnapshot(forPath: "information")
+                for courseInfoChild in courseInfoSnap.children{
+                    let snapCourse = courseInfoChild as! DataSnapshot
+                    let courseDict = snapCourse.value as! [String : Any]
+                    let courseInfoDict = Course(dictionary: courseDict)
+                    self.coursesArr.append(courseInfoDict)
+                    self.tableView.reloadData()
+                }
+            }
+        })
+        
+    }
+    
+//    func getAllAcademiesKeys() {
+//        let academiesRef = dbRef?.child("Academies")
+//        academiesRef?.observeSingleEvent(of: .value, with: { (snapshot) in
+//
+//            for child in snapshot.children {
+//                let snap = child as! DataSnapshot
+//                let key = snap.key
+//                self.academiesKeysArr.append(key)
+//            }
+//        })
+//
+//    }
 }

@@ -93,6 +93,12 @@
                                                 <constraint firstItem="MDg-zc-BJq" firstAttribute="top" secondItem="DYg-YF-6Mf" secondAttribute="top" constant="11" id="wM3-4a-euZ"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cosmosRateView" destination="GDz-GW-4qP" id="Xd5-tz-u1m"/>
+                                            <outlet property="courseImage" destination="V08-vF-COO" id="9cf-jk-IFY"/>
+                                            <outlet property="courseNameLabel" destination="rbJ-cc-OM3" id="lAc-eT-jbA"/>
+                                            <outlet property="coursePriceLabel" destination="aw5-NV-r2U" id="Qfr-Oe-JfU"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

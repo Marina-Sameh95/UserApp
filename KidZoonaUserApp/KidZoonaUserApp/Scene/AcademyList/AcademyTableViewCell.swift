@@ -18,31 +18,33 @@ class AcademyTableViewCell: UITableViewCell {
     @IBOutlet weak var academyName: UILabel!
     
 //    var rate : String?
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-        setUpCosmosView(defultRateValue: 2.5)
-    }
-
-    
-
-}
-
-extension AcademyTableViewCell {
-    
-//    func setUpCosmosUIView(){
-//        rateView.settings.fillMode = .full
-//        rateView.didTouchCosmos = {rating in
-//            print("rate is\(rating)")
-//            self.rate = "\(rating)"
+//    var cosmosVar : CosmosView!{
+//        didSet{
+//            cosmosVar.settings.updateOnTouch = false
+//            cosmosVar.settings.totalStars = 5
+//            cosmosVar.settings.fillMode = .precise
+//            cosmosVar.rating = 2.5
+//            academyRateView = cosmosVar
 //        }
 //    }
     
-    func setUpCosmosView(defultRateValue : Double){
-        academyRateView.settings.updateOnTouch = false
-        academyRateView.settings.totalStars = 5
-        academyRateView.settings.fillMode = .precise
-        academyRateView.rating = defultRateValue
-    }
+
 }
+
+//extension AcademyTableViewCell {
+//
+////    func setUpCosmosUIView(){
+////        rateView.settings.fillMode = .full
+////        rateView.didTouchCosmos = {rating in
+////            print("rate is\(rating)")
+////            self.rate = "\(rating)"
+////        }
+////    }
+//
+//    func setUpCosmosView(defultRateValue : Double){
+//        academyRateView.settings.updateOnTouch = false
+//        academyRateView.settings.totalStars = 5
+//        academyRateView.settings.fillMode = .precise
+//        academyRateView.rating = defultRateValue
+//    }
+//}

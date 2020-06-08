@@ -98,16 +98,8 @@ extension CourseListViewController{
         
     }
     
-//    func getAllAcademiesKeys() {
-//        let academiesRef = dbRef?.child("Academies")
-//        academiesRef?.observeSingleEvent(of: .value, with: { (snapshot) in
-//
-//            for child in snapshot.children {
-//                let snap = child as! DataSnapshot
-//                let key = snap.key
-//                self.academiesKeysArr.append(key)
-//            }
-//        })
-//
+//    func getCoursesRates() {
+//        
 //    }
+
 }

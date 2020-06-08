@@ -16,18 +16,10 @@ class AcademyProfileVC: UIViewController {
     var dbRef : DatabaseReference?
     
     @IBOutlet weak var collectionView: UICollectionView!
-    
     @IBOutlet weak var pageControl: UIPageControl!
-    
     @IBOutlet weak var ratingView: CosmosView! // to get rating
-    
-    
     @IBOutlet weak var academyLocationLbl: UILabel!
-    
-    
     @IBOutlet weak var getDirectionOfAcademyFromMapBtn: UIButton!
-    
-    
     @IBOutlet weak var tableHeaderView: UIView!
     
     var rate : String?
@@ -70,7 +62,9 @@ class AcademyProfileVC: UIViewController {
         
         pageControl.numberOfPages = imgs.count
         
-        setUpCosmosUIView()
+        fetchAcademyData()
+        
+//        setUpCosmosUIView()
         
 //        startTimer()
     }
@@ -153,35 +147,39 @@ extension AcademyProfileVC{
         }
     }
     
+    private func fetchAcademyData(){
+        academyLocationLbl.text = currentAcademy?.location
+    }
     
-    private func pushRating(){
-        //get currentAcademyID
-        guard let academyRate = rate else {
-            print("Cannot find academy rate")
-            return
-        }
-//        guard let userId = Auth.auth().currentUser?.uid else {
-//            print("cannot find userId")
+    
+//    private func pushRating(){
+//        //get currentAcademyID
+//        guard let academyRate = rate else {
+//            print("Cannot find academy rate")
 //            return
 //        }
-//
-        let rateDictValue = ["rate" : academyRate]
-        
-        let academiesRef = dbRef?.child("Academies")
-        let academyId = currentAcademy?.id
-        
-        let infoRef = academiesRef?.child(academyId!).child("Information")
-        
-        infoRef?.updateChildValues(rateDictValue, withCompletionBlock: { (error, dbRef) in
-            
-            if let err = error {
-                print("Cannot Push rate Value", err.localizedDescription)
-            }
-            
-            print("Rate pushed Successfully")
-        })
-        
-        currentAcademy?.rate = rate!
-        
-    }
+////        guard let userId = Auth.auth().currentUser?.uid else {
+////            print("cannot find userId")
+////            return
+////        }
+////
+//        let rateDictValue = ["rate" : academyRate]
+//        
+//        let academiesRef = dbRef?.child("Academies")
+//        let academyId = currentAcademy?.id
+//        
+//        let infoRef = academiesRef?.child(academyId!).child("Information")
+//        
+//        infoRef?.updateChildValues(rateDictValue, withCompletionBlock: { (error, dbRef) in
+//            
+//            if let err = error {
+//                print("Cannot Push rate Value", err.localizedDescription)
+//            }
+//            
+//            print("Rate pushed Successfully")
+//        })
+//        
+//        currentAcademy?.rate = rate!
+//        
+//    }
 }

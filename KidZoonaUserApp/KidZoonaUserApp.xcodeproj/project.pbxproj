@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B415C67248D6E1F000319D0 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B415C66248D6E1F000319D0 /* Course.swift */; };
 		0B7F02C824896322005E7CF9 /* Academy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F02C724896322005E7CF9 /* Academy.swift */; };
 		171FF7732484A7B400077AC0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 171FF7722484A7B300077AC0 /* GoogleService-Info.plist */; };
 		1723FEEA2488BC49001804ED /* CourseListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1723FEE92488BC49001804ED /* CourseListCell.swift */; };
@@ -57,6 +58,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B415C66248D6E1F000319D0 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		0B7F02C724896322005E7CF9 /* Academy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Academy.swift; sourceTree = "<group>"; };
 		171FF7722484A7B300077AC0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1723FEE92488BC49001804ED /* CourseListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListCell.swift; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 		88E502662486404A00D8597A /* Pojo */ = {
 			isa = PBXGroup;
 			children = (
+				0B415C66248D6E1F000319D0 /* Course.swift */,
 				88E50267248640F000D8597A /* UserDataprofile.swift */,
 				0B7F02C724896322005E7CF9 /* Academy.swift */,
 			);
@@ -480,6 +483,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B415C67248D6E1F000319D0 /* Course.swift in Sources */,
 				1799A21D2483B5C900DE26EE /* SliderCell.swift in Sources */,
 				88092FB4247C292100EB3B34 /* EditProfileViewController.swift in Sources */,
 				8899A7C12477C8F00077C872 /* DesignCourseList.swift in Sources */,

@@ -59,11 +59,13 @@ class AcademyListViewController: UIViewController , UITableViewDelegate, UITable
 //        cell.academyName.text! = academyName[indexPath.row] as! String
 //        cell.cardDesign.viewWithTag(1) = cardView[indexPath.row] as!
         
-        cell.academyName.text! = academiesInfoArr[indexPath.row].name
+//        cell.academyName.text! = academiesInfoArr[indexPath.row].name
         // TODO
 //        cell.academyImage.image = academiesInfoArr[indexPath.row].image
         //rating
 //        cell.academyRateView.rating = Double(academiesInfoArr[indexPath.row].rate)!
+        
+        cell.academyObj = academiesInfoArr[indexPath.row]
         
         return cell
     }
@@ -73,18 +75,47 @@ class AcademyListViewController: UIViewController , UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      let academyDetails = UIStoryboard(name: "ListOfAcademies", bundle: nil).instantiateViewController(withIdentifier: "AcademyProfile")
+//      let academyDetails = UIStoryboard(name: "ListOfAcademies", bundle: nil).instantiateViewController(withIdentifier: "AcademyProfile")
+//
+//        let academyProfileVC = AcademyProfileVC()
+//        academyProfileVC.currentAcademy = academiesInfoArr[indexPath.row]
+//
+//        self.navigationController?.pushViewController(academyDetails, animated: true)
         
-        let academyProfileVC = AcademyProfileVC()
-        academyProfileVC.currentAcademy = academiesInfoArr[indexPath.row]
+//        let academyDetails = UIStoryboard(name: "AcademyProfile", bundle: nil)
         
-        self.navigationController?.pushViewController(academyDetails, animated: true)
+        let selectedAcademy = academiesInfoArr[indexPath.row]
+        
+        performSegue(withIdentifier: "toAcademyProfile", sender: selectedAcademy)
 
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let identString = segue.identifier, let identifier = SegueIndentifier(rawValue: identString) else {
+            super.prepare(for: segue, sender: sender)
+            return
+        }
+        
+        switch identifier {
+        case .showDetails: if let indexPath = tableView.indexPathForSelectedRow{
+            let academy = academiesInfoArr[indexPath.row]
+//            let controller = (segue.destination as! UINavigationController).topViewController as! AcademyProfileVC
+            let controller = segue.destination as! AcademyProfileVC
+            controller.currentAcademy = academy as! Academy
+//            controller.navigationItem.leftItemsSupplementBackButton = true
+            }
+        }
+        
     }
 
 }
 
 extension AcademyListViewController{
+    
+    enum SegueIndentifier : String{
+        case showDetails = "toAcademyProfile"
+    }
     
     fileprivate func getAcademiesData(){
         
@@ -103,6 +134,8 @@ extension AcademyListViewController{
                     let academyInfoDict = Academy(dictionary: information!)
                     self?.academiesInfoArr.append(academyInfoDict)
                     self?.tableView.reloadData()
+                    
+                    //create ref to courses 
                     
                     print("SingleAcademy\(String(describing: academy))")
                     print("SingleInfoDictonary\(String(describing: information))")

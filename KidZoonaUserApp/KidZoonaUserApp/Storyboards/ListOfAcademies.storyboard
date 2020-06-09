@@ -208,9 +208,9 @@
                         <viewLayoutGuide key="safeArea" id="l16-8G-7Xt"/>
                     </view>
                     <connections>
-                        <outlet property="AcademyName" destination="hOj-Re-IKS" id="1hf-YX-5Kj"/>
                         <outlet property="academyImage" destination="DON-z7-0gF" id="mWg-fp-ipB"/>
-                        <outlet property="academyLocationLbl" destination="Qkr-Gd-Kv1" id="zmn-l6-OnY"/>
+                        <outlet property="academyLocationLabel" destination="Qkr-Gd-Kv1" id="4ty-xz-MsI"/>
+                        <outlet property="academyName" destination="hOj-Re-IKS" id="Sd7-Nh-Qbi"/>
                         <outlet property="academyReviewTableView" destination="MLd-gx-vEf" id="RzM-Ps-c8Z"/>
                         <outlet property="getDirectionOfAcademyFromMapBtn" destination="YFq-yU-ogP" id="noh-wi-uOa"/>
                         <outlet property="ratingView" destination="YWO-c9-DtH" id="gh1-Bx-5Q4"/>
@@ -318,6 +318,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="q61-zZ-qB6" id="hCX-T1-ZK9"/>
+                        <segue destination="bub-9U-svz" kind="show" identifier="toAcademyProfile" id="OHP-9X-Mcg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m2G-qP-kIj" userLabel="First Responder" sceneMemberID="firstResponder"/>

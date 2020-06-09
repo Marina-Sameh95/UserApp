@@ -46,6 +46,7 @@ class CourseDetailsViewController: UIViewController {
     
 
     @IBAction func favouriteBtn(_ sender: UIButton) {
+        
         if sender.isSelected{
             sender.isSelected = false
             

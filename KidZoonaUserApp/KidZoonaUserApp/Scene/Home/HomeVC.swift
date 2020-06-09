@@ -52,7 +52,7 @@ class HomeVC: UIViewController {
         
         navigationController?.navigationBar.barTintColor = UIColor(red: 37/255 , green: 128/255 , blue: 219/255 , alpha: 1)
         
-    //    retrieveData()
+     retrieveData()
         
     }
     
@@ -118,56 +118,139 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource {
     
 }
 
+
 //extension HomeVC {
 //    fileprivate func retrieveData() {
-//        let ref :  DatabaseReference!
-//        ref = Database.database().reference()
+//        var AcademyObjList = [Academy]()
+//        let query = Database.database().reference().child("Academies").queryLimited(toLast: 10)
+//        _ = query.observe(.value, with: { [weak self] snapshot in
+//            if let academyList = snapshot.value as? [String:Any]{
+//                let academyids = academyList.keys
+//                for id in academyids{
+//                    let academy = academyList[id] as? [String:Any]
+//                    print("academy : \(academy)")
+////                    let Events = academy?["Events"] as? [String:Any]
+////                    let eventIds = Events?.keys
+////                    let singleEvent = Events[]
+////                    print("Information\(Events)")
+//                }
+//                //                    let academyObj = Academy(email: <#T##String#>, image: <#T##String#>, location: <#T##String#>, name: <#T##String#>, papers: <#T##String#>, password: <#T##String#>, phone: <#T##String#>)
+//                //                    let events = academy?["Events"] as! [String:Any]
+//                //                    let eventids = events.keys
+//                //                    print("event id =\(eventids)")
 //
-//        //guard let userId = Auth.auth().currentUser?.uid else {return}
-//        ref.child("Academies").observe(.value, with: { (snapshot) in
-//            
-//            
-//            snapshot.children.forEach({ (data) in
-//               // print(data)
-//                let snap = data as! DataSnapshot
-//                let dic = snap.value as! [String:Any]
-//                let event = dic["Events"] as? Any
-//                
-////                let test = Test(dic: event as! [String : Any])
-////                print("name: \(test.name)")
-//                print(event)
-//            })
-//            
-//            
-////            if let dic = snapshot.value as? [String:Any]{
-////                print(dic)
-////
-////                let test = Test(dic: dic)
-////
-////                print("events: \(test.events)")
-////            }
-//            
-//            
-//            
-//        }, withCancel: nil)
 //
-//         
+//                //                    let academyObj = Academy(
+//                //                    AcademyObjList.append(academyObj)
+//                //  print("academy=\(academy)")
 //
-//    
+//                //  print("event=\(event)")
 //
-//    
+//
+//
+//                // print("academy=\(academy)")
+//                //  }
+//                // print("obj list = \(AcademyObjList[0])")
+//
+//                //                let firstID = academyids[0]
+//            }
+//        })
 //    }
 //}
+
+
+
+
+
+
+
+// ana w shadi
+
+extension HomeVC {
+    fileprivate func retrieveData() {
+        let ref :  DatabaseReference!
+        ref = Database.database().reference()
+        
+        //guard let userId = Auth.auth().currentUser?.uid else {return}
+        ref.child("Academies").observe(.value, with: { (snapshot) in
+            
+            
+            snapshot.children.forEach({ (data) in
+                // print(data)
+                let snap = data as! DataSnapshot
+                snap.children.forEach{ (dataEv) in
+                    let snap2 = data as! DataSnapshot
+                    // print(snap2)
+                    snap2.children.forEach({ (data2) in
+                        let snap = data2 as! DataSnapshot
+                        print("name of snap :\(snap)")
+                        let dic = snap.value as! [String : Any]
+                        let comment = dic["name"] as? String
+                        print("name of academy :\(comment)")
+                    })
+                    
+                }
+//                if let dic = snap.value as? [String: Any]{
+//                    print(dic)
+//                    //                    for id in dic {
+//                    //                        print("academyId : \(id.key)")
+//                    //                    }
 //
-//class Test {
-//    
-//    var name: String
-//    var location: String
-//  
-//    
-//    init(dic: [String:Any]){
-//        self.name = dic["name"] as? String ?? ""
-//        self.location = dic["location"] as? String ?? ""
-//    }
-//    
-//}
+//                    let eventsIds = dic.keys
+//                    print("IDs : \(eventsIds)")
+//                    let id : [String : Any]
+//                    for id in eventsIds{
+//                        //let event = dic[id] as? [String : Any]
+//                        //                    let test = Test(dic: id as! [String : Any])
+//                        //                    print("name: \(test.name)")
+//
+//                        //                print("branches : \(id)")
+//
+//                        //                    print ("shadi : \(eventsIds[id])")
+//                        //                    print("shadi : \(eventId)")
+//                        //                    let rootsofEvenets = id
+//
+//                    }
+//                }
+//
+                //                let event = dic["Events"] as? Any
+                //
+                //                let test = Test(dic: event as! [String : Any])
+                //                print("name: \(test.name)")
+                
+                //print(event)
+            })
+            
+            
+            //            if let dic = snapshot.value as? [String:Any]{
+            //                print(dic)
+            //
+            //                let test = Test(dic: dic)
+            //
+            //                print("events: \(test.events)")
+            //            }
+            
+            
+            
+        }, withCancel: nil)
+        
+        
+        
+        
+        
+        
+    }
+}
+
+class Test {
+    
+    var name: String
+    var location: String
+    
+    
+    init(dic: [String:Any]){
+        self.name = dic["name"] as? String ?? ""
+        self.location = dic["location"] as? String ?? ""
+    }
+    
+}

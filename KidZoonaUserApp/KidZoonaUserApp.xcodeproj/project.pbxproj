@@ -24,7 +24,6 @@
 		1799A21A2483B5C900DE26EE /* UserReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1799A2122483B5C800DE26EE /* UserReviewCell.swift */; };
 		1799A21B2483B5C900DE26EE /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1799A2132483B5C800DE26EE /* CustomButton.swift */; };
 		1799A21C2483B5C900DE26EE /* DesignReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1799A2142483B5C800DE26EE /* DesignReviewCell.swift */; };
-		1799A21D2483B5C900DE26EE /* SliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1799A2152483B5C800DE26EE /* SliderCell.swift */; };
 		1799A21E2483B5C900DE26EE /* AcademyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1799A2162483B5C800DE26EE /* AcademyProfileVC.swift */; };
 		1799A2212483B5FF00DE26EE /* UIColor+Customization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1799A2202483B5FF00DE26EE /* UIColor+Customization.swift */; };
 		179D15EA2474AA9100D49CD0 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179D15E92474AA9100D49CD0 /* LoginVC.swift */; };
@@ -74,7 +73,6 @@
 		1799A2122483B5C800DE26EE /* UserReviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserReviewCell.swift; sourceTree = "<group>"; };
 		1799A2132483B5C800DE26EE /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		1799A2142483B5C800DE26EE /* DesignReviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignReviewCell.swift; sourceTree = "<group>"; };
-		1799A2152483B5C800DE26EE /* SliderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderCell.swift; sourceTree = "<group>"; };
 		1799A2162483B5C800DE26EE /* AcademyProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcademyProfileVC.swift; sourceTree = "<group>"; };
 		1799A2202483B5FF00DE26EE /* UIColor+Customization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Customization.swift"; sourceTree = "<group>"; };
 		179D15E92474AA9100D49CD0 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -140,7 +138,6 @@
 				1799A2122483B5C800DE26EE /* UserReviewCell.swift */,
 				1799A2132483B5C800DE26EE /* CustomButton.swift */,
 				1799A2142483B5C800DE26EE /* DesignReviewCell.swift */,
-				1799A2152483B5C800DE26EE /* SliderCell.swift */,
 				1799A2162483B5C800DE26EE /* AcademyProfileVC.swift */,
 			);
 			path = "Academy Profile";
@@ -484,7 +481,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B415C67248D6E1F000319D0 /* Course.swift in Sources */,
-				1799A21D2483B5C900DE26EE /* SliderCell.swift in Sources */,
 				88092FB4247C292100EB3B34 /* EditProfileViewController.swift in Sources */,
 				8899A7C12477C8F00077C872 /* DesignCourseList.swift in Sources */,
 				88263B1F247B152D00064461 /* DesignCourseDetails.swift in Sources */,

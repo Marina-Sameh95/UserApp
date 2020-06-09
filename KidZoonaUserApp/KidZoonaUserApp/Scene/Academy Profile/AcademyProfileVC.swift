@@ -15,21 +15,27 @@ class AcademyProfileVC: UIViewController {
     var currentAcademy : Academy?
     var dbRef : DatabaseReference?
     
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var pageControl: UIPageControl!
+    ///////////////////@IBOutlet weak var collectionView: UICollectionView!
+    ///////////////////@IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var academyImage: UIImageView!
+    @IBOutlet weak var AcademyName: UILabel!
+    
     @IBOutlet weak var ratingView: CosmosView! // to get rating
     @IBOutlet weak var academyLocationLbl: UILabel!
     @IBOutlet weak var getDirectionOfAcademyFromMapBtn: UIButton!
-    @IBOutlet weak var tableHeaderView: UIView!
+    @IBOutlet weak var academyReviewTableView: UITableView!
+    
+    /////////////////@IBOutlet weak var tableHeaderView: UIView!
     
     var rate : String?
-    
+    ///////////////////////// de elsor eli kant btt3rad fe el collection view w b2a image bs fa shliha lw msh m7tagaha
     let imgs = [
         UIImage(named: "img_1"),
         UIImage(named: "img_2"),
         UIImage(named: "img_3"),
         UIImage(named: "swim_4")
     ]// data source
+    ////////////////////////
     
     let headerLabel: UILabel = {
         let label = UILabel()
@@ -52,7 +58,9 @@ class AcademyProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        academyReviewTableView.delegate = self
+        academyReviewTableView.dataSource = self
+        
 //        setUpNavigationBarItems()
 //        setUpTableView()
         
@@ -60,7 +68,7 @@ class AcademyProfileVC: UIViewController {
         
         view.backgroundColor  = .whiteTwo
         
-        pageControl.numberOfPages = imgs.count
+        //////////////////////pageControl.numberOfPages = imgs.count
         
         fetchAcademyData()
         
@@ -107,30 +115,33 @@ class AcademyProfileVC: UIViewController {
     
 }
 
-extension AcademyProfileVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imgs.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SliderCell", for: indexPath) as! SliderCell
-        
-        cell.img = imgs[indexPath.item]
-        
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        currentIndex = Int(scrollView.contentOffset.x / collectionView.frame.size.width)
-        
-        pageControl.currentPage = currentIndex
-    }
-}
+//////////////////////////////////////// da el collection View ely atmsa7 w b2a image w7da w ms7t el slider Cell ViewController bt3ha
+
+//extension AcademyProfileVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+//
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return imgs.count
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SliderCell", for: indexPath) as! SliderCell
+//
+//        cell.img = imgs[indexPath.item]
+//
+//        return cell
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+//    }
+//
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        currentIndex = Int(scrollView.contentOffset.x / collectionView.frame.size.width)
+//
+//        pageControl.currentPage = currentIndex
+//    }
+//}
+/////////////////////////////////////////////////////
 
 extension AcademyProfileVC{
     
@@ -182,4 +193,23 @@ extension AcademyProfileVC{
 //        currentAcademy?.rate = rate!
 //        
 //    }
+}
+
+////////////////// extension for Academy ReviewTableView
+
+extension AcademyProfileVC : UITableViewDelegate , UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath) as! UserReviewCell
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 85
+    }
+    
+    
 }

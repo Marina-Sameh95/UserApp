@@ -44,16 +44,6 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="414" height="223"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zh4-bJ-Fdl">
-                                                                    <rect key="frame" x="341" y="159" width="41" height="40"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="41" id="HT7-A2-TXq"/>
-                                                                        <constraint firstAttribute="height" constant="40" id="LLU-mX-MRn"/>
-                                                                    </constraints>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                                                                    <state key="normal" title="Button" image="red-empty-heart"/>
-                                                                    <state key="selected" image="heartFill"/>
-                                                                </button>
                                                                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="gqb-gd-TSl">
                                                                     <rect key="frame" x="122.5" y="170" width="169" height="37"/>
                                                                     <constraints>
@@ -67,10 +57,8 @@
                                                         </view>
                                                         <constraints>
                                                             <constraint firstItem="gqb-gd-TSl" firstAttribute="centerX" secondItem="xO3-G6-pZO" secondAttribute="centerX" id="7fd-x0-Jam"/>
-                                                            <constraint firstAttribute="trailing" secondItem="zh4-bJ-Fdl" secondAttribute="trailing" constant="32" id="9bv-36-nPD"/>
                                                             <constraint firstItem="JJ0-U1-rTC" firstAttribute="centerX" secondItem="xO3-G6-pZO" secondAttribute="centerX" id="RzN-2l-WFS"/>
                                                             <constraint firstItem="gqb-gd-TSl" firstAttribute="leading" secondItem="xO3-G6-pZO" secondAttribute="leading" constant="122.5" id="Xuc-9q-XsT"/>
-                                                            <constraint firstAttribute="bottom" secondItem="zh4-bJ-Fdl" secondAttribute="bottom" constant="24" id="eYR-8t-MUl"/>
                                                             <constraint firstItem="JJ0-U1-rTC" firstAttribute="centerY" secondItem="xO3-G6-pZO" secondAttribute="centerY" id="fBv-Bu-1Du"/>
                                                             <constraint firstAttribute="bottom" secondItem="gqb-gd-TSl" secondAttribute="bottom" constant="16" id="jPR-e9-0Ki"/>
                                                             <constraint firstItem="JJ0-U1-rTC" firstAttribute="height" secondItem="xO3-G6-pZO" secondAttribute="height" id="nEX-LL-A2X"/>
@@ -313,8 +301,6 @@
         <image name="green-get-direction-icon" width="26" height="26"/>
         <image name="green-location-icon" width="26" height="26"/>
         <image name="green-time-icon" width="26" height="26"/>
-        <image name="heartFill" width="37" height="37"/>
         <image name="line sections" width="342" height="1"/>
-        <image name="red-empty-heart" width="37" height="37"/>
     </resources>
 </document>

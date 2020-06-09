@@ -82,63 +82,65 @@ class EditProfileViewController: UIViewController {
     }
  
     @IBAction func uploadPhoto(_ sender: Any) {
-//        let imagePicker = UIImagePickerController()
-//        imagePicker.delegate = self
-//        imagePicker.allowsEditing = true
-//        present(imagePicker, animated: true, completion: nil)
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = true
+        present(imagePicker, animated: true, completion: nil)
         
     }
     
     @IBAction func saveEditUserInfo(_ sender: Any) {
-//        guard let userImg = userImageOutLet.image else { return }
-//        guard let uploadImg = userImg.jpegData(compressionQuality: 0.3) else { return }  //compress img
-//        let fileName = NSUUID().uuidString  //make file to arange
-//
-//        let ref = Storage.storage().reference().child("UserProfileImage").child(fileName)
-//        ref.putData(uploadImg, metadata: nil) { (metaData, error) in
-//            if let error = error {
-//                print("failed to uploadImg", error.localizedDescription)
-//                return
-//            }
-//            ref.downloadURL(completion: { (url, error) in
-//                if let error = error {
-//                    print("failed to uploadImg", error.localizedDescription)
-//                    return
-//                }
-//                guard let profileImagUrl = url?.absoluteString else {
-//                    print("something wrong when get url image")
-//                    return
-//                }
-//                print("succefully upload profile image \(profileImagUrl)")
-//
-//                guard let uid = Auth.auth().currentUser?.uid else {return}
-//                let ref = Database.database().reference().child("User").child(uid).child("Information")
-//                let dicValue = ["profileImage": profileImagUrl]
-//                ref.updateChildValues(dicValue, withCompletionBlock: { (err, ref) in
-//                    if let err = err {
-//                        print("Failed to push user image", err.localizedDescription)
-//                    }
-//
-//                    print("Succefully put image")
-//                })
-//
-//
-//
-//            })
-//        }
-//    }
+        guard let userImg = userImageOutLet.image else { return }
+        guard let uploadImg = userImg.jpegData(compressionQuality: 0.3) else { return }  //compress img
+        let fileName = NSUUID().uuidString  //make file to arange
+
+        let ref = Storage.storage().reference().child("UserProfileImage").child(fileName)
+        ref.putData(uploadImg, metadata: nil) { (metaData, error) in
+            if let error = error {
+                print("failed to uploadImg", error.localizedDescription)
+                return
+            }
+            ref.downloadURL(completion: { (url, error) in
+                if let error = error {
+                    print("failed to uploadImg", error.localizedDescription)
+                    return
+                }
+                guard let profileImagUrl = url?.absoluteString else {
+                    print("something wrong when get url image")
+                    return
+                }
+                print("succefully upload profile image \(profileImagUrl)")
+
+                guard let uid = Auth.auth().currentUser?.uid else {return}
+                let ref = Database.database().reference().child("User").child(uid).child("Information")
+                let dicValue = ["profileImage": profileImagUrl]
+                ref.updateChildValues(dicValue, withCompletionBlock: { (err, ref) in
+                    if let err = err {
+                        print("Failed to push user image", err.localizedDescription)
+                    }
+
+                    print("Succefully put image")
+                })
+
+
+
+            })
+        }
+        
+        //updateFunBirthdate
+    }
 }
 
-}
+
 //
-//extension EditProfileViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-//        if let editImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-//            userImageOutLet.image = editImage
-//        }else if let selectImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-//            userImageOutLet.image = selectImage
-//        }
-//       picker.dismiss(animated: true, completion: nil)
-//    }
-//}
+extension EditProfileViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let editImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            userImageOutLet.image = editImage
+        }else if let selectImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            userImageOutLet.image = selectImage
+        }
+       picker.dismiss(animated: true, completion: nil)
+    }
+}
 

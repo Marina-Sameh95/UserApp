@@ -37,7 +37,7 @@ class ProfileDetailsViewController: UIViewController {
             
             
             guard let value = snapshot.value as? [String: Any] else {return}
-            let dataUser = UserData(dictionary: value)
+            let dataUser = UserData(uid: userId, dictionary: value)
             self.userData.append(dataUser)
 //            guard let imageUrl = self.userData.first?.userImage else {return}
 //            print(imageUrl)

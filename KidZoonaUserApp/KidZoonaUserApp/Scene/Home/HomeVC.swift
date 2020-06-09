@@ -164,7 +164,6 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource {
 
 
 
-// ana w shadi
 
 extension HomeVC {
     fileprivate func retrieveData() {
@@ -206,8 +205,8 @@ extension HomeVC {
 //
 //                        //                print("branches : \(id)")
 //
-//                        //                    print ("shadi : \(eventsIds[id])")
-//                        //                    print("shadi : \(eventId)")
+//                        //                    print ("asmaa : \(eventsIds[id])")
+//                        //                    print("asmaa2 : \(eventId)")
 //                        //                    let rootsofEvenets = id
 //
 //                    }

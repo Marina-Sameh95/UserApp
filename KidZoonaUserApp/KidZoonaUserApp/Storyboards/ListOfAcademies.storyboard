@@ -77,14 +77,14 @@
                                 <color key="pageIndicatorTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="currentPageIndicatorTintColor" red="0.20486063060000001" green="0.50336106469999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YWO-c9-DtH" customClass="CosmosView" customModule="Cosmos">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YWO-c9-DtH" customClass="CosmosView" customModule="Cosmos">
                                 <rect key="frame" x="127.5" y="278" width="120" height="20"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="Kbi-eF-84a"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="pMX-mq-LyV">
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="pMX-mq-LyV">
                                 <rect key="frame" x="60" y="306" width="255" height="26"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green-location-icon" translatesAutoresizingMaskIntoConstraints="NO" id="vLg-ye-5aX">
@@ -109,7 +109,7 @@
                                     <constraint firstItem="Qkr-Gd-Kv1" firstAttribute="leading" secondItem="vLg-ye-5aX" secondAttribute="trailing" constant="20" id="ErN-f7-xOM"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="nSE-Z6-Y91">
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="nSE-Z6-Y91">
                                 <rect key="frame" x="60" y="340" width="255" height="26"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green-get-direction-icon" translatesAutoresizingMaskIntoConstraints="NO" id="sdN-uf-ky8">
@@ -129,7 +129,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MLd-gx-vEf">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MLd-gx-vEf">
                                 <rect key="frame" x="0.0" y="398.5" width="375" height="268.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -171,7 +171,7 @@
                                                                 <constraint firstAttribute="height" constant="16" id="HwV-rV-Hk7"/>
                                                             </constraints>
                                                         </stackView>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U91-V4-Dih" customClass="CosmosView" customModule="Cosmos">
+                                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U91-V4-Dih" customClass="CosmosView" customModule="Cosmos">
                                                             <rect key="frame" x="113.5" y="48" width="120" height="20"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
@@ -212,7 +212,7 @@
                                     <segue destination="WO2-zw-FJa" kind="show" id="N5r-Vy-dee"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reviews" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZB-R7-ePJ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Reviews" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZB-R7-ePJ">
                                 <rect key="frame" x="16" y="374" width="68" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="68" id="i99-gc-NND"/>
@@ -333,11 +333,9 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="academyImage" destination="cSe-sG-Mbt" id="4JX-R7-ASf"/>
-                                            <outlet property="academyImg" destination="cSe-sG-Mbt" id="whT-If-Fqs"/>
                                             <outlet property="academyName" destination="gTu-Ny-c5e" id="pRH-JP-x5j"/>
                                             <outlet property="academyRateView" destination="21K-VZ-bOG" id="pym-lt-lC4"/>
                                             <outlet property="cardView" destination="uqk-i2-ca3" id="VQM-1O-NAz"/>
-                                            <outlet property="rateView" destination="21K-VZ-bOG" id="Pom-NF-yEg"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

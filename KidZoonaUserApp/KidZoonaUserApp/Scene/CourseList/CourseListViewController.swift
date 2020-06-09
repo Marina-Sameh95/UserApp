@@ -78,19 +78,24 @@ extension CourseListViewController{
         let academiesRef = dbRef?.child("Academies")
         academiesRef?.observe(.childAdded, with: { (snapshot) in
             let coursesSnapshot = snapshot.childSnapshot(forPath: "courses")
+            print("CourseTree\(coursesSnapshot)")
             var coursesKeysArr : [String] = []
             for courseChild in coursesSnapshot.children{
                 let courseSnap = courseChild as! DataSnapshot
                 print("courseNode\(courseSnap)")
                 let courseKey = courseSnap.key
                 coursesKeysArr.append(courseKey)
+                print("AllCourseseys\(coursesKeysArr)") // till here its okay
                 
                 let courseInfoSnap = coursesSnapshot.childSnapshot(forPath: "information")
+                print("courseInfoDictionary\(courseInfoSnap)")
                 for courseInfoChild in courseInfoSnap.children{
                     let snapCourse = courseInfoChild as! DataSnapshot
                     let courseDict = snapCourse.value as! [String : Any]
                     let courseInfoDict = Course(dictionary: courseDict)
                     self.coursesArr.append(courseInfoDict)
+                    print("coursesArray\(self.coursesArr)")
+                    print("courseDictionary\(courseDict)")
                     self.tableView.reloadData()
                 }
             }

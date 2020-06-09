@@ -87,17 +87,29 @@ extension CourseListViewController{
                 coursesKeysArr.append(courseKey)
                 print("AllCourseseys\(coursesKeysArr)") // till here its okay
                 
-                let courseInfoSnap = coursesSnapshot.childSnapshot(forPath: "information")
-                print("courseInfoDictionary\(courseInfoSnap)")
-                for courseInfoChild in courseInfoSnap.children{
-                    let snapCourse = courseInfoChild as! DataSnapshot
-                    let courseDict = snapCourse.value as! [String : Any]
-                    let courseInfoDict = Course(dictionary: courseDict)
+                for courseId in coursesKeysArr{
+                    let courseObj = courseSnap.value as! [String : Any]
+                    var courseInfo =  courseObj["information"] as? [String : Any]
+                    courseInfo?["key"] = courseId
+                    let courseInfoDict = Course(dictionary: courseInfo!)
                     self.coursesArr.append(courseInfoDict)
-                    print("coursesArray\(self.coursesArr)")
-                    print("courseDictionary\(courseDict)")
                     self.tableView.reloadData()
+                    print("coursesArray\(self.coursesArr)")
+                
+
                 }
+                
+//                let courseInfoSnap = coursesSnapshot.childSnapshot(forPath: "information")
+//                print("courseInfoDictionary\(courseInfoSnap)")
+//                for courseInfoChild in courseInfoSnap.children{
+//                    let snapCourse = courseInfoChild as! DataSnapshot
+//                    let courseDict = snapCourse.value as! [String : Any]
+//                    let courseInfoDict = Course(dictionary: courseDict)
+//                    self.coursesArr.append(courseInfoDict)
+//                    print("coursesArray\(self.coursesArr)")
+//                    print("courseDictionary\(courseDict)")
+//                    self.tableView.reloadData()
+//                }
             }
         })
         

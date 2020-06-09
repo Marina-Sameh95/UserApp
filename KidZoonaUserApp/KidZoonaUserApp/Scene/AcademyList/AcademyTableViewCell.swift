@@ -8,6 +8,7 @@
 
 import UIKit
 import Cosmos
+import Kingfisher
 
 class AcademyTableViewCell: UITableViewCell {
     
@@ -16,6 +17,25 @@ class AcademyTableViewCell: UITableViewCell {
     @IBOutlet weak var academyImage: UIImageView!
     @IBOutlet weak var academyRateView: CosmosView!
     @IBOutlet weak var academyName: UILabel!
+    
+    var academyObj : Academy?{
+        didSet{
+            academyName.text = academyObj?.name
+            
+            academyRateView.settings.updateOnTouch = false
+            academyRateView.settings.totalStars = 5
+            academyRateView.settings.fillMode = .precise
+            academyRateView.rating = 2.5 // will updates with overAll rate
+            
+            let url = URL(string: (academyObj?.image)!)
+            if let imgUrl = url as? URL{
+                KingfisherManager.shared.retrieveImage(with: imgUrl as! Resource, options: nil, progressBlock: nil) { (image, error, cache, academyImage) in
+                    self.academyImage.image = image
+                    self.academyImage.kf.indicatorType = .activity
+                }
+            }
+        }
+    }
     
 //    var rate : String?
 //    var cosmosVar : CosmosView!{

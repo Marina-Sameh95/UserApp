@@ -13,4 +13,5 @@ pod 'Cosmos', '~> 20.0'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
   pod 'SDWebImage', '~> 5.0'
+  pod 'Kingfisher', '~> 4.0'
 end

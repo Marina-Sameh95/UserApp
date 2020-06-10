@@ -16,7 +16,7 @@ class AcademyProfileVC: UIViewController {
     var currentAcademy : Academy?
     var dbRef : DatabaseReference?
     
-    var academyCourses = [Course]()
+//    var academyCourses = [Course]()
 
     @IBOutlet weak var academyImage: UIImageView!
     @IBOutlet weak var academyName: UILabel!
@@ -54,8 +54,8 @@ class AcademyProfileVC: UIViewController {
     
     @IBAction func toAcademyCoursesList(_ sender: Any?) {
         
-        getAcademyCourses(academyId: (currentAcademy?.id)!)
-        performSegue(withIdentifier: "toAcademyCourses", sender: sender)
+//        getAcademyCourses(academyId: (currentAcademy?.id)!)
+//        performSegue(withIdentifier: "toAcademyCourses", sender: sender)
 
     }
     
@@ -82,12 +82,16 @@ class AcademyProfileVC: UIViewController {
 //
 //        }
         
-        guard let coursesListVC = segue.destination as? CourseListViewController else {
-            return
+        if segue.identifier == "toAcademyCourses" {
+            if let coursesListVC = segue.destination as? CourseListViewController {
+                coursesListVC.currentAcademy = self.currentAcademy
+            }
         }
-        coursesListVC.coursesArr = academyCourses as! [Course]
         
-     }
+        
+//        coursesListVC.coursesArr = academyCourses as! [Course]
+        
+    }
     
 }
 
@@ -124,30 +128,30 @@ extension AcademyProfileVC{
         }
     }
     
-    private func getAcademyCourses(academyId : String){
-        
-        let academyCoursesRef = dbRef?.child("Academies").child(academyId).child("courses")
-        academyCoursesRef?.queryLimited(toLast: 10).observe(.value, with: { [weak self] snapshot in
-            if let academyCoursesList = snapshot.value as? [String : Any]{
-                print("coursesList\(academyCoursesList)")
-                let coursesIds = academyCoursesList.keys
-                print("coursesKeys\(coursesIds)")
-                
-                for courseId in coursesIds{
-                    let course = academyCoursesList[courseId] as? [String : Any ]
-                    print("SingleCourseData\(String(describing: course))")
-                    var courseInformation = course!["information"] as? [String : Any]
-                    courseInformation!["key"] = courseId
-                    print("SingleCourseInformation\(String(describing: courseInformation))") // till here true 
-                    let courseInfoDict = Course(dictionary: courseInformation!)
-                    self?.academyCourses.append(courseInfoDict)
-                    print("courses Array\(String(describing: self?.academyCourses))")
-                }
-                
-            }
-        })
-        
-    }
+//    private func getAcademyCourses(academyId : String){
+//
+//        let academyCoursesRef = dbRef?.child("Academies").child(academyId).child("courses")
+//        academyCoursesRef?.queryLimited(toLast: 10).observe(.value, with: { [weak self] snapshot in
+//            if let academyCoursesList = snapshot.value as? [String : Any]{
+//                print("coursesList\(academyCoursesList)")
+//                let coursesIds = academyCoursesList.keys
+//                print("coursesKeys\(coursesIds)")
+//
+//                for courseId in coursesIds{
+//                    let course = academyCoursesList[courseId] as? [String : Any ]
+//                    print("SingleCourseData\(String(describing: course))")
+//                    var courseInformation = course!["information"] as? [String : Any]
+//                    courseInformation!["key"] = courseId
+//                    print("SingleCourseInformation\(String(describing: courseInformation))") // till here true
+//                    let courseInfoDict = Course(dictionary: courseInformation!)
+//                    self?.academyCourses.append(courseInfoDict)
+//                    print("courses Array\(String(describing: self?.academyCourses))")
+//                }
+//
+//            }
+//        })
+//
+//    }
     
     
 //    private func pushRating(){

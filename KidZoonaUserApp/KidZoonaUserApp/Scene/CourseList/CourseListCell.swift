@@ -20,11 +20,12 @@ class CourseListCell: UITableViewCell {
     var courseObj : Course?{
         didSet{
             courseNameLabel.text = courseObj?.name
+            coursePriceLabel.text = courseObj?.price
             
             cosmosRateView.settings.updateOnTouch = false
             cosmosRateView.settings.totalStars = 5
             cosmosRateView.settings.fillMode = .precise
-            cosmosRateView.rating = 2.5 // will updates with overAll rate
+            cosmosRateView.rating = 2.5 // will updates with overAll rate from review Branch
             
             let url = URL(string: (courseObj?.image)!)
             if let imgUrl = url as? URL{

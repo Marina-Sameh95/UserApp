@@ -14,6 +14,8 @@ class AcademyListViewController: UIViewController , UITableViewDelegate, UITable
     
     var dbRef : DatabaseReference?
     var academiesInfoArr = [Academy]()
+    
+//    var currentAcademyCourses = [Course]()
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -103,6 +105,7 @@ class AcademyListViewController: UIViewController , UITableViewDelegate, UITable
 //            let controller = (segue.destination as! UINavigationController).topViewController as! AcademyProfileVC
             let controller = segue.destination as! AcademyProfileVC
             controller.currentAcademy = academy as! Academy
+//            controller.academyCourses = currentAcademyCourses as! [Course]
 //            controller.navigationItem.leftItemsSupplementBackButton = true
             }
         }
@@ -125,7 +128,7 @@ extension AcademyListViewController{
             if let academiesList = snapshot.value as? [String : Any]{
                 
                 let academiesIds = academiesList.keys
-                print("AllKey\(academiesIds)")
+//                print("AllKey\(academiesIds)")
                 for id in academiesIds{
                     let academy = academiesList[id] as? [String : Any]
                     
@@ -135,7 +138,20 @@ extension AcademyListViewController{
                     self?.academiesInfoArr.append(academyInfoDict)
                     self?.tableView.reloadData()
                     
-                    //create ref to courses 
+                    //create ref to courses
+                    
+//                    let academyCoursesList = academy?["courses"] as? [String : Any]
+//                    print("coursesNode\(academyCoursesList)")
+//                    let coursesIds = academyCoursesList!.keys
+//                    print("coursesKeys\(coursesIds)")
+//                    for courseId in coursesIds{
+//                        let course = academyCoursesList![courseId] as? [String : Any]
+//                        var courseInformation = course?["information"] as? [String : Any]
+////                        courseInformation?["key"] = coursesIds
+//                        let courseInfoDict = Course(dictionary: courseInformation!)
+//                        self?.currentAcademyCourses.append(courseInfoDict)
+////                        var courseReview = course?["review"] as? [String : Any]
+//                    }
                     
                     print("SingleAcademy\(String(describing: academy))")
                     print("SingleInfoDictonary\(String(describing: information))")

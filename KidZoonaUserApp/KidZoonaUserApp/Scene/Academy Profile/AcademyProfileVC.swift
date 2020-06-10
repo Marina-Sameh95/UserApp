@@ -15,6 +15,8 @@ class AcademyProfileVC: UIViewController {
     
     var currentAcademy : Academy?
     var dbRef : DatabaseReference?
+    
+    var academyCourses = [Course]()
 
     @IBOutlet weak var academyImage: UIImageView!
     @IBOutlet weak var academyName: UILabel!
@@ -50,20 +52,50 @@ class AcademyProfileVC: UIViewController {
 
     }
     
+    @IBAction func toAcademyCoursesList(_ sender: Any?) {
+        
+        getAcademyCourses(academyId: (currentAcademy?.id)!)
+        performSegue(withIdentifier: "toAcademyCourses", sender: sender)
+
+    }
     
-    /*
+    
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      // Get the new view controller using segue.destination.
      // Pass the selected object to the new view controller.
+//        guard let identString = segue.identifier, let identifier = SegueIndentifier(rawValue: identString) else {
+//            super.prepare(for: segue, sender: sender)
+//            return
+//        }
+        
+//        switch identifier {
+//        case .showDetails:
+//
+//            let courses = academyCourses
+//            guard let coursesListVC = segue.destination as? CourseListViewController else {
+//                return
+//            }
+//            coursesListVC.coursesArr = courses as! [Course]
+//
+//        }
+        
+        guard let coursesListVC = segue.destination as? CourseListViewController else {
+            return
+        }
+        coursesListVC.coursesArr = academyCourses as! [Course]
+        
      }
-     */
     
 }
 
 extension AcademyProfileVC{
+    
+//    enum SegueIndentifier : String{
+//        case showDetails = "toAcademyCourses"
+//    }
     
     private func setUpCosmosUIView(){
         ratingView.settings.fillMode = .full
@@ -90,6 +122,31 @@ extension AcademyProfileVC{
                 self.academyImage.kf.indicatorType = .activity
             }
         }
+    }
+    
+    private func getAcademyCourses(academyId : String){
+        
+        let academyCoursesRef = dbRef?.child("Academies").child(academyId).child("courses")
+        academyCoursesRef?.queryLimited(toLast: 10).observe(.value, with: { [weak self] snapshot in
+            if let academyCoursesList = snapshot.value as? [String : Any]{
+                print("coursesList\(academyCoursesList)")
+                let coursesIds = academyCoursesList.keys
+                print("coursesKeys\(coursesIds)")
+                
+                for courseId in coursesIds{
+                    let course = academyCoursesList[courseId] as? [String : Any ]
+                    print("SingleCourseData\(String(describing: course))")
+                    var courseInformation = course!["information"] as? [String : Any]
+                    courseInformation!["key"] = courseId
+                    print("SingleCourseInformation\(String(describing: courseInformation))") // till here true 
+                    let courseInfoDict = Course(dictionary: courseInformation!)
+                    self?.academyCourses.append(courseInfoDict)
+                    print("courses Array\(String(describing: self?.academyCourses))")
+                }
+                
+            }
+        })
+        
     }
     
     

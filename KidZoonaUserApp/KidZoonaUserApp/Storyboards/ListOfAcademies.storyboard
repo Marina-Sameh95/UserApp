@@ -152,7 +152,8 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="Academy Courses"/>
                                 <connections>
-                                    <segue destination="WO2-zw-FJa" kind="show" id="N5r-Vy-dee"/>
+                                    <action selector="toAcademyCoursesList:" destination="bub-9U-svz" eventType="touchUpInside" id="WKs-WJ-WdN"/>
+                                    <segue destination="WO2-zw-FJa" kind="show" identifier="toAcademyCourses" id="N5r-Vy-dee"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reviews" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZB-R7-ePJ">

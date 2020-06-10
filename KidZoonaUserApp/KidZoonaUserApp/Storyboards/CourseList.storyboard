@@ -114,6 +114,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="arF-Ga-TL6" id="Zfc-ql-DyR"/>
+                        <segue destination="lGb-B5-vaM" kind="show" identifier="toCourseDetails" id="st0-dl-asW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vsj-Pl-gpG" userLabel="First Responder" sceneMemberID="firstResponder"/>

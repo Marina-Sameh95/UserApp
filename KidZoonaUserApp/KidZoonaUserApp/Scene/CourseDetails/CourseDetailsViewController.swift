@@ -9,11 +9,14 @@
 import UIKit
 import Cosmos
 import Firebase
+import Kingfisher
 
 class CourseDetailsViewController: UIViewController {
     
-    var dbRoot : DatabaseReference?
+//    var dbRoot : DatabaseReference?
     
+    var currentCourse : Course?
+    var rate : Double?
 
     @IBOutlet weak var reviewTable: UITableView!
     @IBOutlet weak var favBtn: UIButton!
@@ -26,10 +29,10 @@ class CourseDetailsViewController: UIViewController {
     @IBOutlet weak var courseCost: UILabel!
     @IBOutlet weak var courseDescription: UITextView!
     
-    
-    var getCourseName = String()
-    var getCourseImg = UIImage()
-    
+//
+//    var getCourseName = String()
+//    var getCourseImg = UIImage()
+//
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,9 +42,11 @@ class CourseDetailsViewController: UIViewController {
 
         registerBtn.layer.cornerRadius = 15
 
-       registerBtn.layer.shadowOpacity = 0.25
+        registerBtn.layer.shadowOpacity = 0.25
         registerBtn.layer.shadowRadius = 5
         registerBtn.layer.shadowOffset = CGSize(width: 0, height: 10)
+        
+        setUpCosmosUIView()
     }
     
 
@@ -50,10 +55,10 @@ class CourseDetailsViewController: UIViewController {
         if sender.isSelected{
             sender.isSelected = false
             
-            dbRoot = Database.database().reference()
+//            dbRoot = Database.database().reference()
 //            let userId = Auth.auth().currentUser?.uid
-            let usersRoot = dbRoot?.child("User")
-            let wishlistRoot = usersRoot?.child("Wishlist").childByAutoId()
+//            let usersRoot = dbRoot?.child("User")
+//            let wishlistRoot = usersRoot?.child("Wishlist").childByAutoId()
 //            let courseId =
             
 
@@ -81,4 +86,34 @@ extension CourseDetailsViewController : UITableViewDelegate , UITableViewDataSou
 
             return cell
         }
+}
+
+extension CourseDetailsViewController{
+    
+    private func setUpCosmosUIView(){
+        ratingCourse.settings.fillMode = .full
+        ratingCourse.text = "Rate Us"
+        ratingCourse.didTouchCosmos = {rating in
+            
+            let userReviewCell = CourseDetailsCell()
+//            userReviewCell.rate = rating
+            
+            print("rate is\(rating)")
+            
+            self.rate = rating
+        }
+    }
+    
+    private func fetchAcademyData(){
+//        academyLocationLabel.text = currentCourse?.location
+        courseName.text = currentCourse?.name
+        
+        let url = URL(string: (currentCourse?.image)!)
+        if let imgUrl = url as? URL{
+            KingfisherManager.shared.retrieveImage(with: imgUrl as! Resource, options: nil, progressBlock: nil) { (image, error, cache, academyImage) in
+                self.courseImg.image = image
+                self.courseImg.kf.indicatorType = .activity
+            }
+        }
+    }
 }

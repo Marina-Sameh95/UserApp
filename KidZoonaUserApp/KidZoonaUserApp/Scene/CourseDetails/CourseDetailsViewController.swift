@@ -11,14 +11,12 @@ import Cosmos
 import Firebase
 import Kingfisher
 
+
 class CourseDetailsViewController: UIViewController {
     
     var dbRef : DatabaseReference?
-    
     var currentCourse : Course?
     var rate : Double?
-    
-    var wishlistedCourses = [String]()
 
     @IBOutlet weak var reviewTable: UITableView!
     @IBOutlet weak var favBtn: UIButton!
@@ -27,17 +25,18 @@ class CourseDetailsViewController: UIViewController {
     @IBOutlet weak var courseName: UILabel!
     @IBOutlet weak var ratingCourse: CosmosView!
     @IBOutlet weak var courseDate: UILabel!
-    @IBOutlet weak var courseDirection: UIButton!
     @IBOutlet weak var courseCost: UILabel!
     @IBOutlet weak var courseDescription: UITextView!
+    @IBOutlet weak var courseOffer: UILabel!
+    @IBOutlet weak var courseTime: UILabel!
     
-//
-//    var getCourseName = String()
-//    var getCourseImg = UIImage()
-//
+    
+    var myCourse : Course?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        dbRef = Database.database().reference()
 
         reviewTable.delegate = self
         reviewTable.dataSource = self
@@ -50,7 +49,20 @@ class CourseDetailsViewController: UIViewController {
         
         setUpCosmosUIView()
         
-        retriveWishListedCourses()
+        courseName.text =   myCourse?.name
+        courseDate.text = myCourse?.date
+        courseTime.text = myCourse?.time
+        courseDescription.text = myCourse?.description
+        courseOffer.text = myCourse?.offer
+        courseCost.text = myCourse?.price
+        
+        let url = URL(string: ((myCourse?.image)!))
+        if let url = url as? URL{
+            KingfisherManager.shared.retrieveImage(with: url as! Resource, options: nil, progressBlock: nil){ (image , error, cache, coursename) in
+                self.courseImg.image = image
+                self.courseImg.kf.indicatorType = .activity
+            }
+        }
     }
     
 
@@ -59,7 +71,7 @@ class CourseDetailsViewController: UIViewController {
         if sender.isSelected{
             sender.isSelected = false
             
-            addCourseToWishlist()
+//            addCourseToWishlist()
 
             
         } else {
@@ -67,8 +79,24 @@ class CourseDetailsViewController: UIViewController {
         }
     }
     
-   
-}
+    @IBAction func registerCourse(_ sender: Any) {
+        
+        guard let uId = Auth.auth().currentUser?.uid else {
+            print("cannot find userID")
+            return
+        }
+       // let courseValue = ["courseId" : myCourse?.id] as? [String : String]
+        
+        let userRef = dbRef!.child("User").child(uId)
+        let enrollListRef = userRef.child("enrollment")
+        let registerCoursesList = enrollListRef.child("Courses").childByAutoId()
+        let courseId = registerCoursesList.child(myCourse!.id)
+        print("id=\(courseId)")
+    }
+    
+    }
+    
+
 extension CourseDetailsViewController : UITableViewDelegate , UITableViewDataSource {
 
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -110,9 +138,7 @@ extension CourseDetailsViewController{
             return
         }
         
-        wishlistedCourses.append((currentCourse?.id)!)
-        
-        let wishCourseValue = ["courseId" : wishlistedCourses] as? [String : [String]]
+        let wishCourseValue = ["courseId" : currentCourse?.id] as? [String : String]
         
         dbRef = Database.database().reference()
         let userRef = dbRef!.child("User").child(uId)
@@ -128,38 +154,6 @@ extension CourseDetailsViewController{
         
     }
     
-    private func retriveWishListedCourses(){
-        
-        guard let uId = Auth.auth().currentUser?.uid else {
-            print("cannot find userID")
-            return
-        }
-        
-        dbRef = Database.database().reference()
-        let userRef = dbRef!.child("User").child(uId)
-        let wishlistRef = userRef.child("WishList")
-        let wishCoursesList = wishlistRef.child("Courses")
-        wishCoursesList.observeSingleEvent(of: .value, with: { (snapshot) in
-            for child in snapshot.children{
-                let snap = child as! DataSnapshot
-                let courseId = snap.value as! [String]
-                self.wishlistedCourses.append(contentsOf: courseId)
-            }
-        })
-        
-        
-    }
     
-    
-//    private func fetchCourseData(){
-//        courseName.text = currentCourse?.name
-//
-//        let url = URL(string: (currentCourse?.image)!)
-//        if let imgUrl = url as? URL{
-//            KingfisherManager.shared.retrieveImage(with: imgUrl as! Resource, options: nil, progressBlock: nil) { (image, error, cache, academyImage) in
-//                self.courseImg.image = image
-//                self.courseImg.kf.indicatorType = .activity
-//            }
-//        }
-//    }
+
 }

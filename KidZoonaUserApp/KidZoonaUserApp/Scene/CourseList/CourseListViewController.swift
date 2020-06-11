@@ -33,7 +33,9 @@ class CourseListViewController: UIViewController , UITableViewDelegate, UITableV
         
         dbRef = Database.database().reference()
         
-        print("CurrentAcademyObjectFromCoursesViewList\(currentAcademy)")
+//        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
+//        print("CurrentAcademyObjectFromCoursesViewList\(currentAcademy)")
 
     }
     
@@ -90,29 +92,34 @@ class CourseListViewController: UIViewController , UITableViewDelegate, UITableV
 extension CourseListViewController{
 
     private func getAcademyCourses(academyId : String){
+        
+//        UIApplication.shared.isNetworkActivityIndicatorVisible = true
     
         let academyCoursesRef = dbRef?.child("Academies").child(academyId).child("courses")
         academyCoursesRef?.queryLimited(toLast: 10).observe(.value, with: { [weak self] snapshot in
             if let academyCoursesList = snapshot.value as? [String : Any]{
-                print("coursesList\(academyCoursesList)")
+//                print("coursesList\(academyCoursesList)")
                 let coursesIds = academyCoursesList.keys
-                print("coursesKeys\(coursesIds)")
+//                print("coursesKeys\(coursesIds)")
     
                 for courseId in coursesIds{
                     let course = academyCoursesList[courseId] as? [String : Any ]
-                    print("SingleCourseData\(String(describing: course))")
+//                    print("SingleCourseData\(String(describing: course))")
                     var courseInformation = course!["information"] as? [String : Any]
                     courseInformation!["key"] = courseId
-                    print("SingleCourseInformation\(String(describing: courseInformation))") // till here true
+//                    print("SingleCourseInformation\(String(describing: courseInformation))") // till here true
                     let courseInfoDict = Course(dictionary: courseInformation!)
                     self?.coursesArr.append(courseInfoDict)
                     //here we can create review objects to update rating
-                    print("courses Array\(self?.coursesArr)")
+//                    print("courses Array\(self?.coursesArr)")
                     self?.tableView.reloadData()
+//                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 }
     
             }
         })
+        
+//        UIApplication.shared.isNetworkActivityIndicatorVisible = false
     
     }
 

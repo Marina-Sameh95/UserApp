@@ -275,7 +275,7 @@
                                                                                 <constraint firstAttribute="height" constant="20" id="SyO-RD-1ec"/>
                                                                             </constraints>
                                                                         </stackView>
-                                                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uQe-O7-0mV" customClass="CosmosView" customModule="Cosmos">
+                                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uQe-O7-0mV" customClass="CosmosView" customModule="Cosmos">
                                                                             <rect key="frame" x="127" y="36" width="120" height="26"/>
                                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <constraints>
@@ -348,6 +348,9 @@
                                         <state key="normal" title="Register">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="registerCourse:" destination="lGb-B5-vaM" eventType="touchUpInside" id="dMy-kZ-WQk"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="W8E-Q4-Rda">
                                         <rect key="frame" x="24" y="322" width="134.33333333333334" height="24"/>
@@ -401,8 +404,8 @@
                         <outlet property="courseDescription" destination="lNu-Kc-Thr" id="LBm-MZ-qty"/>
                         <outlet property="courseImg" destination="bdv-d7-ZnN" id="ZHi-PB-15h"/>
                         <outlet property="courseName" destination="YGW-Dm-zSl" id="SEV-4D-giM"/>
-                        <outlet property="courseOffer" destination="s4A-oA-AOL" id="c4a-HW-goF"/>
-                        <outlet property="courseTime" destination="Px6-r6-wVo" id="2ut-ZD-1US"/>
+                        <outlet property="courseOffer" destination="s4A-oA-AOL" id="IKy-AD-5Mt"/>
+                        <outlet property="courseTime" destination="Px6-r6-wVo" id="5cZ-mZ-d9C"/>
                         <outlet property="favBtn" destination="ZDV-eb-VxK" id="Q6c-ca-0Ay"/>
                         <outlet property="ratingCourse" destination="CHE-BN-X1f" id="hFp-mq-jcj"/>
                         <outlet property="registerBtn" destination="GGU-96-Cft" id="hTP-aw-bpM"/>

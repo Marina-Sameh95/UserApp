@@ -300,6 +300,11 @@
                                                                 <constraint firstItem="uRI-0o-qhM" firstAttribute="leading" secondItem="xzA-Kz-LjA" secondAttribute="leading" constant="20" id="xJB-gV-3n1"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="reviewDate" destination="Unh-dq-t6w" id="ba3-9g-qaO"/>
+                                                            <outlet property="reviewRate" destination="uQe-O7-0mV" id="it8-3V-9n2"/>
+                                                            <outlet property="userName" destination="avq-vH-H8b" id="F6f-Hq-atl"/>
+                                                        </connections>
                                                     </tableViewCell>
                                                 </prototypes>
                                             </tableView>

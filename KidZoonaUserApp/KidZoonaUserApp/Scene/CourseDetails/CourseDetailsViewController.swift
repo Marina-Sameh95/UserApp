@@ -15,7 +15,9 @@ import Kingfisher
 class CourseDetailsViewController: UIViewController {
     
     var dbRef : DatabaseReference?
-//    var currentCourse : Course?
+    var name: NSArray = []
+    var date: NSArray = []
+    var rateView: CosmosView!
     var rate : Double?
     var wishlistedCourses = [String]()
 
@@ -38,10 +40,15 @@ class CourseDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         dbRef = Database.database().reference()
-        retriveWishListedCourses()
+    //    retriveWishListedCourses()
 
         reviewTable.delegate = self
         reviewTable.dataSource = self
+        
+        
+        name = ["Ali","Kero","Mark","Mahmoud","Marwan","Asmaa","Marwa","Hager"]
+        date = ["1/6/2020", "5/6/2020", "10/6/2020", "12/6/2020","3/6/2020","11/6/2020","14/6/2020","2/6/2020"]
+
 
         registerBtn.layer.cornerRadius = 15
 
@@ -49,7 +56,7 @@ class CourseDetailsViewController: UIViewController {
         registerBtn.layer.shadowRadius = 5
         registerBtn.layer.shadowOffset = CGSize(width: 0, height: 10)
         
-        setUpCosmosUIView()
+    //    setUpCosmosUIView()
         
         courseName.text =   myCourse?.name
         courseDate.text = myCourse?.date
@@ -60,7 +67,7 @@ class CourseDetailsViewController: UIViewController {
         
         let url = URL(string: ((myCourse?.image)!))
         if let url = url as? URL{
-            KingfisherManager.shared.retrieveImage(with: url as! Resource, options: nil, progressBlock: nil){ (image , error, cache, coursename) in
+            KingfisherManager.shared.retrieveImage(with: url as Resource, options: nil, progressBlock: nil){ (image , error, cache, coursename) in
                 self.courseImg.image = image
                 self.courseImg.kf.indicatorType = .activity
             }
@@ -73,7 +80,7 @@ class CourseDetailsViewController: UIViewController {
         if sender.isSelected{
             sender.isSelected = false
             
-            addCourseToWishlist()
+       //     addCourseToWishlist()
 
             
         } else {
@@ -94,6 +101,12 @@ class CourseDetailsViewController: UIViewController {
         let registerCoursesList = enrollListRef.child("Courses").childByAutoId()
         let courseId = registerCoursesList.child(myCourse!.id)
         print("id=\(courseId)")
+        
+        let alert = UIAlertController(title: "Register Course", message: "Save your register code #course10001", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {(action) in }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: {(action) in }))
+
+        self.present(alert, animated: true, completion: nil)
     }
     
     }
@@ -102,7 +115,7 @@ class CourseDetailsViewController: UIViewController {
 extension CourseDetailsViewController : UITableViewDelegate , UITableViewDataSource {
 
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return 8
+            return name.count
         }
 
         func numberOfSections(in tableView: UITableView) -> Int {
@@ -112,78 +125,83 @@ extension CourseDetailsViewController : UITableViewDelegate , UITableViewDataSou
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CourseDetailsCell", for: indexPath) as! CourseDetailsCell
             cell.contentView.backgroundColor = UIColor (white: 0.95, alpha: 1)
+            cell.reviewRate = [indexPath.row] as? CosmosView
+            cell.reviewDate.text = date[indexPath.row] as? String
+            cell.userName.text = name[indexPath.row] as? String
 
             return cell
         }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
 }
 
-extension CourseDetailsViewController{
-    
-    private func setUpCosmosUIView(){
-        ratingCourse.settings.fillMode = .full
-        ratingCourse.text = "Rate Us"
-        ratingCourse.didTouchCosmos = {rating in
-            
-            let userReviewCell = CourseDetailsCell()
-//            userReviewCell.rate = rating
-            
-            print("rate is\(rating)")
-            
-            self.rate = rating
-        }
-    }
-    
-    private func addCourseToWishlist(){
-        
-        guard let uId = Auth.auth().currentUser?.uid else {
-            print("cannot find userID")
-            return
-        }
-        
-        wishlistedCourses.append((myCourse?.id)!)
-        
-        let wishCourseValue = ["courseId" : wishlistedCourses] as? [String : [String]]
-        
-        dbRef = Database.database().reference()
-        let userRef = dbRef!.child("User").child(uId)
-        let wishlistRef = userRef.child("WishList")
-        let wishCoursesList = wishlistRef.child("Courses")
-        wishCoursesList.updateChildValues(wishCourseValue!) { (error, dbRef) in
-            if let err = error{
-                print("Filed to update wishlist node / add wishlist course", err.localizedDescription)
-            }else{
-                print("Suessfully updated wishlist branch")
-            }
-        }
-        
-    }
-    
-    private func retriveWishListedCourses(){
-        
-        guard let uId = Auth.auth().currentUser?.uid else {
-            print("cannot find userID")
-            return
-        }
-        
-        dbRef = Database.database().reference()
-        let userRef = dbRef!.child("User").child(uId)
-        let wishlistRef = userRef.child("WishList")
-        let wishCoursesList = wishlistRef.child("Courses")
-        wishCoursesList.observeSingleEvent(of: .value, with: { (snapshot) in
-            for child in snapshot.children{
-                let snap = child as! DataSnapshot
-                let courseId = snap.value as! [String]
-                self.wishlistedCourses.append(contentsOf: courseId)
-                print("Course Details")
-                print("WishlistedCoursesId\(courseId)")
-            }
-        })
-        
-        print("WishlistedCoursesidArray\(wishlistedCourses)")
-        
-        
-    }
-    
-    
+//extension CourseDetailsViewController{
+//
+//    private func setUpCosmosUIView(){
+//        ratingCourse.settings.fillMode = .full
+//        ratingCourse.text = "Rate Us"
+//        ratingCourse.didTouchCosmos = {rating in
+//
+//            let userReviewCell = CourseDetailsCell()
+//           userReviewCell.rate = rating
+//          print("rate is\(rating)")
+//
+//           self.rate = rating
+//        }
+//    }
+//
+//    private func addCourseToWishlist(){
+//
+//        guard let uId = Auth.auth().currentUser?.uid else {
+//            print("cannot find userID")
+//            return
+//        }
+//
+//        wishlistedCourses.append((myCourse?.id)!)
+//
+//        let wishCourseValue = ["courseId" : wishlistedCourses] as? [String : [String]]
+//
+//        dbRef = Database.database().reference()
+//        let userRef = dbRef!.child("User").child(uId)
+//            //            userReviewCell.rate = rating
+//        let wishCoursesList = wishlistRef.child("Courses")
+//        wishCoursesList.updateChildValues(wishCourseValue!) { (error, dbRef) in
+//            if let err = error{
+//                print("Filed to update wishlist node / add wishlist course", err.localizedDescription)
+//            }else{
+//                print("Suessfully updated wishlist branch")
+//            }
+//        }
+//
+//    }
+//
+//    private func retriveWishListedCourses(){
+//
+//        guard let uId = Auth.auth().currentUser?.uid else {
+//            print("cannot find userID")
+//            return
+//        }
+//
+//        dbRef = Database.database().reference()
+//        let userRef = dbRef!.child("User").child(uId)
+//        let wishlistRef = userRef.child("WishList")
+//        let wishCoursesList = wishlistRef.child("Courses")
+//        wishCoursesList.observeSingleEvent(of: .value, with: { (snapshot) in
+//            for child in snapshot.children{
+//                let snap = child as! DataSnapshot
+//                let courseId = snap.value as! [String]
+//                self.wishlistedCourses.append(contentsOf: courseId)
+//                print("Course Details")
+//                print("WishlistedCoursesId\(courseId)")
+//            }
+//        })
+//
+//        print("WishlistedCoursesidArray\(wishlistedCourses)")
+//
+//
+//    }
+//
 
-}
+
+//}

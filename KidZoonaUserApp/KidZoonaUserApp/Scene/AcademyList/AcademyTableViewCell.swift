@@ -51,7 +51,7 @@ class AcademyTableViewCell: UITableViewCell {
 
 }
 
-//extension AcademyTableViewCell {
+extension AcademyTableViewCell {
 //
 ////    func setUpCosmosUIView(){
 ////        rateView.settings.fillMode = .full
@@ -67,4 +67,13 @@ class AcademyTableViewCell: UITableViewCell {
 //        academyRateView.settings.fillMode = .precise
 //        academyRateView.rating = defultRateValue
 //    }
-//}
+    
+    
+    
+    func calcAvgRatesForAcadmies(rates : [Double] ) -> Double{
+        let sumArr = rates.reduce(0 , +)
+        let avgRates = Double(sumArr) / Double(rates.count)
+        
+        return avgRates
+    }
+}

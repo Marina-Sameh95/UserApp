@@ -62,7 +62,7 @@ class CourseListCell: UITableViewCell {
 
 }
 //
-//extension CourseListCell{
+extension CourseListCell{
 //    
 ////    func setUpCosmosView(defultRateValue : Double){
 ////        cosmosRateView.settings.updateOnTouch = false
@@ -70,5 +70,14 @@ class CourseListCell: UITableViewCell {
 ////        cosmosRateView.settings.fillMode = .precise
 ////        cosmosRateView.rating = defultRateValue
 ////    }
-//}
+    
+    
+    
+    func calcAvgRatesForAcadmies(rates : [Double] ) -> Double{
+        let sumArr = rates.reduce(0 , +)
+        let avgRates = Double(sumArr) / Double(rates.count)
+        
+        return avgRates
+    }
+}
 

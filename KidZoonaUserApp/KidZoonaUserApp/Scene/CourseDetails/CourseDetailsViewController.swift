@@ -13,9 +13,9 @@ import Kingfisher
 
 class CourseDetailsViewController: UIViewController {
     
-//    var dbRoot : DatabaseReference?
+    var dbRef : DatabaseReference?
     
-    var myCourse : Course?
+    var currentCourse : Course?
     var rate : Double?
 
     @IBOutlet weak var reviewTable: UITableView!
@@ -25,14 +25,14 @@ class CourseDetailsViewController: UIViewController {
     @IBOutlet weak var courseName: UILabel!
     @IBOutlet weak var ratingCourse: CosmosView!
     @IBOutlet weak var courseDate: UILabel!
-
-    @IBOutlet weak var courseOffer: UILabel!
-    @IBOutlet weak var courseTime: UILabel!
+    @IBOutlet weak var courseDirection: UIButton!
     @IBOutlet weak var courseCost: UILabel!
     @IBOutlet weak var courseDescription: UITextView!
     
-
-
+//
+//    var getCourseName = String()
+//    var getCourseImg = UIImage()
+//
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -47,22 +47,6 @@ class CourseDetailsViewController: UIViewController {
         registerBtn.layer.shadowOffset = CGSize(width: 0, height: 10)
         
         setUpCosmosUIView()
-        
-        courseName.text =   myCourse?.name
-        courseDate.text = myCourse?.date
-        courseTime.text = myCourse?.time
-        courseDescription.text = myCourse?.description
-        courseOffer.text = myCourse?.offer
-        courseCost.text = myCourse?.price
-        
-        let url = URL(string: (myCourse!.image))
-        if let url = url as? URL{
-            KingfisherManager.shared.retrieveImage(with: url as! Resource, options: nil, progressBlock: nil){ (image , error, cache, coursename) in
-                self.courseImg.image = image
-                self.courseImg.kf.indicatorType = .activity
-            }
-        }
-        
     }
     
 
@@ -71,12 +55,7 @@ class CourseDetailsViewController: UIViewController {
         if sender.isSelected{
             sender.isSelected = false
             
-//            dbRoot = Database.database().reference()
-//            let userId = Auth.auth().currentUser?.uid
-//            let usersRoot = dbRoot?.child("User")
-//            let wishlistRoot = usersRoot?.child("Wishlist").childByAutoId()
-//            let courseId =
-            
+//            addCourseToWishlist()
 
             
         } else {
@@ -120,5 +99,39 @@ extension CourseDetailsViewController{
         }
     }
     
-
+    private func addCourseToWishlist(){
+        
+        guard let uId = Auth.auth().currentUser?.uid else {
+            print("cannot find userID")
+            return
+        }
+        
+        let wishCourseValue = ["courseId" : currentCourse?.id] as? [String : String]
+        
+        dbRef = Database.database().reference()
+        let userRef = dbRef!.child("User").child(uId)
+        let wishlistRef = userRef.child("WishList")
+        let wishCoursesList = wishlistRef.child("Courses")
+        wishCoursesList.updateChildValues(wishCourseValue!) { (error, dbRef) in
+            if let err = error{
+                print("Filed to update wishlist node / add wishlist course", err.localizedDescription)
+            }else{
+                print("Suessfully updated wishlist branch")
+            }
+        }
+        
+    }
+    
+    
+//    private func fetchCourseData(){
+//        courseName.text = currentCourse?.name
+//
+//        let url = URL(string: (currentCourse?.image)!)
+//        if let imgUrl = url as? URL{
+//            KingfisherManager.shared.retrieveImage(with: imgUrl as! Resource, options: nil, progressBlock: nil) { (image, error, cache, academyImage) in
+//                self.courseImg.image = image
+//                self.courseImg.kf.indicatorType = .activity
+//            }
+//        }
+//    }
 }

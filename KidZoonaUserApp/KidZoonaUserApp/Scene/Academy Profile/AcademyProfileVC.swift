@@ -26,7 +26,7 @@ class AcademyProfileVC: UIViewController {
     @IBOutlet weak var getDirectionOfAcademyFromMapBtn: UIButton!
     @IBOutlet weak var academyReviewTableView: UITableView!
     
-    var rate : String?
+    var rate : Double?
     
     let lineImage: UIImageView = {
         let line = UIImageView()
@@ -111,7 +111,7 @@ extension AcademyProfileVC{
             
             print("rate is\(rating)")
             
-            self.rate = "\(rating)"
+            self.rate = rating
         }
     }
     

@@ -63,20 +63,20 @@ class CourseListViewController: UIViewController , UITableViewDelegate, UITableV
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let courseDetails = UIStoryboard(name: "CourseList", bundle: nil).instantiateViewController(withIdentifier: "CourseDetails")
-//
-//        self.navigationController?.pushViewController(courseDetails, animated: true)
         
-        let selectedCourse = coursesArr[indexPath.row]
+        let courseDetails = UIStoryboard(name: "CourseList", bundle: nil)
+        var selectCourse = coursesArr[indexPath.row]
+        performSegue(withIdentifier: "toCourseDetails", sender: selectCourse)
         
-        performSegue(withIdentifier: "toCourseDetails", sender: selectedCourse)
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        
         if (segue.identifier == "toCourseDetails"){
             let courseDetailsVC = segue.destination as! CourseDetailsViewController
-            courseDetailsVC.currentCourse = sender as! Course
+            courseDetailsVC.myCourse = sender as? Course
         }
         
     }
@@ -93,6 +93,7 @@ extension CourseListViewController{
     
         let academyCoursesRef = dbRef?.child("Academies").child(academyId).child("courses")
         academyCoursesRef?.queryLimited(toLast: 10).observe(.value, with: { [weak self] snapshot in
+            self?.coursesArr = []
             if let academyCoursesList = snapshot.value as? [String : Any]{
                 print("coursesList\(academyCoursesList)")
                 let coursesIds = academyCoursesList.keys
@@ -117,52 +118,6 @@ extension CourseListViewController{
     }
 
     
-//    func getCoursesDtata(){
-//
-//        let academiesRef = dbRef?.child("Academies")
-//        academiesRef?.observe(.childAdded, with: { (snapshot) in
-//            let coursesSnapshot = snapshot.childSnapshot(forPath: "courses")
-//            print("CourseTree\(coursesSnapshot)")
-//            var coursesKeysArr : [String] = []
-//            for courseChild in coursesSnapshot.children{
-//                let courseSnap = courseChild as! DataSnapshot
-//                print("courseNode\(courseSnap)")
-//                let courseKey = courseSnap.key
-//                coursesKeysArr.append(courseKey)
-//                print("AllCourseseys\(coursesKeysArr)") // till here its okay
-//
-//                for courseId in coursesKeysArr{
-//                    let courseObj = courseSnap.value as! [String : Any]
-//                    var courseInfo =  courseObj["information"] as? [String : Any]
-//                    courseInfo?["key"] = courseId
-//                    let courseInfoDict = Course(dictionary: courseInfo!)
-//                    self.coursesArr.append(courseInfoDict)
-//                    self.tableView.reloadData()
-//                    print("coursesArray\(self.coursesArr)")
-//
-//
-//                }
-//
-////                let courseInfoSnap = coursesSnapshot.childSnapshot(forPath: "information")
-////                print("courseInfoDictionary\(courseInfoSnap)")
-////                for courseInfoChild in courseInfoSnap.children{
-////                    let snapCourse = courseInfoChild as! DataSnapshot
-////                    let courseDict = snapCourse.value as! [String : Any]
-////                    let courseInfoDict = Course(dictionary: courseDict)
-////                    self.coursesArr.append(courseInfoDict)
-////                    print("coursesArray\(self.coursesArr)")
-////                    print("courseDictionary\(courseDict)")
-////                    self.tableView.reloadData()
-////                }
-//            }
-//        })
-//
-//    }
-    
-//    func getCoursesRates() {
-//
-//        //from courses review branch
-//
-//    }
+
 
 }

@@ -104,6 +104,8 @@ extension WishListVC{
             print("cannot find userID")
             return
         }
+        
+        print("Wishlist")
 
         let userRef = dbRef!.child("User").child(uId)
         let wishlistRef = userRef.child("WishList")
@@ -112,22 +114,37 @@ extension WishListVC{
             for child in snapshot.children{
                 let snap = child as! DataSnapshot
                 let courseId = snap.value as! [String]
-                self.wishlistedCoursesIds.append(contentsOf: courseId)
+                print("WishlistedCoursesIdVC\(courseId)")
+//                self.wishlistedCoursesIds.append(contentsOf: courseId)
+//                self.wishlistedCoursesIds = courseId
+                self.wishlistedCoursesIds += courseId
             }
         })
         
+        print("WishlistedCoursesIdArrayVC\(wishlistedCoursesIds)")
+        
+        getCoursesData()
+        
+    }
+    
+    private func getCoursesData(){
         for id in wishlistedCoursesIds{
             dbRef?.child("Academies").observe(.value, with: { (snapshot) in
                 let courseSnap = snapshot.childSnapshot(forPath: "Courses").childSnapshot(forPath: id) as! DataSnapshot
-                
+                print("courseSnapshot\(courseSnap)")
+
                 var courseDict = courseSnap.value as! [String : Any]
                 courseDict["key"] = id
                 let courseInfoDict = Course(dictionary: courseDict)
+                print("courseInfoDictVC\(courseInfoDict)")
                 self.wishlistedCoursesArr.append(courseInfoDict)
                 self.tableView.reloadData()
-                
             })
+
+            print("WishlistedCoursesArrayVC\(wishlistedCoursesArr)")
         }
+        
+        
     }
     
 }

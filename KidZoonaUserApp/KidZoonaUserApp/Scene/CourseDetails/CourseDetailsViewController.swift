@@ -88,6 +88,13 @@ class CourseDetailsViewController: UIViewController {
         }
     }
     
+    func randomString(length: Int) -> String {
+        let letters = "0123456789"
+        return String((0...length-1).map{ _ in letters.randomElement()!})
+    }
+    
+    
+    
     @IBAction func registerCourse(_ sender: Any) {
         
         guard let uId = Auth.auth().currentUser?.uid else {
@@ -102,7 +109,7 @@ class CourseDetailsViewController: UIViewController {
         let courseId = registerCoursesList.child(myCourse!.id)
         print("id=\(courseId)")
         
-        let alert = UIAlertController(title: "Register Course", message: "Save your register code #course10001", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Register Course", message: "Save your register code #course\(randomString(length: 5))", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {(action) in }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: {(action) in }))
 

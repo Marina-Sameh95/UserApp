@@ -17,6 +17,8 @@ class CourseDetailsViewController: UIViewController {
     
     var currentCourse : Course?
     var rate : Double?
+    
+    var wishlistedCourses = [String]()
 
     @IBOutlet weak var reviewTable: UITableView!
     @IBOutlet weak var favBtn: UIButton!
@@ -47,6 +49,8 @@ class CourseDetailsViewController: UIViewController {
         registerBtn.layer.shadowOffset = CGSize(width: 0, height: 10)
         
         setUpCosmosUIView()
+        
+        retriveWishListedCourses()
     }
     
 
@@ -55,7 +59,7 @@ class CourseDetailsViewController: UIViewController {
         if sender.isSelected{
             sender.isSelected = false
             
-//            addCourseToWishlist()
+            addCourseToWishlist()
 
             
         } else {
@@ -106,7 +110,9 @@ extension CourseDetailsViewController{
             return
         }
         
-        let wishCourseValue = ["courseId" : currentCourse?.id] as? [String : String]
+        wishlistedCourses.append((currentCourse?.id)!)
+        
+        let wishCourseValue = ["courseId" : wishlistedCourses] as? [String : [String]]
         
         dbRef = Database.database().reference()
         let userRef = dbRef!.child("User").child(uId)
@@ -119,6 +125,28 @@ extension CourseDetailsViewController{
                 print("Suessfully updated wishlist branch")
             }
         }
+        
+    }
+    
+    private func retriveWishListedCourses(){
+        
+        guard let uId = Auth.auth().currentUser?.uid else {
+            print("cannot find userID")
+            return
+        }
+        
+        dbRef = Database.database().reference()
+        let userRef = dbRef!.child("User").child(uId)
+        let wishlistRef = userRef.child("WishList")
+        let wishCoursesList = wishlistRef.child("Courses")
+        wishCoursesList.observeSingleEvent(of: .value, with: { (snapshot) in
+            for child in snapshot.children{
+                let snap = child as! DataSnapshot
+                let courseId = snap.value as! [String]
+                self.wishlistedCourses.append(contentsOf: courseId)
+            }
+        })
+        
         
     }
     

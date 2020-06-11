@@ -14,6 +14,9 @@ class AcademyListViewController: UIViewController , UITableViewDelegate, UITable
     
     var dbRef : DatabaseReference?
     var academiesInfoArr = [Academy]()
+//    override var preferredStatusBarStyle: UIStatusBarStyle{
+//        return .lightContent
+//    }
     
 //    var currentAcademyCourses = [Course]()
 
@@ -41,7 +44,9 @@ class AcademyListViewController: UIViewController , UITableViewDelegate, UITable
     
     override func viewWillAppear(_ animated: Bool) {
         self.parent?.title = "Academies"
+//        navigationController?.navigationBar.barStyle = .black
         
+//        UIApplication.shared.isNetworkActivityIndicatorVisible = true
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -122,6 +127,8 @@ extension AcademyListViewController{
     
     fileprivate func getAcademiesData(){
         
+//        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
         let academiesRef = dbRef?.child("Academies")
         academiesRef?.queryLimited(toLast: 10).observe(.value, with: { [weak self] snapshot in
             
@@ -160,6 +167,7 @@ extension AcademyListViewController{
             }
             
         })
+//        UIApplication.shared.isNetworkActivityIndicatorVisible = false
 //        academiesRef?.queryOrderedByKey().observe(.childAdded, with: { (snapshot) in
 //            let infoSnap = snapshot.childSnapshot(forPath: "Information")
 //            
@@ -198,14 +206,7 @@ extension AcademyListViewController{
 ////            let academyRate = infoDict["rate"] as! String
 //        })
     }
-    
-    
-//    func calcAvgRatesForAcadmies(rates : [Double] ) -> Double{
-//        let sumArr = rates.reduce(0 , +)
-//        let avgRates = Double(sumArr) / Double(rates.count)
-//
-//        return avgRates
-//    }
+
     
 //    private func upadateAcadmyRateWithDefultValue(){
 //        let rateDictValue = ["rate" : 2.5]

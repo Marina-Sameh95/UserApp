@@ -13,7 +13,7 @@ import Kingfisher
 
 class CourseDetailsViewController: UIViewController {
     
-//    var dbRoot : DatabaseReference?
+    var dbRef : DatabaseReference?
     
     var currentCourse : Course?
     var rate : Double?
@@ -55,12 +55,7 @@ class CourseDetailsViewController: UIViewController {
         if sender.isSelected{
             sender.isSelected = false
             
-//            dbRoot = Database.database().reference()
-//            let userId = Auth.auth().currentUser?.uid
-//            let usersRoot = dbRoot?.child("User")
-//            let wishlistRoot = usersRoot?.child("Wishlist").childByAutoId()
-//            let courseId =
-            
+//            addCourseToWishlist()
 
             
         } else {
@@ -104,16 +99,39 @@ extension CourseDetailsViewController{
         }
     }
     
-    private func fetchAcademyData(){
-//        academyLocationLabel.text = currentCourse?.location
-        courseName.text = currentCourse?.name
+    private func addCourseToWishlist(){
         
-        let url = URL(string: (currentCourse?.image)!)
-        if let imgUrl = url as? URL{
-            KingfisherManager.shared.retrieveImage(with: imgUrl as! Resource, options: nil, progressBlock: nil) { (image, error, cache, academyImage) in
-                self.courseImg.image = image
-                self.courseImg.kf.indicatorType = .activity
+        guard let uId = Auth.auth().currentUser?.uid else {
+            print("cannot find userID")
+            return
+        }
+        
+        let wishCourseValue = ["courseId" : currentCourse?.id] as? [String : String]
+        
+        dbRef = Database.database().reference()
+        let userRef = dbRef!.child("User").child(uId)
+        let wishlistRef = userRef.child("WishList")
+        let wishCoursesList = wishlistRef.child("Courses")
+        wishCoursesList.updateChildValues(wishCourseValue!) { (error, dbRef) in
+            if let err = error{
+                print("Filed to update wishlist node / add wishlist course", err.localizedDescription)
+            }else{
+                print("Suessfully updated wishlist branch")
             }
         }
+        
     }
+    
+    
+//    private func fetchCourseData(){
+//        courseName.text = currentCourse?.name
+//
+//        let url = URL(string: (currentCourse?.image)!)
+//        if let imgUrl = url as? URL{
+//            KingfisherManager.shared.retrieveImage(with: imgUrl as! Resource, options: nil, progressBlock: nil) { (image, error, cache, academyImage) in
+//                self.courseImg.image = image
+//                self.courseImg.kf.indicatorType = .activity
+//            }
+//        }
+//    }
 }

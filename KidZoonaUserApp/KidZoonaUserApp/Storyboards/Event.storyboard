@@ -119,16 +119,6 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registered People: 5/15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wv7-Yh-ddr">
-                                                <rect key="frame" x="24" y="450" width="270" height="26"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="270" id="6Ap-jm-AAh"/>
-                                                    <constraint firstAttribute="height" constant="26" id="tQF-7z-HyQ"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available Places: 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5M-Hl-D5v">
                                                 <rect key="frame" x="24" y="484" width="149" height="26"/>
                                                 <constraints>
@@ -177,6 +167,16 @@
                                                     <constraint firstAttribute="height" constant="232" id="46T-p2-jRh"/>
                                                 </constraints>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registered People: 5/15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wv7-Yh-ddr">
+                                                <rect key="frame" x="24" y="450" width="270" height="26"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="270" id="6Ap-jm-AAh"/>
+                                                    <constraint firstAttribute="height" constant="26" id="tQF-7z-HyQ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -222,6 +222,9 @@
                                         <state key="normal" title="Register">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="registerBtn:" destination="BuC-pm-gf4" eventType="touchUpInside" id="NOB-5g-cj5"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

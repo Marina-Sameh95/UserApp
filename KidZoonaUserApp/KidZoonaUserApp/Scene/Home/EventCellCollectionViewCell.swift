@@ -19,7 +19,7 @@ class EventCellCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        eventImageInEventCollection.layer.cornerRadius = 35
+        eventImageInEventCollection.layer.cornerRadius = 15
     }
     
     

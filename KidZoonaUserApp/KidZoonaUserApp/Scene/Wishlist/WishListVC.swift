@@ -64,7 +64,7 @@ class WishListVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        return name.count
-        return wishlistedCoursesIds.count //will increased by events count
+        return wishlistedCoursesArr.count //will increased by events count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -109,40 +109,78 @@ extension WishListVC{
 
         let userRef = dbRef!.child("User").child(uId)
         let wishlistRef = userRef.child("WishList")
-        let wishCoursesList = wishlistRef.child("Courses")
+        let wishCoursesList = wishlistRef.child("Courses").child("courseId")
         wishCoursesList.observeSingleEvent(of: .value, with: { (snapshot) in
             for child in snapshot.children{
+                print("childSnap\(child)")
                 let snap = child as! DataSnapshot
-                let courseId = snap.value as! [String]
+                
+                let courseId = snap.value as! String
                 print("WishlistedCoursesIdVC\(courseId)")
-//                self.wishlistedCoursesIds.append(contentsOf: courseId)
+                self.wishlistedCoursesIds.append(courseId)
 //                self.wishlistedCoursesIds = courseId
-                self.wishlistedCoursesIds += courseId
+//                self.wishlistedCoursesIds += courseId
+                print("WishlistedCoursesIdArrayVC\(self.wishlistedCoursesIds)")
+                
             }
+            self.getCoursesData(coursesIds: self.wishlistedCoursesIds)
         })
+
         
-        print("WishlistedCoursesIdArrayVC\(wishlistedCoursesIds)")
-        
-        getCoursesData()
         
     }
     
-    private func getCoursesData(){
-        for id in wishlistedCoursesIds{
-            dbRef?.child("Academies").observe(.value, with: { (snapshot) in
-                let courseSnap = snapshot.childSnapshot(forPath: "Courses").childSnapshot(forPath: id) as! DataSnapshot
-                print("courseSnapshot\(courseSnap)")
+    private func getCoursesData(coursesIds : [String]){
+        
+        let academiesRef = dbRef?.child("Academies")
+        academiesRef?.queryLimited(toLast: 10).observe(.value, with: { [weak self] snapshot in
+            
+            if let academiesList = snapshot.value as? [String : Any]{
+                
+                let academiesIds = academiesList.keys
+                for id in academiesIds{
+                    let academy = academiesList[id] as? [String : Any]
+                    
+                    let academyCoursesList = academy?["courses"] as? [String : Any]
+                    print("coursesNode\(academyCoursesList)")
 
-                var courseDict = courseSnap.value as! [String : Any]
-                courseDict["key"] = id
-                let courseInfoDict = Course(dictionary: courseDict)
-                print("courseInfoDictVC\(courseInfoDict)")
-                self.wishlistedCoursesArr.append(courseInfoDict)
-                self.tableView.reloadData()
-            })
-
-            print("WishlistedCoursesArrayVC\(wishlistedCoursesArr)")
-        }
+                    for courseId in coursesIds{
+                        
+                        let course = academyCoursesList![courseId] as? [String : Any ]
+                        //                    print("SingleCourseData\(String(describing: course))")
+                        var courseInformation = course!["information"] as? [String : Any]
+                        courseInformation!["key"] = courseId
+                        //                    print("SingleCourseInformation\(String(describing: courseInformation))") // till here true
+                        let courseInfoDict = Course(dictionary: courseInformation!)
+                        
+                        self?.wishlistedCoursesArr.append(courseInfoDict)
+                    //  var courseReview = course?["review"] as? [String : Any]
+                        }
+                    print("wishlistVCArray\(self?.wishlistedCoursesArr)")
+                    
+                }
+                self!.tableView.reloadData()
+            }
+            
+        })
+        
+//        for id in wishlistedCoursesIds{
+//            dbRef?.child("Academies").queryOrderedByKey().observe(.value, with: { (snapshot) in
+//                let courseSnap = snapshot.childSnapshot(forPath: "courses").childSnapshot(forPath: id).childSnapshot(forPath: "information") as! DataSnapshot
+//                //child.id
+//                print("courseSnapshot\(courseSnap)")
+//
+//                var courseDict = courseSnap.value as! [String : Any]
+//                courseDict["key"] = id
+//                let courseInfoDict = Course(dictionary: courseDict)
+//                print("courseInfoDictVC\(courseInfoDict)")
+//                self.wishlistedCoursesArr.append(courseInfoDict)
+//
+//            })
+//
+//            print("WishlistedCoursesArrayVC\(wishlistedCoursesArr)")
+//        }
+//        self.tableView.reloadData()
         
         
     }

@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import Cosmos
 
 class CourseDetailsCell: UITableViewCell {
 
-
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var reviewRate: CosmosView!
+    @IBOutlet weak var reviewDate: UILabel!
 }

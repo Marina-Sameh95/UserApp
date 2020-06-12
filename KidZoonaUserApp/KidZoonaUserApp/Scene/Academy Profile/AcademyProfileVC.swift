@@ -16,6 +16,9 @@ class AcademyProfileVC: UIViewController {
     var currentAcademy : Academy?
     var dbRef : DatabaseReference?
     
+    var name: NSArray = []
+    var date: NSArray = []
+    var rateView: CosmosView!
 //    var academyCourses = [Course]()
 
     @IBOutlet weak var academyImage: UIImageView!
@@ -49,6 +52,9 @@ class AcademyProfileVC: UIViewController {
         fetchAcademyData()
         
         setUpCosmosUIView()
+        
+        name = ["Ali","Kero","Mark","Mahmoud"]
+        date = ["1/6/2020", "5/6/2020", "10/6/2020", "12/6/2020"]
 
     }
     
@@ -190,11 +196,14 @@ extension AcademyProfileVC{
 
 extension AcademyProfileVC : UITableViewDelegate , UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return name.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath) as! UserReviewCell
+        cell.reviewDate.text = date[indexPath.row] as? String
+        cell.userNameLabel.text = name[indexPath.row] as? String
+        cell.rateView = [indexPath.row] as? CosmosView
         return cell
     }
     

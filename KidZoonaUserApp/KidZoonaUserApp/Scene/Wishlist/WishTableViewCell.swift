@@ -9,16 +9,37 @@
 import UIKit
 import Cosmos
 import Firebase
+import Kingfisher
 
 class WishTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var cardDesign: DesignCourseList!
+//    @IBOutlet weak var cardDesign: DesignCourseList!
     @IBOutlet weak var courseDate: UILabel!
     @IBOutlet weak var courseImg: UIImageView!
-    @IBOutlet weak var academyName: UILabel!
-    @IBOutlet weak var favBtn: RoundedBtn!
+    @IBOutlet weak var academyName: UILabel! // cannot get it
+//    @IBOutlet weak var favBtn: RoundedBtn!
     @IBOutlet weak var courseName: UILabel!
     @IBOutlet weak var rateView: CosmosView!
+    
+    var courseObj : Course?{
+        didSet{
+            courseName.text = courseObj?.name
+            courseDate.text = courseObj?.date
+            
+            rateView.settings.updateOnTouch = false
+            rateView.settings.totalStars = 5
+            rateView.settings.fillMode = .precise
+            rateView.rating = 2.5 // will updates with overAll rate from review Branch
+            
+            let url = URL(string: (courseObj?.image)!)
+            if let imgUrl = url as? URL{
+                KingfisherManager.shared.retrieveImage(with: imgUrl as! Resource, options: nil, progressBlock: nil) { (image, error, cache, courseImage) in
+                    self.courseImg.image = image
+                    self.courseImg.kf.indicatorType = .activity
+                }
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,9 +55,6 @@ class WishTableViewCell: UITableViewCell {
 }
 
 extension WishTableViewCell{
-    
-    func updateComsmos(){
-        
-    }
+
     
 }

@@ -14,6 +14,11 @@ class AcademyListViewController: UIViewController , UITableViewDelegate, UITable
     
     var dbRef : DatabaseReference?
     var academiesInfoArr = [Academy]()
+//    override var preferredStatusBarStyle: UIStatusBarStyle{
+//        return .lightContent
+//    }
+    
+//    var currentAcademyCourses = [Course]()
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -39,7 +44,9 @@ class AcademyListViewController: UIViewController , UITableViewDelegate, UITable
     
     override func viewWillAppear(_ animated: Bool) {
         self.parent?.title = "Academies"
+//        navigationController?.navigationBar.barStyle = .black
         
+//        UIApplication.shared.isNetworkActivityIndicatorVisible = true
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -59,11 +66,13 @@ class AcademyListViewController: UIViewController , UITableViewDelegate, UITable
 //        cell.academyName.text! = academyName[indexPath.row] as! String
 //        cell.cardDesign.viewWithTag(1) = cardView[indexPath.row] as!
         
-        cell.academyName.text! = academiesInfoArr[indexPath.row].name
+//        cell.academyName.text! = academiesInfoArr[indexPath.row].name
         // TODO
 //        cell.academyImage.image = academiesInfoArr[indexPath.row].image
         //rating
 //        cell.academyRateView.rating = Double(academiesInfoArr[indexPath.row].rate)!
+        
+        cell.academyObj = academiesInfoArr[indexPath.row]
         
         return cell
     }
@@ -73,20 +82,52 @@ class AcademyListViewController: UIViewController , UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      let academyDetails = UIStoryboard(name: "ListOfAcademies", bundle: nil).instantiateViewController(withIdentifier: "AcademyProfile")
+//      let academyDetails = UIStoryboard(name: "ListOfAcademies", bundle: nil).instantiateViewController(withIdentifier: "AcademyProfile")
+//
+//        let academyProfileVC = AcademyProfileVC()
+//        academyProfileVC.currentAcademy = academiesInfoArr[indexPath.row]
+//
+//        self.navigationController?.pushViewController(academyDetails, animated: true)
         
-        let academyProfileVC = AcademyProfileVC()
-        academyProfileVC.currentAcademy = academiesInfoArr[indexPath.row]
+//        let academyDetails = UIStoryboard(name: "AcademyProfile", bundle: nil)
         
-        self.navigationController?.pushViewController(academyDetails, animated: true)
+        let selectedAcademy = academiesInfoArr[indexPath.row]
+        
+        performSegue(withIdentifier: "toAcademyProfile", sender: selectedAcademy)
 
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let identString = segue.identifier, let identifier = SegueIndentifier(rawValue: identString) else {
+            super.prepare(for: segue, sender: sender)
+            return
+        }
+        
+        switch identifier {
+        case .showDetails: if let indexPath = tableView.indexPathForSelectedRow{
+            let academy = academiesInfoArr[indexPath.row]
+//            let controller = (segue.destination as! UINavigationController).topViewController as! AcademyProfileVC
+            let controller = segue.destination as! AcademyProfileVC
+            controller.currentAcademy = academy as! Academy
+//            controller.academyCourses = currentAcademyCourses as! [Course]
+//            controller.navigationItem.leftItemsSupplementBackButton = true
+            }
+        }
+        
     }
 
 }
 
 extension AcademyListViewController{
     
+    enum SegueIndentifier : String{
+        case showDetails = "toAcademyProfile"
+    }
+    
     fileprivate func getAcademiesData(){
+        
+//        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
         let academiesRef = dbRef?.child("Academies")
         academiesRef?.queryLimited(toLast: 10).observe(.value, with: { [weak self] snapshot in
@@ -94,7 +135,7 @@ extension AcademyListViewController{
             if let academiesList = snapshot.value as? [String : Any]{
                 
                 let academiesIds = academiesList.keys
-                print("AllKey\(academiesIds)")
+//                print("AllKey\(academiesIds)")
                 for id in academiesIds{
                     let academy = academiesList[id] as? [String : Any]
                     
@@ -104,6 +145,21 @@ extension AcademyListViewController{
                     self?.academiesInfoArr.append(academyInfoDict)
                     self?.tableView.reloadData()
                     
+                    //create ref to courses
+                    
+//                    let academyCoursesList = academy?["courses"] as? [String : Any]
+//                    print("coursesNode\(academyCoursesList)")
+//                    let coursesIds = academyCoursesList!.keys
+//                    print("coursesKeys\(coursesIds)")
+//                    for courseId in coursesIds{
+//                        let course = academyCoursesList![courseId] as? [String : Any]
+//                        var courseInformation = course?["information"] as? [String : Any]
+////                        courseInformation?["key"] = coursesIds
+//                        let courseInfoDict = Course(dictionary: courseInformation!)
+//                        self?.currentAcademyCourses.append(courseInfoDict)
+////                        var courseReview = course?["review"] as? [String : Any]
+//                    }
+                    
                     print("SingleAcademy\(String(describing: academy))")
                     print("SingleInfoDictonary\(String(describing: information))")
                     
@@ -111,6 +167,7 @@ extension AcademyListViewController{
             }
             
         })
+//        UIApplication.shared.isNetworkActivityIndicatorVisible = false
 //        academiesRef?.queryOrderedByKey().observe(.childAdded, with: { (snapshot) in
 //            let infoSnap = snapshot.childSnapshot(forPath: "Information")
 //            
@@ -149,14 +206,7 @@ extension AcademyListViewController{
 ////            let academyRate = infoDict["rate"] as! String
 //        })
     }
-    
-    
-//    func calcAvgRatesForAcadmies(rates : [Double] ) -> Double{
-//        let sumArr = rates.reduce(0 , +)
-//        let avgRates = Double(sumArr) / Double(rates.count)
-//
-//        return avgRates
-//    }
+
     
 //    private func upadateAcadmyRateWithDefultValue(){
 //        let rateDictValue = ["rate" : 2.5]

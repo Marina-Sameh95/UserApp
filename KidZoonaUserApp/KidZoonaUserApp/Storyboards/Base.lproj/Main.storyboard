@@ -182,7 +182,7 @@
                                                                         <constraint firstAttribute="width" constant="37" id="ETG-mR-hw4"/>
                                                                         <constraint firstAttribute="height" constant="37" id="T2a-vY-Un9"/>
                                                                     </constraints>
-                                                                    <state key="normal" image="red-fill-heart"/>
+                                                                    <state key="normal" image="red-empty-heart"/>
                                                                     <connections>
                                                                         <action selector="favoriteBtnInOffersCollAction:" destination="nNl-sz-xzJ" eventType="touchUpInside" id="PPs-yi-yBd"/>
                                                                     </connections>
@@ -329,7 +329,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="95K-eW-Xly">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.1450980392" green="0.50196078430000002" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -398,7 +402,7 @@
         <image name="academies" width="24" height="24"/>
         <image name="course6" width="180" height="120.48000335693359"/>
         <image name="event1" width="800" height="502"/>
-        <image name="red-fill-heart" width="37" height="37"/>
+        <image name="red-empty-heart" width="37" height="37"/>
         <image name="setting tab bar" width="24" height="24"/>
         <image name="wish list tab bar" width="24" height="24"/>
     </resources>

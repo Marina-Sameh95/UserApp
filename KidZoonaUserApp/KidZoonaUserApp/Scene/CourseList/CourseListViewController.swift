@@ -12,6 +12,7 @@ import Firebase
 class CourseListViewController: UIViewController , UITableViewDelegate, UITableViewDataSource{
     
     var dbRef : DatabaseReference?
+    var currentAcademy : Academy?
     var coursesArr = [Course]()
     
     @IBOutlet weak var tableView: UITableView!
@@ -32,12 +33,16 @@ class CourseListViewController: UIViewController , UITableViewDelegate, UITableV
         
         dbRef = Database.database().reference()
         
-        getCoursesDtata()
+//        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
+//        print("CurrentAcademyObjectFromCoursesViewList\(currentAcademy)")
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.parent?.title = "Courses"
         
+        getAcademyCourses(academyId: (currentAcademy?.id)!)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -54,57 +59,72 @@ class CourseListViewController: UIViewController , UITableViewDelegate, UITableV
         let cell = tableView.dequeueReusableCell(withIdentifier: "CourseCell", for: indexPath) as! CourseListCell
         cell.contentView.backgroundColor = UIColor (white: 0.95, alpha: 1)
         
-        cell.courseNameLabel.text! = coursesArr[indexPath.row].name
-        
+        cell.courseObj = coursesArr[indexPath.row]
         
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let courseDetails = UIStoryboard(name: "CourseList", bundle: nil).instantiateViewController(withIdentifier: "CourseDetails")
         
-        self.navigationController?.pushViewController(courseDetails, animated: true)
+        let courseDetails = UIStoryboard(name: "CourseList", bundle: nil)
+        var selectCourse = coursesArr[indexPath.row]
+        performSegue(withIdentifier: "toCourseDetails", sender: selectCourse)
+        
+
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+        if (segue.identifier == "toCourseDetails"){
+            let courseDetailsVC = segue.destination as! CourseDetailsViewController
+            courseDetailsVC.myCourse = sender as? Course
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 144
     }
+    
 }
 
 extension CourseListViewController{
-    
-    func getCoursesDtata(){
+
+    private func getAcademyCourses(academyId : String){
         
-        let academiesRef = dbRef?.child("Academies")
-        academiesRef?.observe(.childAdded, with: { (snapshot) in
-            let coursesSnapshot = snapshot.childSnapshot(forPath: "courses")
-            print("CourseTree\(coursesSnapshot)")
-            var coursesKeysArr : [String] = []
-            for courseChild in coursesSnapshot.children{
-                let courseSnap = courseChild as! DataSnapshot
-                print("courseNode\(courseSnap)")
-                let courseKey = courseSnap.key
-                coursesKeysArr.append(courseKey)
-                print("AllCourseseys\(coursesKeysArr)") // till here its okay
-                
-                let courseInfoSnap = coursesSnapshot.childSnapshot(forPath: "information")
-                print("courseInfoDictionary\(courseInfoSnap)")
-                for courseInfoChild in courseInfoSnap.children{
-                    let snapCourse = courseInfoChild as! DataSnapshot
-                    let courseDict = snapCourse.value as! [String : Any]
-                    let courseInfoDict = Course(dictionary: courseDict)
-                    self.coursesArr.append(courseInfoDict)
-                    print("coursesArray\(self.coursesArr)")
-                    print("courseDictionary\(courseDict)")
-                    self.tableView.reloadData()
+//        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    
+        let academyCoursesRef = dbRef?.child("Academies").child(academyId).child("courses")
+        academyCoursesRef?.queryLimited(toLast: 10).observe(.value, with: { [weak self] snapshot in
+            self?.coursesArr = []
+            if let academyCoursesList = snapshot.value as? [String : Any]{
+//                print("coursesList\(academyCoursesList)")
+                let coursesIds = academyCoursesList.keys
+//                print("coursesKeys\(coursesIds)")
+    
+                for courseId in coursesIds{
+                    let course = academyCoursesList[courseId] as? [String : Any ]
+//                    print("SingleCourseData\(String(describing: course))")
+                    var courseInformation = course!["information"] as? [String : Any]
+                    courseInformation!["key"] = courseId
+//                    print("SingleCourseInformation\(String(describing: courseInformation))") // till here true
+                    let courseInfoDict = Course(dictionary: courseInformation!)
+                    self?.coursesArr.append(courseInfoDict)
+                    //here we can create review objects to update rating
+//                    print("courses Array\(self?.coursesArr)")
+                    self?.tableView.reloadData()
+//                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 }
+    
             }
         })
         
-    }
+//        UIApplication.shared.isNetworkActivityIndicatorVisible = false
     
-//    func getCoursesRates() {
-//        
-//    }
+    }
+
+    
+
 
 }

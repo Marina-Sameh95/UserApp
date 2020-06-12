@@ -8,6 +8,7 @@
 
 import UIKit
 import Cosmos
+import Kingfisher
 
 class CourseListCell: UITableViewCell {
     
@@ -15,6 +16,26 @@ class CourseListCell: UITableViewCell {
     @IBOutlet weak var coursePriceLabel: UILabel!
     @IBOutlet weak var cosmosRateView: CosmosView!
     @IBOutlet weak var courseImage: UIImageView!
+    
+    var courseObj : Course?{
+        didSet{
+            courseNameLabel.text = courseObj?.name
+            coursePriceLabel.text = courseObj?.price
+            
+            cosmosRateView.settings.updateOnTouch = false
+            cosmosRateView.settings.totalStars = 5
+            cosmosRateView.settings.fillMode = .precise
+            cosmosRateView.rating = 2.5 // will updates with overAll rate from review Branch
+            
+            let url = URL(string: (courseObj?.image)!)
+            if let imgUrl = url as? URL{
+                KingfisherManager.shared.retrieveImage(with: imgUrl as! Resource, options: nil, progressBlock: nil) { (image, error, cache, courseImage) in
+                    self.courseImage.image = image
+                    self.courseImage.kf.indicatorType = .activity
+                }
+            }
+        }
+    }
     
 //    var cosmosVar : CosmosView!{
 //        didSet{
@@ -41,7 +62,7 @@ class CourseListCell: UITableViewCell {
 
 }
 //
-//extension CourseListCell{
+extension CourseListCell{
 //    
 ////    func setUpCosmosView(defultRateValue : Double){
 ////        cosmosRateView.settings.updateOnTouch = false
@@ -49,5 +70,14 @@ class CourseListCell: UITableViewCell {
 ////        cosmosRateView.settings.fillMode = .precise
 ////        cosmosRateView.rating = defultRateValue
 ////    }
-//}
+    
+    
+    
+    func calcAvgRatesForAcadmies(rates : [Double] ) -> Double{
+        let sumArr = rates.reduce(0 , +)
+        let avgRates = Double(sumArr) / Double(rates.count)
+        
+        return avgRates
+    }
+}
 

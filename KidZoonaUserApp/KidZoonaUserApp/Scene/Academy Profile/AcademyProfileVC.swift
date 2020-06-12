@@ -9,144 +9,107 @@
 import UIKit
 import Cosmos
 import Firebase
+import Kingfisher
 
 class AcademyProfileVC: UIViewController {
     
     var currentAcademy : Academy?
     var dbRef : DatabaseReference?
     
-    ///////////////////@IBOutlet weak var collectionView: UICollectionView!
-    ///////////////////@IBOutlet weak var pageControl: UIPageControl!
+    var name: NSArray = []
+    var date: NSArray = []
+    var rateView: CosmosView!
+//    var academyCourses = [Course]()
+
     @IBOutlet weak var academyImage: UIImageView!
-    @IBOutlet weak var AcademyName: UILabel!
+    @IBOutlet weak var academyName: UILabel!
     
     @IBOutlet weak var ratingView: CosmosView! // to get rating
-    @IBOutlet weak var academyLocationLbl: UILabel!
+    @IBOutlet weak var academyLocationLabel: UILabel!
     @IBOutlet weak var getDirectionOfAcademyFromMapBtn: UIButton!
     @IBOutlet weak var academyReviewTableView: UITableView!
     
-    /////////////////@IBOutlet weak var tableHeaderView: UIView!
-    
-    var rate : String?
-    ///////////////////////// de elsor eli kant btt3rad fe el collection view w b2a image bs fa shliha lw msh m7tagaha
-    let imgs = [
-        UIImage(named: "img_1"),
-        UIImage(named: "img_2"),
-        UIImage(named: "img_3"),
-        UIImage(named: "swim_4")
-    ]// data source
-    ////////////////////////
-    
-    let headerLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Reviews"
-        label.textColor = .black
-        label.font = UIFont.boldSystemFont(ofSize: 15)
-        return label
-    }()
+    var rate : Double?
     
     let lineImage: UIImageView = {
         let line = UIImageView()
         line.image = UIImage(named: "line")
         return line
     }()
-    
-    var currentIndex = 0 //current page on view controll
-    
-    var timer : Timer?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         academyReviewTableView.delegate = self
         academyReviewTableView.dataSource = self
-        
-//        setUpNavigationBarItems()
-//        setUpTableView()
+
         
         dbRef = Database.database().reference()
         
         view.backgroundColor  = .whiteTwo
         
-        //////////////////////pageControl.numberOfPages = imgs.count
-        
         fetchAcademyData()
         
-//        setUpCosmosUIView()
+        setUpCosmosUIView()
         
-//        startTimer()
+        name = ["Ali","Kero","Mark","Mahmoud"]
+        date = ["1/6/2020", "5/6/2020", "10/6/2020", "12/6/2020"]
+
     }
     
-//    private func setUpTableView(){
-//        tableHeaderView.backgroundColor = .whiteThree
-//        tableHeaderView.addSubview(lineImage)
-//        tableHeaderView.addSubview(headerLabel)
-//
-//    }
-//
-//    private func setUpNavigationBarItems(){
-//        let barTitle = "Learn Academy"
-//        navigationItem.title = barTitle
-//        navigationController?.navigationBar.barTintColor = .warmGrey
-//        navigationController?.navigationBar.isTranslucent = false
-//
-//    }
+    @IBAction func toAcademyCoursesList(_ sender: Any?) {
+        
+//        getAcademyCourses(academyId: (currentAcademy?.id)!)
+//        performSegue(withIdentifier: "toAcademyCourses", sender: sender)
+
+    }
     
-//    private func startTimer(){
-//        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
-//    }
-//
-//    @objc func timerAction(){
-//
-//        let desiredScrollPosition = (currentIndex < imgs.count - 1 ) ? currentIndex + 1 : 0
-//
-//        collectionView.scrollToItem(at: IndexPath(item: desiredScrollPosition, section: 0), at: .centeredHorizontally, animated: true)
-//    }
     
-    /*
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      // Get the new view controller using segue.destination.
      // Pass the selected object to the new view controller.
-     }
-     */
+//        guard let identString = segue.identifier, let identifier = SegueIndentifier(rawValue: identString) else {
+//            super.prepare(for: segue, sender: sender)
+//            return
+//        }
+        
+//        switch identifier {
+//        case .showDetails:
+//
+//            let courses = academyCourses
+//            guard let coursesListVC = segue.destination as? CourseListViewController else {
+//                return
+//            }
+//            coursesListVC.coursesArr = courses as! [Course]
+//
+//        }
+        
+        if segue.identifier == "toAcademyCourses" {
+            if let coursesListVC = segue.destination as? CourseListViewController {
+                coursesListVC.currentAcademy = self.currentAcademy
+            }
+        }
+        
+        
+//        coursesListVC.coursesArr = academyCourses as! [Course]
+        
+    }
     
 }
 
-//////////////////////////////////////// da el collection View ely atmsa7 w b2a image w7da w ms7t el slider Cell ViewController bt3ha
-
-//extension AcademyProfileVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
-//
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return imgs.count
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SliderCell", for: indexPath) as! SliderCell
-//
-//        cell.img = imgs[indexPath.item]
-//
-//        return cell
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
-//    }
-//
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        currentIndex = Int(scrollView.contentOffset.x / collectionView.frame.size.width)
-//
-//        pageControl.currentPage = currentIndex
-//    }
-//}
-/////////////////////////////////////////////////////
-
 extension AcademyProfileVC{
+    
+//    enum SegueIndentifier : String{
+//        case showDetails = "toAcademyCourses"
+//    }
     
     private func setUpCosmosUIView(){
         ratingView.settings.fillMode = .full
+        ratingView.text = "Rate Us"
         ratingView.didTouchCosmos = {rating in
             
             let userReviewCell = UserReviewCell()
@@ -154,13 +117,47 @@ extension AcademyProfileVC{
             
             print("rate is\(rating)")
             
-            self.rate = "\(rating)"
+            self.rate = rating
         }
     }
     
     private func fetchAcademyData(){
-        academyLocationLbl.text = currentAcademy?.location
+        academyLocationLabel.text = currentAcademy?.location
+        academyName.text = currentAcademy?.name
+        
+        let url = URL(string: (currentAcademy?.image)!)
+        if let imgUrl = url as? URL{
+            KingfisherManager.shared.retrieveImage(with: imgUrl as! Resource, options: nil, progressBlock: nil) { (image, error, cache, academyImage) in
+                self.academyImage.image = image
+                self.academyImage.kf.indicatorType = .activity
+            }
+        }
     }
+    
+//    private func getAcademyCourses(academyId : String){
+//
+//        let academyCoursesRef = dbRef?.child("Academies").child(academyId).child("courses")
+//        academyCoursesRef?.queryLimited(toLast: 10).observe(.value, with: { [weak self] snapshot in
+//            if let academyCoursesList = snapshot.value as? [String : Any]{
+//                print("coursesList\(academyCoursesList)")
+//                let coursesIds = academyCoursesList.keys
+//                print("coursesKeys\(coursesIds)")
+//
+//                for courseId in coursesIds{
+//                    let course = academyCoursesList[courseId] as? [String : Any ]
+//                    print("SingleCourseData\(String(describing: course))")
+//                    var courseInformation = course!["information"] as? [String : Any]
+//                    courseInformation!["key"] = courseId
+//                    print("SingleCourseInformation\(String(describing: courseInformation))") // till here true
+//                    let courseInfoDict = Course(dictionary: courseInformation!)
+//                    self?.academyCourses.append(courseInfoDict)
+//                    print("courses Array\(String(describing: self?.academyCourses))")
+//                }
+//
+//            }
+//        })
+//
+//    }
     
     
 //    private func pushRating(){
@@ -199,11 +196,14 @@ extension AcademyProfileVC{
 
 extension AcademyProfileVC : UITableViewDelegate , UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return name.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath) as! UserReviewCell
+        cell.reviewDate.text = date[indexPath.row] as? String
+        cell.userNameLabel.text = name[indexPath.row] as? String
+        cell.rateView = [indexPath.row] as? CosmosView
         return cell
     }
     

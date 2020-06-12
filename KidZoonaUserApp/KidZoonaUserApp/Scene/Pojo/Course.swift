@@ -9,23 +9,33 @@
 import Foundation
 
 class Course {
+    var id : String
     var name : String
-    var email : String
-    var location : String
-    var papers : String
+    var availablePlace : String
+    var date : String
+    var instructor : String
     var image : String
-    var password : String
-    var phone : String
+    var description : String
+    var offer : String
+    var location : String
+    var price : String
+    var time : String
+    var type : String
 //    var rate : String
     
     init(dictionary: [String: Any]){
-        self.name = dictionary["name"] as! String
-        self.email = dictionary["email"] as! String
-        self.location = dictionary["location"] as! String
-        self.papers = dictionary["papers"] as! String
-        self.image = dictionary["image"] as! String
-        self.phone = dictionary["phone"] as! String
-        self.password = dictionary["password"] as! String
+        self.name = dictionary["courseName"] as! String
+        self.availablePlace = dictionary["courseAvailablePlace"] as! String
+        self.date = dictionary["courseDate"] as! String
+        self.instructor = dictionary["courseInstructor"] as! String
+        self.image = dictionary["courseImage"] as! String
+        self.offer = dictionary["courseOffer"] as! String
+        self.description = dictionary["courseDescription"] as! String
+        self.id = dictionary["key"] as! String
+        self.location = dictionary["coursePlace"] as! String
+        self.price  = dictionary["coursePrice"] as! String
+        self.time = dictionary["courseTime"] as! String
+        self.type = dictionary["courseType"] as! String
 //        self.rate = dictionary["rate"] as! String
     }
 }

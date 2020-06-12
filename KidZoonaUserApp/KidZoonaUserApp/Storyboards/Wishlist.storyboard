@@ -115,11 +115,9 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="academyName" destination="XYC-ey-Nld" id="wnU-Dg-fxr"/>
-                                            <outlet property="cardDesign" destination="N46-tx-8KZ" id="ujb-iJ-LDS"/>
                                             <outlet property="courseDate" destination="llR-Sp-LVH" id="wav-UV-ktV"/>
                                             <outlet property="courseImg" destination="6st-2e-9aj" id="H97-o0-Owz"/>
                                             <outlet property="courseName" destination="mCy-SM-l4y" id="OQZ-YM-2ML"/>
-                                            <outlet property="favBtn" destination="fde-1G-Kx9" id="kGk-wh-xR5"/>
                                             <outlet property="rateView" destination="NTr-vx-guy" id="LuW-Js-sDG"/>
                                         </connections>
                                     </tableViewCell>

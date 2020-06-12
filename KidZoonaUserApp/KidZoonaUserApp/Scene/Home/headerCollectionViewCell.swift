@@ -15,8 +15,8 @@ class headerCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        self.layer.cornerRadius = 33
-        self.layer.masksToBounds = false
+//        
+//        self.layer.cornerRadius = 33
+//        self.layer.masksToBounds = false
     }
 }

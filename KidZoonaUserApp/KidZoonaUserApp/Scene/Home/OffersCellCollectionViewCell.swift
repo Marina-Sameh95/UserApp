@@ -27,7 +27,7 @@ class OffersCellCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        offerImageInOffersCollection.layer.cornerRadius = 35
+        offerImageInOffersCollection.layer.cornerRadius = 15
     }
     
     @IBAction func favoriteBtnInOffersCollAction(_ sender: Any) {

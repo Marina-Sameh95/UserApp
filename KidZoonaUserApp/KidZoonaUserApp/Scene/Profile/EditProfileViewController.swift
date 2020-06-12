@@ -40,6 +40,11 @@ class EditProfileViewController: UIViewController {
 
         createDatePicker()
     }
+  
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
     @IBAction func male(_ sender: UIButton) {
         if sender.isSelected{
@@ -128,6 +133,56 @@ class EditProfileViewController: UIViewController {
         }
         
         //updateFunBirthdate
+        updateUserData()
+        
+    }
+    
+    func updateUserData() {
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+        let refe = Database.database().reference().child("User").child(uid).child("Information")
+        
+        ///// handle if user Name& birthDate if Texts = nil
+        var fullname: String?
+        var usrNameTxt = userName.text
+        var birthdate : String?
+        var userBirthDateTxt =  birthDate.text
+        let def = UserDefaults()
+        let fullNameDef = def.value(forKey: "userName") as? String
+        let birthdateDef = def.value(forKey: "userBirthDate") as? String
+        
+        print("fullNameDef : \(fullNameDef)")
+        print("birthdateDef : \(birthdateDef)")
+        
+        if usrNameTxt == "" {
+            fullname = fullNameDef
+        }else{
+            fullname = usrNameTxt
+        }
+        if userBirthDateTxt == ""{
+            birthdate = birthdateDef
+        }else{
+            birthdate = userBirthDateTxt
+        }
+        
+        /////
+        
+        
+        
+        let birthDateTxt = ["birthDate" : birthdate, "UserName" : fullname]
+        
+        print("birthDateTxt :  \(birthDateTxt)")
+        
+        refe.updateChildValues(birthDateTxt, withCompletionBlock: { (error, ref ) in
+            if let error = error {
+                print("failed to update UserData in Database", error.localizedDescription)
+               
+            }else{
+                print("suessfully update UserData in DataBase")
+
+                self.birthDate.text = ""
+                self.userName.text = ""
+            }
+        })
     }
 }
 

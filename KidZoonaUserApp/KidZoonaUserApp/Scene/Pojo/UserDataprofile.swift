@@ -13,11 +13,13 @@ class UserData {
     var email : String
     var userImage : String
     var uid: String
+    var birthDate : String
     
     init(uid: String, dictionary: [String: Any]){
         self.fullName = dictionary["UserName"] as! String
         self.email = dictionary["userEmail"] as! String
         self.userImage = dictionary["profileImage"] as! String
+        self.birthDate = dictionary["birthDate"] as! String
         self.uid = uid
     }
 }

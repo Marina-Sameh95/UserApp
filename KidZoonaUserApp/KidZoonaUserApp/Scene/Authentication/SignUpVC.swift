@@ -22,10 +22,13 @@ class SignUpVC: UIViewController {
     
     @IBOutlet weak var passRegTxt: UITextField!
     
-    @IBOutlet weak var passRegSecondTxt: UITextField!
+    @IBOutlet weak var birthDate: UITextField!
     
     @IBOutlet weak var signUpBtnOutlet: UIButton!
     
+    
+    let datePicker = UIDatePicker()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,11 +55,36 @@ class SignUpVC: UIViewController {
         passRegTxt.layer.borderWidth = 1
         passRegTxt.layer.borderColor = UIColor.lightGray.cgColor
         
-        passRegSecondTxt.layer.cornerRadius = 15
-        passRegSecondTxt.layer.borderWidth = 1
-        passRegSecondTxt.layer.borderColor = UIColor.lightGray.cgColor
+        birthDate.layer.cornerRadius = 15
+        birthDate.layer.borderWidth = 1
+        birthDate.layer.borderColor = UIColor.lightGray.cgColor
         
         signUpBtnOutlet.layer.cornerRadius = 15
+        
+        createDatePicker()
+    }
+    
+    func createDatePicker(){
+        birthDate.textAlignment = .center
+        
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
+        toolbar.setItems([doneBtn], animated: true)
+        
+        birthDate.inputAccessoryView = toolbar
+        birthDate.inputView = datePicker
+        datePicker.datePickerMode = .date
+    }
+    
+    @objc func donePressed(){
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        
+        birthDate.text = formatter.string(from: datePicker.date)
+        self.view.endEditing(true)
     }
     
     @IBAction func signUpBtn(_ sender: Any) {
@@ -91,13 +119,23 @@ class SignUpVC: UIViewController {
                     return
                 }
                 let userName = "\(firstName) \(lastName)"
+                let userBirthDateTxt =  self.birthDate.text
+
                 guard let uid = Auth.auth().currentUser?.uid else {return}
                 let ref = Database.database().reference().child("User").child(uid).child("Information")
-                let dicValues = ["UserName" : userName , "userEmail" : emailAddress]
+                let dicValues: [String: Any] = ["UserName" : userName , "userEmail" : emailAddress, "birthDate" : userBirthDateTxt]
                 ref.updateChildValues(dicValues, withCompletionBlock: { (error, ref ) in
                     if let error = error {
                         print("failed to update/push data in Database", error.localizedDescription)
+//                        var errorTxt = error.localizedDescription
+//                        let alert = UIAlertController(title: "Error Message", message: errorTxt, preferredStyle: UIAlertController.Style.alert)
+//                        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+//                        alert.present(alert, animated: true, completion: nil)
                     }else{
+                        let def = UserDefaults()
+                        def.setValue(userName, forKey: "userName")
+                        def.setValue(userBirthDateTxt, forKey: "userBirthDate")
+                        def.synchronize()
                         print("suessfully update Data in DataBase")
                     }
                 })

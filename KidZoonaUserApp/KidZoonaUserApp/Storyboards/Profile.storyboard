@@ -25,7 +25,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VbC-5D-nU4">
-                                <rect key="frame" x="50" y="232" width="275" height="36"/>
+                                <rect key="frame" x="24" y="232" width="327" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -68,7 +68,7 @@
                             <constraint firstAttribute="trailing" secondItem="8pO-gE-SJj" secondAttribute="trailing" id="EIf-jc-HQJ"/>
                             <constraint firstAttribute="bottom" secondItem="8pO-gE-SJj" secondAttribute="bottom" id="MVd-MT-rnL"/>
                             <constraint firstItem="ewz-Yy-1OK" firstAttribute="top" secondItem="GDY-AT-nvx" secondAttribute="top" constant="16" id="Mxh-Y8-JXN"/>
-                            <constraint firstItem="VbC-5D-nU4" firstAttribute="leading" secondItem="GDY-AT-nvx" secondAttribute="leading" constant="50" id="NVS-vO-U6F"/>
+                            <constraint firstItem="VbC-5D-nU4" firstAttribute="leading" secondItem="GDY-AT-nvx" secondAttribute="leading" constant="24" id="NVS-vO-U6F"/>
                             <constraint firstItem="x6r-cJ-i5x" firstAttribute="leading" secondItem="fRt-wn-oip" secondAttribute="leading" id="Rre-Va-8yp"/>
                             <constraint firstAttribute="trailing" secondItem="x6r-cJ-i5x" secondAttribute="trailing" id="Vw2-Gy-TQF"/>
                             <constraint firstItem="1qQ-jj-09E" firstAttribute="top" secondItem="VbC-5D-nU4" secondAttribute="bottom" constant="8" id="Yu0-rM-Qrn"/>
@@ -349,7 +349,9 @@
                         <viewLayoutGuide key="safeArea" id="BR9-WT-hpR"/>
                     </view>
                     <connections>
+                        <outlet property="birthDateLbl" destination="Rbm-V0-MTY" id="jgM-4f-iQ3"/>
                         <outlet property="editBtn" destination="0M4-24-Q7V" id="fbG-F9-dkL"/>
+                        <outlet property="genderLbl" destination="1Yg-dd-sqW" id="y4X-ch-Jgl"/>
                         <outlet property="userEmailDetails" destination="R5T-F8-aSu" id="X6W-ws-i3u"/>
                     </connections>
                 </viewController>
@@ -450,7 +452,7 @@
         <!--Event Table View Controller-->
         <scene sceneID="282-Lv-cEp">
             <objects>
-                <viewController id="IAj-Wi-blE" customClass="EventTableViewController" customModule="KidZoonaUserApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EventTableViewController" id="IAj-Wi-blE" customClass="EventTableViewController" customModule="KidZoonaUserApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ktc-Rv-Kb9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

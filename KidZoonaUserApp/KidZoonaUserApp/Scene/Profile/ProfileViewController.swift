@@ -26,8 +26,9 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        retrieveData()
+        
     }
+    
     
     @IBAction func switchViews(_ sender: UISegmentedControl) {
         
@@ -50,12 +51,14 @@ class ProfileViewController: UIViewController {
         myProfile.alpha = 1
         activities.alpha = 0
         events.alpha = 0
+        //myProfile.reloadInputViews()
+        retrieveData()
     }
     
     var userData: UserData?
 
     
-    fileprivate func retrieveData() {
+     func retrieveData() {
     
       let ref = Database.database().reference()
         
@@ -70,12 +73,31 @@ class ProfileViewController: UIViewController {
             self.userData = user
           
             
-            if let photoURL = self.userData?.userImage{
-                KingfisherManager.shared.retrieveImage(with: photoURL as! Resource, options: nil, progressBlock: nil, completionHandler: { (image, err, chach, photoURL) in
-                    <#code#>
-                })
-            }
+            //let photoURL = URL(String: (userData!.userImage))
+            let photoURL = URL(string: (self.userData?.userImage)!)
+            print("UserImage : \(photoURL)")
             
+            if let url = photoURL as? URL{
+                KingfisherManager.shared.retrieveImage(with: url as! Resource, options: nil, progressBlock: nil){ (image , error, cache, coursename) in
+                    
+                    print("image came )")
+                    self.userImage.image = image
+                    self.userImage.kf.indicatorType = .activity
+                }
+            }
+          
+//
+            
+            ////////////
+            
+//            let url = URL(string: (myCourse!.courseImage)!)
+//            if let url = url as? URL{
+//                KingfisherManager.shared.retrieveImage(with: url as! Resource, options: nil, progressBlock: nil){ (image , error, cache, coursename) in
+//                    self.courseImg.image = image
+//                    self.courseImg.kf.indicatorType = .activity
+//                }
+//            }
+            /////////////////
             
 //            if let photoURL = self.userData?.userImage{
 //                 print("PhotoUrl: \(photoURL)")

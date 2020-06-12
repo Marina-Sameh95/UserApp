@@ -16,6 +16,11 @@ class ProfileDetailsViewController: UIViewController {
 
     @IBOutlet weak var editBtn: UIButton!
         
+    @IBOutlet weak var birthDateLbl: UILabel!
+    
+    @IBOutlet weak var genderLbl: UILabel!
+    
+    
     @IBOutlet weak var userEmailDetails: UILabel!
     
      var userData = [UserData]()
@@ -25,8 +30,14 @@ class ProfileDetailsViewController: UIViewController {
 
         editBtn.layer.cornerRadius = 15
         
-     retrieveData()
+        
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        retrieveData()
+    }
+    
+   
     
     fileprivate func retrieveData() {
         let ref :  DatabaseReference!
@@ -37,12 +48,16 @@ class ProfileDetailsViewController: UIViewController {
             
             
             guard let value = snapshot.value as? [String: Any] else {return}
-            let dataUser = UserData(dictionary: value)
+            print(("Values : \(value)"))
+            let dataUser = UserData(uid: userId, dictionary: value)
             self.userData.append(dataUser)
-//            guard let imageUrl = self.userData.first?.userImage else {return}
-//            print(imageUrl)
+           guard let userBirthDate = self.userData.first?.birthDate else {
+            self.birthDateLbl.text = ""
+            return
+        }
+            self.birthDateLbl.text = userBirthDate
             
-            guard let useremail = self.userData.first?.email else {return}
+          guard let useremail = self.userData.first?.email else {return}
             self.userEmailDetails.text = useremail
             
         }

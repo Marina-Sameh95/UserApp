@@ -12,6 +12,7 @@ import FirebaseDatabase
 import FirebaseAuth
 import FirebaseStorage
 import SDWebImage
+import Kingfisher
 
 class ProfileViewController: UIViewController {
 
@@ -21,13 +22,13 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var events: UIView!
     
-    var userData = [UserData]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        retrieveData()
+        
     }
+    
     
     @IBAction func switchViews(_ sender: UISegmentedControl) {
         
@@ -50,51 +51,71 @@ class ProfileViewController: UIViewController {
         myProfile.alpha = 1
         activities.alpha = 0
         events.alpha = 0
+        //myProfile.reloadInputViews()
+        retrieveData()
     }
     
-    fileprivate func retrieveData() {
-        let ref :  DatabaseReference!
-        ref = Database.database().reference()
+    var userData: UserData?
+
+    
+     func retrieveData() {
+    
+      let ref = Database.database().reference()
         
         guard let userId = Auth.auth().currentUser?.uid else {return}
         ref.child("User").child(userId).child("Information").observeSingleEvent(of: .value) { (snapshot) in
             
             
-            guard let value = snapshot.value as? [String: Any] else {return}
-            let dataUser = UserData(dictionary: value)
-            self.userData.append(dataUser)
-            guard let username = self.userData.first?.fullName else {return}
-            self.userName.text = username
-//            guard let imageUrl = self.userData.first?.userImage else {return}
-//            print(imageUrl)
+            guard let dic = snapshot.value as? [String: Any] else {return}
             
+            let user = UserData(uid: userId, dictionary: dic)
+            self.userName.text = user.fullName
+            self.userData = user
+          
             
-            //Download Image
-            //            URLSession.shared.dataTask(with: URL(string: imageUrl)!, completionHandler: { (data, response, err) in
-            //                if let err = err {
-            //                    print("Failed to download data ", err)
-            //                    return
-            //                }else {
-            //                    if let data = data , let image = UIImage(data: data){
-            //                        DispatchQueue.main.async {
-            //                            self.userImage.image = image
-            //                        }
-            //                    }
-            //                }
-            //
-            //            })
+            //let photoURL = URL(String: (userData!.userImage))
+            let photoURL = URL(string: (self.userData?.userImage)!)
+            print("UserImage : \(photoURL)")
             
+            if let url = photoURL as? URL{
+                KingfisherManager.shared.retrieveImage(with: url as! Resource, options: nil, progressBlock: nil){ (image , error, cache, coursename) in
+                    
+                    print("image came )")
+                    self.userImage.image = image
+                    self.userImage.kf.indicatorType = .activity
+                }
+            }
+          
+//
             
-            //            self.userImage.sd_setImage(with: URL(string: imageUrl), placeholderImage: #imageLiteral(resourceName: "icon -time"))
+            ////////////
             
-            //            for (k,v) in dic{
-            //                print("key: \(k), value: \(v)")
-            //                var value = v
-            //                print("\(value)")
-            //            }
+//            let url = URL(string: (myCourse!.courseImage)!)
+//            if let url = url as? URL{
+//                KingfisherManager.shared.retrieveImage(with: url as! Resource, options: nil, progressBlock: nil){ (image , error, cache, coursename) in
+//                    self.courseImg.image = image
+//                    self.courseImg.kf.indicatorType = .activity
+//                }
+//            }
+            /////////////////
             
+//            if let photoURL = self.userData?.userImage{
+//                 print("PhotoUrl: \(photoURL)")
+//                //Download Photo
+//                URLSession.shared.dataTask(with: URL(string: photoURL)!) { (data, response, err) in
+//                    if let err = err {
+//                        print("Failed to download user image", err)
+//                        return
+//                    }
+//                    if let data = data , let image = UIImage(data: data){
+//                        DispatchQueue.main.async{
+//                            self.userImage.image = image
+//                        }
+//                    }
+//                    }.resume()
+//            }
+         
         }
-        
     }
 
 

@@ -45,13 +45,13 @@ class WishListVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
         
         dbRef = Database.database().reference()
         
-        retriveWishListedCourses()
+        
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.parent?.title = "Wishlist"
-        
+        retriveWishListedCourses()
     }
     
 //    private func setUpNavigationBarItems(){
@@ -76,16 +76,7 @@ class WishListVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! WishTableViewCell
         
         cell.courseObj = wishlistedCoursesArr[indexPath.row]
-        
-//        cell.courseImg.image = imgArr[indexPath.row] as! UIImage
-//        cell.courseName.text! = name[indexPath.row] as! String
-//        cell.academyName.text! = academyName[indexPath.row] as! String
-//        cell.courseDate.text! = date[indexPath.row] as! String
-     //   cell.cardDesign.viewWithTag(1) = cardView[indexPath.row] as! DesignCourseList
-     //   cell.favBtn.buttonType = favouriteBtn[indexPath.row] as! UIButton
-        
-        
-        
+
         return cell
     }
     
@@ -99,7 +90,7 @@ class WishListVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
 extension WishListVC{
     
     private func retriveWishListedCourses(){
-        
+        wishlistedCoursesIds = []
         guard let uId = Auth.auth().currentUser?.uid else {
             print("cannot find userID")
             return
@@ -131,6 +122,7 @@ extension WishListVC{
     }
     
     private func getCoursesData(coursesIds : [String]){
+        wishlistedCoursesArr = []
         
         let academiesRef = dbRef?.child("Academies")
         academiesRef?.queryLimited(toLast: 10).observe(.value, with: { [weak self] snapshot in
@@ -148,14 +140,20 @@ extension WishListVC{
                         
                         let course = academyCoursesList![courseId] as? [String : Any ]
                         //                    print("SingleCourseData\(String(describing: course))")
-                        var courseInformation = course!["information"] as? [String : Any]
-                        courseInformation!["key"] = courseId
-                        //                    print("SingleCourseInformation\(String(describing: courseInformation))") // till here true
-                        let courseInfoDict = Course(dictionary: courseInformation!)
-                        
-                        self?.wishlistedCoursesArr.append(courseInfoDict)
-                    //  var courseReview = course?["review"] as? [String : Any]
+                        if course == nil {
+                            continue
+                        }else{
+                            var courseInformation = course!["information"] as? [String : Any]
+                            courseInformation!["key"] = courseId
+                            //                    print("SingleCourseInformation\(String(describing: courseInformation))") // till here true
+                            let courseInfoDict = Course(dictionary: courseInformation!)
+                            
+                            self?.wishlistedCoursesArr.append(courseInfoDict)
+                            //  var courseReview = course?["review"] as? [String : Any]
+                            
                         }
+                        
+                    }
                     print("wishlistVCArray\(self?.wishlistedCoursesArr)")
                     
                 }
@@ -163,6 +161,12 @@ extension WishListVC{
             }
             
         })
+        
+        //another try
+//        let academiesRef = dbRef?.child("Academies")
+//        academiesRef?.queryLimited(toLast: 10).observe(.value, with: { [weak self] snapshot in })
+        
+        
         
 //        for id in wishlistedCoursesIds{
 //            dbRef?.child("Academies").queryOrderedByKey().observe(.value, with: { (snapshot) in

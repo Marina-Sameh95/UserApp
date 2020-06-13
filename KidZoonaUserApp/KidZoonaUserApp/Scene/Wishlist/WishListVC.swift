@@ -112,6 +112,21 @@ class WishListVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
         return true
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let courseDetails = UIStoryboard(name: "CourseList", bundle: nil)
+//        let courseDetailsController = self.storyboard!.instantiateViewController(withIdentifier: "CourseList")
+        let selectedCourse = wishlistedCoursesArr[indexPath.row]
+        
+        performSegue(withIdentifier: "toCourseDetailsView", sender: selectedCourse)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "toCourseDetailsView"){
+            let courseDetailsVC = segue.destination as! CourseDetailsViewController
+            courseDetailsVC.myCourse = sender as? Course
+        }
+    }
+    
     
 }
 

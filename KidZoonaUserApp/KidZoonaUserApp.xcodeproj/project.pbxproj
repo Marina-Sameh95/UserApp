@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0B415C67248D6E1F000319D0 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B415C66248D6E1F000319D0 /* Course.swift */; };
 		0B7F02C824896322005E7CF9 /* Academy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F02C724896322005E7CF9 /* Academy.swift */; };
+		0BB5DFC024954D3D000DAAAB /* AcademyReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB5DFBF24954D3D000DAAAB /* AcademyReview.swift */; };
 		17149538248FA8B1004F4EC2 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17149537248FA8B1004F4EC2 /* Event.swift */; };
 		171FF7732484A7B400077AC0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 171FF7722484A7B300077AC0 /* GoogleService-Info.plist */; };
 		1723FEEA2488BC49001804ED /* CourseListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1723FEE92488BC49001804ED /* CourseListCell.swift */; };
@@ -61,6 +62,7 @@
 /* Begin PBXFileReference section */
 		0B415C66248D6E1F000319D0 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		0B7F02C724896322005E7CF9 /* Academy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Academy.swift; sourceTree = "<group>"; };
+		0BB5DFBF24954D3D000DAAAB /* AcademyReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademyReview.swift; sourceTree = "<group>"; };
 		17149537248FA8B1004F4EC2 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		171FF7722484A7B300077AC0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1723FEE92488BC49001804ED /* CourseListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListCell.swift; sourceTree = "<group>"; };
@@ -332,6 +334,7 @@
 				88E50267248640F000D8597A /* UserDataprofile.swift */,
 				0B7F02C724896322005E7CF9 /* Academy.swift */,
 				17149537248FA8B1004F4EC2 /* Event.swift */,
+				0BB5DFBF24954D3D000DAAAB /* AcademyReview.swift */,
 			);
 			path = Pojo;
 			sourceTree = "<group>";
@@ -519,6 +522,7 @@
 				88092FB2247C26CC00EB3B34 /* ProfileDetailsViewController.swift in Sources */,
 				5B598D022494527900ED24F6 /* AlertController.swift in Sources */,
 				1723FEEA2488BC49001804ED /* CourseListCell.swift in Sources */,
+				0BB5DFC024954D3D000DAAAB /* AcademyReview.swift in Sources */,
 				88830B4E248BEAC20065D6E9 /* EventSegmentTableViewCell.swift in Sources */,
 				88DDAA0224847BE4003ADFBF /* SettingsViewController.swift in Sources */,
 				1799A2212483B5FF00DE26EE /* UIColor+Customization.swift in Sources */,

@@ -54,14 +54,6 @@ class WishListVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
         retriveWishListedCourses()
     }
     
-//    private func setUpNavigationBarItems(){
-//        let barTitle = "Wishlist"
-//        navigationItem.title = barTitle
-//        navigationController?.navigationBar.barTintColor = .warmGrey
-//        navigationController?.navigationBar.isTranslucent = false
-//
-//    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        return name.count
         return wishlistedCoursesArr.count //will increased by events count
@@ -84,6 +76,32 @@ class WishListVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
         return 144
     }
     
+    // delete cell
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+//            getAllKeys()
+            let when = DispatchTime.now() + 1
+            DispatchQueue.main.asyncAfter(deadline: when) {
+                
+                guard let uId = Auth.auth().currentUser?.uid else {
+                    print("cannot find userID")
+                    return
+                }
+                
+                self.dbRef?.child("User").child(uId).child("WishList").child("Courses").child("courseId").child(self.wishlistedCoursesIds[indexPath.row]).removeValue()
+                self.wishlistedCoursesArr.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .bottom)
+//                self.wishlistedCoursesArr = []
+            }
+            
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
     
 }
 
@@ -96,7 +114,7 @@ extension WishListVC{
             return
         }
         
-        print("Wishlist")
+//        print("Wishlist")
 
         let userRef = dbRef!.child("User").child(uId)
         let wishlistRef = userRef.child("WishList")
@@ -107,18 +125,14 @@ extension WishListVC{
                 let snap = child as! DataSnapshot
                 
                 let courseId = snap.value as! String
-                print("WishlistedCoursesIdVC\(courseId)")
+//                print("WishlistedCoursesIdVC\(courseId)")
                 self.wishlistedCoursesIds.append(courseId)
 //                self.wishlistedCoursesIds = courseId
 //                self.wishlistedCoursesIds += courseId
-                print("WishlistedCoursesIdArrayVC\(self.wishlistedCoursesIds)")
-                
+//                print("WishlistedCoursesIdArrayVC\(self.wishlistedCoursesIds)")
             }
             self.getCoursesData(coursesIds: self.wishlistedCoursesIds)
-        })
-
-        
-        
+        })  
     }
     
     private func getCoursesData(coursesIds : [String]){
@@ -152,42 +166,22 @@ extension WishListVC{
                             //  var courseReview = course?["review"] as? [String : Any]
                             
                         }
-                        
                     }
-                    print("wishlistVCArray\(self?.wishlistedCoursesArr)")
-                    
+//                    print("wishlistVCArray\(self?.wishlistedCoursesArr)")
                 }
                 self!.tableView.reloadData()
             }
             
         })
-        
-        //another try
-//        let academiesRef = dbRef?.child("Academies")
-//        academiesRef?.queryLimited(toLast: 10).observe(.value, with: { [weak self] snapshot in })
-        
-        
-        
-//        for id in wishlistedCoursesIds{
-//            dbRef?.child("Academies").queryOrderedByKey().observe(.value, with: { (snapshot) in
-//                let courseSnap = snapshot.childSnapshot(forPath: "courses").childSnapshot(forPath: id).childSnapshot(forPath: "information") as! DataSnapshot
-//                //child.id
-//                print("courseSnapshot\(courseSnap)")
-//
-//                var courseDict = courseSnap.value as! [String : Any]
-//                courseDict["key"] = id
-//                let courseInfoDict = Course(dictionary: courseDict)
-//                print("courseInfoDictVC\(courseInfoDict)")
-//                self.wishlistedCoursesArr.append(courseInfoDict)
-//
-//            })
-//
-//            print("WishlistedCoursesArrayVC\(wishlistedCoursesArr)")
-//        }
-//        self.tableView.reloadData()
-        
-        
     }
+    
+    //    private func setUpNavigationBarItems(){
+    //        let barTitle = "Wishlist"
+    //        navigationItem.title = barTitle
+    //        navigationController?.navigationBar.barTintColor = .warmGrey
+    //        navigationController?.navigationBar.isTranslucent = false
+    //
+    //    }
     
 }
 

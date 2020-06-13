@@ -74,6 +74,7 @@ class ProfileViewController: UIViewController {
           
             
             //let photoURL = URL(String: (userData!.userImage))
+            if (self.userData?.userImage != ""){
             let photoURL = URL(string: (self.userData?.userImage)!)
             print("UserImage : \(photoURL)")
             
@@ -84,6 +85,10 @@ class ProfileViewController: UIViewController {
                     self.userImage.image = image
                     self.userImage.kf.indicatorType = .activity
                 }
+            }
+            }
+            else {
+                self.userImage.image = UIImage(named: "profile")
             }
           
 //

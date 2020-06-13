@@ -88,16 +88,33 @@ class SignUpVC: UIViewController {
     }
     
     @IBAction func signUpBtn(_ sender: Any) {
-        
-        guard let email = emailRegTxt.text, email.count > 0 else {
-            print("please enter your Email Address")
+        guard let firstName = self.firstNameTxt.text , firstName != "" else {
+            AlertController.showAlert(inViewController:self, title: "Alert", message: "Please enter your first name")
+            
+            print("you must enter your name")
+            return
+            
+        }
+        guard let lastName = self.lastNameTxt.text , lastName != "" else {
+            AlertController.showAlert(inViewController:self, title: "Alert", message: "Please enter your last name")
+            print("you must enter your name")
             return
         }
-        guard let pass = passRegTxt.text, pass.count > 0 else{
+        
+        guard let email = emailRegTxt.text, email != "" else {
+            AlertController.showAlert(inViewController:self, title: "Alert", message: "Please enter your email")
+            return
+        }
+        guard let pass = passRegTxt.text, pass != "" else{
+            AlertController.showAlert(inViewController:self, title: "Alert", message: "Please enter your Password")
             print("please enter your Password")
             return
         }
-        
+       
+        guard let emailAddress = self.emailRegTxt.text , emailAddress != "" else {
+            print("you must enter your name")
+            return
+        }
         // Register the User to Firebase
         Auth.auth().createUser(withEmail: email, password: pass) { (user, error) in
             if let error = error{
@@ -105,22 +122,8 @@ class SignUpVC: UIViewController {
                 return
             } else {
                 print("Successfully SignUp")
-                guard let firstName = self.firstNameTxt.text , firstName.count > 0 else {
-                    print("you must enter your name")
-                    return
-                    
-                }
-                guard let lastName = self.lastNameTxt.text , lastName.count > 0 else {
-                    print("you must enter your name")
-                    return
-                }
-                guard let emailAddress = self.emailRegTxt.text , emailAddress.count > 0 else {
-                    print("you must enter your name")
-                    return
-                }
                 let userName = "\(firstName) \(lastName)"
                 let userBirthDateTxt =  self.birthDate.text
-
                 guard let uid = Auth.auth().currentUser?.uid else {return}
                 let ref = Database.database().reference().child("User").child(uid).child("Information")
                 let dicValues: [String: Any] = ["UserName" : userName , "userEmail" : emailAddress, "birthDate" : userBirthDateTxt]

@@ -35,6 +35,7 @@
 		17F67ECC246FDE8600A1F211 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17F67ECA246FDE8600A1F211 /* Main.storyboard */; };
 		17F67ECE246FDE9100A1F211 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17F67ECD246FDE9100A1F211 /* Assets.xcassets */; };
 		17F67ED1246FDE9100A1F211 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17F67ECF246FDE9100A1F211 /* LaunchScreen.storyboard */; };
+		5B598D022494527900ED24F6 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B598D012494527900ED24F6 /* AlertController.swift */; };
 		62EF5E6ADCD61C5B599BC24D /* Pods_KidZoonaUserApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A216C5BA0151B3063F21B1B /* Pods_KidZoonaUserApp.framework */; };
 		88092FB0247C1BBE00EB3B34 /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88092FAF247C1BBE00EB3B34 /* ActivitiesViewController.swift */; };
 		88092FB2247C26CC00EB3B34 /* ProfileDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88092FB1247C26CC00EB3B34 /* ProfileDetailsViewController.swift */; };
@@ -88,6 +89,7 @@
 		17F67ED0246FDE9100A1F211 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17F67ED2246FDE9100A1F211 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FBA4BADC316154081C96343 /* Pods-KidZoonaUserApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidZoonaUserApp.release.xcconfig"; path = "Target Support Files/Pods-KidZoonaUserApp/Pods-KidZoonaUserApp.release.xcconfig"; sourceTree = "<group>"; };
+		5B598D012494527900ED24F6 /* AlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		7A216C5BA0151B3063F21B1B /* Pods_KidZoonaUserApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidZoonaUserApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88092FAF247C1BBE00EB3B34 /* ActivitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
 		88092FB1247C26CC00EB3B34 /* ProfileDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailsViewController.swift; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 			isa = PBXGroup;
 			children = (
 				0B415C66248D6E1F000319D0 /* Course.swift */,
+				5B598D012494527900ED24F6 /* AlertController.swift */,
 				88E50267248640F000D8597A /* UserDataprofile.swift */,
 				0B7F02C724896322005E7CF9 /* Academy.swift */,
 				17149537248FA8B1004F4EC2 /* Event.swift */,
@@ -514,6 +517,7 @@
 				17149538248FA8B1004F4EC2 /* Event.swift in Sources */,
 				179D15EA2474AA9100D49CD0 /* LoginVC.swift in Sources */,
 				88092FB2247C26CC00EB3B34 /* ProfileDetailsViewController.swift in Sources */,
+				5B598D022494527900ED24F6 /* AlertController.swift in Sources */,
 				1723FEEA2488BC49001804ED /* CourseListCell.swift in Sources */,
 				88830B4E248BEAC20065D6E9 /* EventSegmentTableViewCell.swift in Sources */,
 				88DDAA0224847BE4003ADFBF /* SettingsViewController.swift in Sources */,

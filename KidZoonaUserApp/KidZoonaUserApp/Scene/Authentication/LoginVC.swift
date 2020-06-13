@@ -60,10 +60,13 @@ class LoginVC: UIViewController{
     @IBAction func signInBtn(_ sender: Any) {
         
         guard let email = emailText.text, email.count > 0 else {
+            AlertController.showAlert(inViewController:self, title: "Alert", message: "Please enter your email")
             print("please enter your Email Address")
             return
         }
         guard let pass = passwordText.text, pass.count > 0 else{
+            AlertController.showAlert(inViewController:self, title: "Alert", message: "Please enter your password")
+
             print("please enter your Password")
             return
         }
@@ -71,6 +74,8 @@ class LoginVC: UIViewController{
         Auth.auth().signIn(withEmail: email, password: pass) { (user, error) in
             //check the user is not nil
             if let error = error{
+                AlertController.showAlert(inViewController:self, title: "Alert", message: "email or password is wrong")
+
                 print("failed to SignIn", error.localizedDescription)
                 return
             }else if let user = user{

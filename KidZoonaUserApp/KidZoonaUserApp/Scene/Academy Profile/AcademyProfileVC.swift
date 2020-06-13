@@ -16,20 +16,26 @@ class AcademyProfileVC: UIViewController {
     var currentAcademy : Academy?
     var dbRef : DatabaseReference?
     
+    var currentRate : Double?
+    
     var name: NSArray = []
     var date: NSArray = []
-    var rateView: CosmosView!
-//    var academyCourses = [Course]()
+    var rateView: CosmosView!{
+        didSet{
+            rateView.settings.updateOnTouch = false
+            rateView.settings.totalStars = 5
+            rateView.settings.fillMode = .full
+            rateView.rating = currentRate ?? 4.0
+        }
+    }
 
     @IBOutlet weak var academyImage: UIImageView!
     @IBOutlet weak var academyName: UILabel!
-    
     @IBOutlet weak var ratingView: CosmosView! // to get rating
     @IBOutlet weak var academyLocationLabel: UILabel!
     @IBOutlet weak var getDirectionOfAcademyFromMapBtn: UIButton!
-    @IBOutlet weak var academyReviewTableView: UITableView!
     
-    var rate : Double?
+    @IBOutlet weak var academyReviewTableView: UITableView!
     
     let lineImage: UIImageView = {
         let line = UIImageView()
@@ -55,7 +61,6 @@ class AcademyProfileVC: UIViewController {
         
         name = ["Ali","Kero","Mark","Mahmoud"]
         date = ["1/6/2020", "5/6/2020", "10/6/2020", "12/6/2020"]
-
     }
     
     @IBAction func toAcademyCoursesList(_ sender: Any?) {
@@ -72,21 +77,6 @@ class AcademyProfileVC: UIViewController {
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      // Get the new view controller using segue.destination.
      // Pass the selected object to the new view controller.
-//        guard let identString = segue.identifier, let identifier = SegueIndentifier(rawValue: identString) else {
-//            super.prepare(for: segue, sender: sender)
-//            return
-//        }
-        
-//        switch identifier {
-//        case .showDetails:
-//
-//            let courses = academyCourses
-//            guard let coursesListVC = segue.destination as? CourseListViewController else {
-//                return
-//            }
-//            coursesListVC.coursesArr = courses as! [Course]
-//
-//        }
         
         if segue.identifier == "toAcademyCourses" {
             if let coursesListVC = segue.destination as? CourseListViewController {
@@ -94,32 +84,11 @@ class AcademyProfileVC: UIViewController {
             }
         }
         
-        
-//        coursesListVC.coursesArr = academyCourses as! [Course]
-        
     }
     
 }
 
 extension AcademyProfileVC{
-    
-//    enum SegueIndentifier : String{
-//        case showDetails = "toAcademyCourses"
-//    }
-    
-    private func setUpCosmosUIView(){
-        ratingView.settings.fillMode = .full
-        ratingView.text = "Rate Us"
-        ratingView.didTouchCosmos = {rating in
-            
-            let userReviewCell = UserReviewCell()
-            userReviewCell.rate = rating
-            
-            print("rate is\(rating)")
-            
-            self.rate = rating
-        }
-    }
     
     private func fetchAcademyData(){
         academyLocationLabel.text = currentAcademy?.location
@@ -134,82 +103,43 @@ extension AcademyProfileVC{
         }
     }
     
-//    private func getAcademyCourses(academyId : String){
-//
-//        let academyCoursesRef = dbRef?.child("Academies").child(academyId).child("courses")
-//        academyCoursesRef?.queryLimited(toLast: 10).observe(.value, with: { [weak self] snapshot in
-//            if let academyCoursesList = snapshot.value as? [String : Any]{
-//                print("coursesList\(academyCoursesList)")
-//                let coursesIds = academyCoursesList.keys
-//                print("coursesKeys\(coursesIds)")
-//
-//                for courseId in coursesIds{
-//                    let course = academyCoursesList[courseId] as? [String : Any ]
-//                    print("SingleCourseData\(String(describing: course))")
-//                    var courseInformation = course!["information"] as? [String : Any]
-//                    courseInformation!["key"] = courseId
-//                    print("SingleCourseInformation\(String(describing: courseInformation))") // till here true
-//                    let courseInfoDict = Course(dictionary: courseInformation!)
-//                    self?.academyCourses.append(courseInfoDict)
-//                    print("courses Array\(String(describing: self?.academyCourses))")
-//                }
-//
-//            }
-//        })
-//
-//    }
+    private func setUpCosmosUIView(){
+        //rating view for academy to get rate
+        
+        ratingView.settings.fillMode = .full
+        ratingView.text = "Rate Us"
+        ratingView.didTouchCosmos = {rating in
+            
+            print("rate is\(rating)")
+            
+            self.currentRate = rating
+            
+        }
+    }
     
-    
-//    private func pushRating(){
-//        //get currentAcademyID
-//        guard let academyRate = rate else {
-//            print("Cannot find academy rate")
-//            return
-//        }
-////        guard let userId = Auth.auth().currentUser?.uid else {
-////            print("cannot find userId")
-////            return
-////        }
-////
-//        let rateDictValue = ["rate" : academyRate]
-//        
-//        let academiesRef = dbRef?.child("Academies")
-//        let academyId = currentAcademy?.id
-//        
-//        let infoRef = academiesRef?.child(academyId!).child("Information")
-//        
-//        infoRef?.updateChildValues(rateDictValue, withCompletionBlock: { (error, dbRef) in
-//            
-//            if let err = error {
-//                print("Cannot Push rate Value", err.localizedDescription)
-//            }
-//            
-//            print("Rate pushed Successfully")
-//        })
-//        
-//        currentAcademy?.rate = rate!
-//        
-//    }
 }
 
 ////////////////// extension for Academy ReviewTableView
 
 extension AcademyProfileVC : UITableViewDelegate , UITableViewDataSource{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return name.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath) as! UserReviewCell
+        
         cell.reviewDate.text = date[indexPath.row] as? String
         cell.userNameLabel.text = name[indexPath.row] as? String
         cell.rateView = [indexPath.row] as? CosmosView
+
+        
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 85
     }
-    
     
 }

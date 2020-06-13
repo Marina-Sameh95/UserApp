@@ -97,17 +97,17 @@
                                                     <constraint firstAttribute="height" constant="100" id="mIf-5h-BiG"/>
                                                 </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="15" minimumInteritemSpacing="15" id="zOk-Ho-HMz">
-                                                    <size key="itemSize" width="78" height="65"/>
+                                                    <size key="itemSize" width="80" height="80"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="headerCollectionViewCell" reuseIdentifier="Cell" id="wWl-p6-UbT" customClass="headerCollectionViewCell" customModule="KidZoonaUserApp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="17.5" width="78" height="65"/>
+                                                        <rect key="frame" x="0.0" y="10" width="80" height="80"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                            <rect key="frame" x="0.0" y="0.0" width="78" height="65"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Catagory" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="alk-nA-QFP">
@@ -176,34 +176,20 @@
                                                                     <color key="textColor" red="0.89164179560000001" green="0.2502275705" blue="0.22392901779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGq-Qc-Y3Z">
-                                                                    <rect key="frame" x="187" y="16" width="37" height="37"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="37" id="ETG-mR-hw4"/>
-                                                                        <constraint firstAttribute="height" constant="37" id="T2a-vY-Un9"/>
-                                                                    </constraints>
-                                                                    <state key="normal" image="red-empty-heart"/>
-                                                                    <connections>
-                                                                        <action selector="favoriteBtnInOffersCollAction:" destination="nNl-sz-xzJ" eventType="touchUpInside" id="PPs-yi-yBd"/>
-                                                                    </connections>
-                                                                </button>
                                                             </subviews>
                                                         </view>
                                                         <constraints>
                                                             <constraint firstItem="kJJ-ew-PTE" firstAttribute="top" secondItem="nNl-sz-xzJ" secondAttribute="top" id="24I-RB-mil"/>
-                                                            <constraint firstItem="jGq-Qc-Y3Z" firstAttribute="top" secondItem="nNl-sz-xzJ" secondAttribute="top" constant="16" id="EKl-Sm-9P8"/>
                                                             <constraint firstItem="u2b-sG-2Cu" firstAttribute="centerX" secondItem="Q3c-Rp-ZHV" secondAttribute="centerX" id="G08-l2-b93"/>
                                                             <constraint firstItem="kJJ-ew-PTE" firstAttribute="leading" secondItem="nNl-sz-xzJ" secondAttribute="leading" id="JWS-Km-wpd"/>
                                                             <constraint firstAttribute="trailing" secondItem="kJJ-ew-PTE" secondAttribute="trailing" id="K2a-A9-X3m"/>
                                                             <constraint firstItem="Q3c-Rp-ZHV" firstAttribute="centerX" secondItem="kJJ-ew-PTE" secondAttribute="centerX" id="NXG-43-IJP"/>
-                                                            <constraint firstAttribute="trailing" secondItem="jGq-Qc-Y3Z" secondAttribute="trailing" constant="16" id="fK8-FK-r8k"/>
                                                             <constraint firstItem="u2b-sG-2Cu" firstAttribute="top" secondItem="Q3c-Rp-ZHV" secondAttribute="bottom" constant="2" id="xIe-Pu-dlx"/>
                                                             <constraint firstItem="Q3c-Rp-ZHV" firstAttribute="top" secondItem="kJJ-ew-PTE" secondAttribute="bottom" constant="8" id="xcW-an-jgl"/>
                                                         </constraints>
                                                         <connections>
                                                             <outlet property="courseDiscountInOffersCollection" destination="u2b-sG-2Cu" id="jdG-Fi-q8a"/>
                                                             <outlet property="courseNameInOffersCollection" destination="Q3c-Rp-ZHV" id="f6B-cy-35Z"/>
-                                                            <outlet property="favoriteBtnInOffersCollection" destination="jGq-Qc-Y3Z" id="kbQ-Up-I5i"/>
                                                             <outlet property="offerImageInOffersCollection" destination="kJJ-ew-PTE" id="ekJ-ow-Xdm"/>
                                                         </connections>
                                                     </collectionViewCell>
@@ -402,7 +388,6 @@
         <image name="academies" width="24" height="24"/>
         <image name="course6" width="180" height="120.48000335693359"/>
         <image name="event1" width="800" height="502"/>
-        <image name="red-empty-heart" width="37" height="37"/>
         <image name="setting tab bar" width="24" height="24"/>
         <image name="wish list tab bar" width="24" height="24"/>
     </resources>

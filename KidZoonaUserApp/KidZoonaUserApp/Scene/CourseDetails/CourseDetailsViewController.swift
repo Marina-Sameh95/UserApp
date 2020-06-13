@@ -40,7 +40,7 @@ class CourseDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         dbRef = Database.database().reference()
-    //    retriveWishListedCourses()
+        retriveWishListedCourses()
 
         reviewTable.delegate = self
         reviewTable.dataSource = self
@@ -80,7 +80,7 @@ class CourseDetailsViewController: UIViewController {
         if sender.isSelected{
             sender.isSelected = false
             
-       //     addCourseToWishlist()
+            addCourseToWishlist()
 
             
         } else {
@@ -143,72 +143,71 @@ extension CourseDetailsViewController : UITableViewDelegate , UITableViewDataSou
     }
 }
 
-//extension CourseDetailsViewController{
-//
-//    private func setUpCosmosUIView(){
-//        ratingCourse.settings.fillMode = .full
-//        ratingCourse.text = "Rate Us"
-//        ratingCourse.didTouchCosmos = {rating in
-//
-//            let userReviewCell = CourseDetailsCell()
-//           userReviewCell.rate = rating
-//          print("rate is\(rating)")
-//
-//           self.rate = rating
-//        }
-//    }
-//
-//    private func addCourseToWishlist(){
-//
-//        guard let uId = Auth.auth().currentUser?.uid else {
-//            print("cannot find userID")
-//            return
-//        }
-//
-//        wishlistedCourses.append((myCourse?.id)!)
-//
-//        let wishCourseValue = ["courseId" : wishlistedCourses] as? [String : [String]]
-//
-//        dbRef = Database.database().reference()
-//        let userRef = dbRef!.child("User").child(uId)
-//            //            userReviewCell.rate = rating
-//        let wishCoursesList = wishlistRef.child("Courses")
-//        wishCoursesList.updateChildValues(wishCourseValue!) { (error, dbRef) in
-//            if let err = error{
-//                print("Filed to update wishlist node / add wishlist course", err.localizedDescription)
-//            }else{
-//                print("Suessfully updated wishlist branch")
-//            }
-//        }
-//
-//    }
-//
-//    private func retriveWishListedCourses(){
-//
-//        guard let uId = Auth.auth().currentUser?.uid else {
-//            print("cannot find userID")
-//            return
-//        }
-//
-//        dbRef = Database.database().reference()
-//        let userRef = dbRef!.child("User").child(uId)
-//        let wishlistRef = userRef.child("WishList")
-//        let wishCoursesList = wishlistRef.child("Courses")
-//        wishCoursesList.observeSingleEvent(of: .value, with: { (snapshot) in
-//            for child in snapshot.children{
-//                let snap = child as! DataSnapshot
-//                let courseId = snap.value as! [String]
-//                self.wishlistedCourses.append(contentsOf: courseId)
-//                print("Course Details")
-//                print("WishlistedCoursesId\(courseId)")
-//            }
-//        })
-//
-//        print("WishlistedCoursesidArray\(wishlistedCourses)")
-//
-//
-//    }
-//
+extension CourseDetailsViewController{
 
-
-//}
+    private func setUpCosmosUIView(){
+        ratingCourse.settings.fillMode = .full
+        ratingCourse.text = "Rate Us"
+        ratingCourse.didTouchCosmos = {rating in
+            
+            let userReviewCell = CourseDetailsCell()
+            //            userReviewCell.rate = rating
+            
+            print("rate is\(rating)")
+            
+            self.rate = rating
+        }
+    }
+    
+    private func addCourseToWishlist(){
+        
+        guard let uId = Auth.auth().currentUser?.uid else {
+            print("cannot find userID")
+            return
+        }
+        
+        wishlistedCourses.append((myCourse?.id)!)
+        
+        let wishCourseValue = ["courseId" : wishlistedCourses] as? [String : [String]]
+        
+        dbRef = Database.database().reference()
+        let userRef = dbRef!.child("User").child(uId)
+        let wishlistRef = userRef.child("WishList")
+        let wishCoursesList = wishlistRef.child("Courses")
+        wishCoursesList.updateChildValues(wishCourseValue!) { (error, dbRef) in
+            if let err = error{
+                print("Filed to update wishlist node / add wishlist course", err.localizedDescription)
+                
+            }else{
+                print("Suessfully updated wishlist branch")
+            }
+        }
+    }
+    
+    private func retriveWishListedCourses(){
+                wishlistedCourses = []
+        guard let uId = Auth.auth().currentUser?.uid else {
+            print("cannot find userID")
+            return
+        }
+        
+        dbRef = Database.database().reference()
+        let userRef = dbRef!.child("User").child(uId)
+        let wishlistRef = userRef.child("WishList")
+        let wishCoursesList = wishlistRef.child("Courses")
+        wishCoursesList.observeSingleEvent(of: .value, with: { (snapshot) in
+            for child in snapshot.children{
+                let snap = child as! DataSnapshot
+                let courseId = snap.value as! [String]
+                self.wishlistedCourses.append(contentsOf: courseId)
+                print("Course Details")
+                print("WishlistedCoursesId\(courseId)")
+            }
+        })
+        
+        print("WishlistedCoursesidArray\(wishlistedCourses)")
+        
+        
+    }
+    
+}

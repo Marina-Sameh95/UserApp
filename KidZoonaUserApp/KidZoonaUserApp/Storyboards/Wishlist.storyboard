@@ -142,11 +142,20 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="kL2-r2-uOG" id="OHn-w0-Rg9"/>
+                        <segue destination="kvQ-zQ-BBB" kind="show" identifier="toCourseDetailsView" id="7M6-pf-eSK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="emY-pI-92a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1372" y="118.29085457271366"/>
+        </scene>
+        <!--CourseDetails-->
+        <scene sceneID="CC0-hT-BeV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CourseList" referencedIdentifier="CourseDetails" id="kvQ-zQ-BBB" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9KJ-Ax-z05" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2048" y="160"/>
         </scene>
     </scenes>
     <resources>

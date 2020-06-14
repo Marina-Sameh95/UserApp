@@ -76,11 +76,10 @@ class WishListVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
         return 144
     }
     
-    // delete cell
+    // delete cell from table view and the course id from firebase widhlist node
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-//            getAllKeys()
             let when = DispatchTime.now() + 1
             DispatchQueue.main.asyncAfter(deadline: when) {
                 
@@ -89,9 +88,20 @@ class WishListVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
                     return
                 }
                 
-                self.dbRef?.child("User").child(uId).child("WishList").child("Courses").child("courseId").child(self.wishlistedCoursesIds[indexPath.row]).removeValue()
+//                self.dbRef?.child("User").child(uId).child("WishList").child("Courses").child("courseId").child(self.wishlistedCoursesIds[indexPath.row]).removeValue()
                 self.wishlistedCoursesArr.remove(at: indexPath.row)
+                self.wishlistedCoursesIds.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .bottom)
+                
+                let wishCourseValue = ["courseId" : self.wishlistedCoursesIds] as? [String : [String]]
+                self.dbRef?.child("User").child(uId).child("WishList").child("Courses").updateChildValues(wishCourseValue!, withCompletionBlock: { (error, dbRef) in
+                    if let err = error{
+                        print("Filed to delete element from wishlist node ", err.localizedDescription)
+                        
+                    }else{
+                        print("Suessfully delete wishlist element")
+                    }
+                })
 //                self.wishlistedCoursesArr = []
             }
             
@@ -100,6 +110,21 @@ class WishListVC: UIViewController , UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let courseDetails = UIStoryboard(name: "CourseList", bundle: nil)
+//        let courseDetailsController = self.storyboard!.instantiateViewController(withIdentifier: "CourseList")
+        let selectedCourse = wishlistedCoursesArr[indexPath.row]
+        
+        performSegue(withIdentifier: "toCourseDetailsView", sender: selectedCourse)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "toCourseDetailsView"){
+            let courseDetailsVC = segue.destination as! CourseDetailsViewController
+            courseDetailsVC.myCourse = sender as? Course
+        }
     }
     
     

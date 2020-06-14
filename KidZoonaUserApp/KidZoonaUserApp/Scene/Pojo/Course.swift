@@ -24,18 +24,18 @@ class Course {
 //    var rate : String
     
     init(dictionary: [String: Any]){
-        self.name = dictionary["courseName"] as! String
-        self.availablePlace = dictionary["courseAvailablePlace"] as! String
-        self.date = dictionary["courseDate"] as! String
-        self.instructor = dictionary["courseInstructor"] as! String
-        self.image = dictionary["courseImage"] as! String
-        self.offer = dictionary["courseOffer"] as! String
-        self.description = dictionary["courseDescription"] as! String
-        self.id = dictionary["key"] as! String
-        self.location = dictionary["coursePlace"] as! String
-        self.price  = dictionary["coursePrice"] as! String
-        self.time = dictionary["courseTime"] as! String
-        self.type = dictionary["courseType"] as! String
+        self.name = dictionary["courseName"] as? String ?? ""
+        self.availablePlace = dictionary["courseAvailablePlace"] as? String ?? ""
+        self.date = dictionary["courseDate"] as? String ?? ""
+        self.instructor = dictionary["courseInstructor"] as? String ?? ""
+        self.image = dictionary["courseImage"] as? String ?? ""
+        self.offer = dictionary["courseOffer"] as? String ?? ""
+        self.description = dictionary["courseDescription"] as? String ?? ""
+        self.id = dictionary["key"] as? String ?? ""
+        self.location = dictionary["coursePlace"] as? String ?? ""
+        self.price  = dictionary["coursePrice"] as? String ?? ""
+        self.time = dictionary["courseTime"] as? String ?? ""
+        self.type = dictionary["courseType"] as? String ?? ""
 //        self.rate = dictionary["rate"] as! String
     }
 }

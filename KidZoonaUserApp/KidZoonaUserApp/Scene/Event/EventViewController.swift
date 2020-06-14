@@ -39,19 +39,19 @@ class EventViewController: UIViewController {
     var coach: String = ""
     var location: String = ""
     var availableSeats: String = ""
-    
     var eventKey: String = ""
+    var allKeysRegisterEvents = [String]()
+
    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        registerBtn.layer.cornerRadius = 15
         
+        registerBtn.layer.cornerRadius = 15
         registerBtn.layer.shadowOpacity = 0.25
         registerBtn.layer.shadowRadius = 5
         registerBtn.layer.shadowOffset = CGSize(width: 0, height: 10)
+        getAllKeyRegistered()
         setupView()
     }
     
@@ -75,14 +75,62 @@ class EventViewController: UIViewController {
         desciptionTextOfEvent.text = descrption
     }
     
+    
+    fileprivate func getAllKeyRegistered(){
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+        Database.database().reference().child("User").child(uid).child("enrollment").child("event").observe(.value, with: { (snapshot) in
+            
+            snapshot.children.forEach { (data) in
+                let snap = data as! DataSnapshot
+                guard let dict = snap.value as? [String: Any] else {return}
+                let eventId = dict["eventId"] as! String
+                self.allKeysRegisterEvents.append(eventId)
+                //   print(eventId)
+            }
+            
+        }, withCancel: nil)
+    }
+    
+    
     fileprivate func createEvent() {
+        
+        
         guard let uid = Auth.auth().currentUser?.uid else {return}
         let ref = Database.database().reference().child("User").child(uid).child("enrollment").child("event").childByAutoId()
-        let wishListValue = ["eventId" : eventKey]
         
-        ref.setValue(wishListValue) { (err, ref) in
+        
+        var key: String?
+        
+        for item in allKeysRegisterEvents{
+            if eventKey != item{
+                key = eventKey
+            }else{
+                //self.showAlert(title: "Error", message: "You Are Already Registered in this Event", style: .alert)
+                self.showAlert(title: "Important", message: "You Are Already Registered in this Event", style: .alert) { (UIAlertAction) in
+                    // self.navigationController?.popViewController(animated: true)
+                    self.registerBtn.isEnabled = false
+                }
+                return
+            }
+        }
+        
+        //        allKeysRegisterEvents.forEach { (data) in
+        //            if data != eventKey{
+        //                key = eventKey
+        //            }else{
+        //                print("is already exist")
+        //                return
+        //            }
+        //        }
+        
+        guard let eventK = key , !eventK.isEmpty else {return}
+        
+        let eventKeyRegister  = ["eventId" : eventK]
+        
+        ref.setValue(eventKeyRegister) { (err, ref) in
             if let error = err {
                 print("failed to update/push data in Database", error.localizedDescription)
+                return
             }else{
                 print("suessfully update Data in DataBase")
                 let eventTableView = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "EventTableViewController") as!

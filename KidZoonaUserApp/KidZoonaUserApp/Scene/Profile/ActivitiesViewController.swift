@@ -73,7 +73,7 @@ class ActivitiesViewController: UIViewController , UITableViewDelegate, UITableV
         if let academiesList = snapshot.value as? [String : Any]{
             
             let academiesIds = academiesList.keys
-            //                print("AllKey\(academiesIds)")
+            print("AllKey\(academiesIds)")
             for id in academiesIds{
                 let academy = academiesList[id] as? [String : Any]
                 
@@ -94,9 +94,10 @@ class ActivitiesViewController: UIViewController , UITableViewDelegate, UITableV
                   let courseInfoDict = Course(dictionary: courseInformation!)
                   self?.courses.append(courseInfoDict)
                 }
-                self?.tableView.reloadData()
-                
+  
             }
+            
+            self?.tableView.reloadData()
         }
         
     })

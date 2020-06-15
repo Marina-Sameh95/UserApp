@@ -100,7 +100,7 @@ class EventViewController: UIViewController {
         
         
         var key: String?
-        
+
         if allKeysRegisterEvents.isEmpty{
             key = eventKey
         }else{
@@ -118,16 +118,7 @@ class EventViewController: UIViewController {
             }
         }
 
-        
-        //        allKeysRegisterEvents.forEach { (data) in
-        //            if data != eventKey{
-        //                key = eventKey
-        //            }else{
-        //                print("is already exist")
-        //                return
-        //            }
-        //        }
-        
+
         guard let eventK = key , !eventK.isEmpty else {return}
         
         let eventKeyRegister  = ["eventId" : eventK]

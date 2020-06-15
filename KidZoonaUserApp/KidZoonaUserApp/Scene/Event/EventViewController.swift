@@ -100,29 +100,25 @@ class EventViewController: UIViewController {
         
         
         var key: String?
-        
-        for item in allKeysRegisterEvents{
-            if eventKey != item{
-                key = eventKey
-            }else{
-                //self.showAlert(title: "Error", message: "You Are Already Registered in this Event", style: .alert)
-                self.showAlert(title: "Important", message: "You Are Already Registered in this Event", style: .alert) { (UIAlertAction) in
-                    // self.navigationController?.popViewController(animated: true)
-                    self.registerBtn.isEnabled = false
+
+        if allKeysRegisterEvents.isEmpty{
+            key = eventKey
+        }else{
+            for item in allKeysRegisterEvents{
+                if eventKey != item{
+                    key = eventKey
+                }else{
+                    //self.showAlert(title: "Error", message: "You Are Already Registered in this Event", style: .alert)
+                    self.showAlert(title: "Important", message: "You Are Already Registered in this Event", style: .alert) { (UIAlertAction) in
+                        // self.navigationController?.popViewController(animated: true)
+                        self.registerBtn.isEnabled = false
+                    }
+                    return
                 }
-                return
             }
         }
-        
-        //        allKeysRegisterEvents.forEach { (data) in
-        //            if data != eventKey{
-        //                key = eventKey
-        //            }else{
-        //                print("is already exist")
-        //                return
-        //            }
-        //        }
-        
+
+
         guard let eventK = key , !eventK.isEmpty else {return}
         
         let eventKeyRegister  = ["eventId" : eventK]

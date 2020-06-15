@@ -345,7 +345,11 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource {
         }
         
         if collectionView == offersCollectionView{
-            print(courseMusic.count)
+            let courseDetails = UIStoryboard(name: "CourseList", bundle: nil).instantiateViewController(withIdentifier: "CourseDetails") as! CourseDetailsViewController
+            
+            courseDetails.myCourse = courses[indexPath.row]
+            
+            self.navigationController?.pushViewController(courseDetails, animated: true)
         }
         
         if collectionView == eventsCollectionView{

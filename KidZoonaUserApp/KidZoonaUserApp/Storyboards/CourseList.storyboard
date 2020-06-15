@@ -272,7 +272,7 @@
                                                                                 <constraint firstAttribute="height" constant="20" id="SyO-RD-1ec"/>
                                                                             </constraints>
                                                                         </stackView>
-                                                                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uQe-O7-0mV" customClass="CosmosView" customModule="Cosmos">
+                                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uQe-O7-0mV" customClass="CosmosView" customModule="Cosmos">
                                                                             <rect key="frame" x="127" y="36" width="120" height="26"/>
                                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <constraints>

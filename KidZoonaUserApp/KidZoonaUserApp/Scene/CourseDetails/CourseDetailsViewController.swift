@@ -22,6 +22,7 @@ class CourseDetailsViewController: UIViewController {
     var wishlistedCourses = [String]()
     var allKeysRegisterCourses = [String]()
     var courseKey: String = ""
+    var code = ""
 
 
 
@@ -107,9 +108,8 @@ class CourseDetailsViewController: UIViewController {
             snapshot.children.forEach { (data) in
                 let snap = data as! DataSnapshot
                 guard let dict = snap.value as? [String: Any] else {return}
-                let courseId = dict["eventId"] as! String
+                let courseId = dict["courseId"] as! String
                 self.allKeysRegisterCourses.append(courseId)
-                print("all key registered=\(self.allKeysRegisterCourses)")
                 //   print(eventId)
             }
             
@@ -119,51 +119,95 @@ class CourseDetailsViewController: UIViewController {
     
   func createCourse() {
     print("in create course")
-        
-        guard let uid = Auth.auth().currentUser?.uid else {return}
-        let ref = Database.database().reference().child("User").child(uid).child("enrollment").child("course").childByAutoId()
-        var key: String?
-        
-    for item in allKeysRegisterCourses{
-            if courseKey != item{
-                key = courseKey
+    
+    guard let uid = Auth.auth().currentUser?.uid else {return}
+    let ref = Database.database().reference().child("User").child(uid).child("enrollment").child("course").childByAutoId()
+    var key: String?
+    
+    if allKeysRegisterCourses.isEmpty{
+        key = myCourse?.id
+    }else{
+        for item in allKeysRegisterCourses{
+            if myCourse?.id != item{
+                key = myCourse?.id
             }else{
                 //self.showAlert(title: "Error", message: "You Are Already Registered in this Event", style: .alert)
-                AlertController.showAlert(inViewController: self, title: "Important", message: "You Are Already Registered in this Event")
-                self.registerBtn.isEnabled = false
-
-//                self.showAlert(title: "Important", message: "You Are Already Registered in this Event", style: .alert) { (UIAlertAction) in
-//                    // self.navigationController?.popViewController(animated: true)
-//                    self.registerBtn.isEnabled = false
-//                }
+                self.showAlert(title: "Important", message: "You Are Already Registered in this Course your code is: \(code)", style: .alert) { (UIAlertAction) in
+                    // self.navigationController?.popViewController(animated: true)
+                    //self.registerBtn.isEnabled = false
+                }
                 return
             }
         }
-        
-        //        allKeysRegisterEvents.forEach { (data) in
-        //            if data != eventKey{
-        //                key = eventKey
-        //            }else{
-        //                print("is already exist")
-        //                return
-        //            }
-        //        }
-        
-        guard let courseK = key , !courseK.isEmpty else {return}
-        
+    }
+    
+    
+    guard let courseK = key , !courseK.isEmpty else {return}
+    
     let courseKeyRegister  = ["courseId" : courseK]
-        
+    
     ref.setValue(courseKeyRegister) { (err, ref) in
-            if let error = err {
-                print("failed to update/push data in Database", error.localizedDescription)
-                return
-            }else{
-                print("suessfully update Data in DataBase")
-                let courseTableView = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "ActivitiesViewController") as!
-                ActivitiesViewController
-                self.navigationController?.pushViewController(courseTableView, animated: true)
-            }
+        if let error = err {
+            print("failed to update/push data in Database", error.localizedDescription)
+            return
+        }else{
+            print("suessfully update Data in DataBase")
+//            let courseTableView = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "ActivitiesViewController") as!
+//           ActivitiesViewController
+//            self.navigationController?.pushViewController(courseTableView, animated: true)
+            self.code = self.randomString(length: 5)
+            let alert = UIAlertController(title: "Register Course", message: "Save your register code #course\(self.code)", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {(action) in }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: {(action) in }))
+    
+            self.present(alert, animated: true, completion: nil)
         }
+    }
+        
+//        guard let uid = Auth.auth().currentUser?.uid else {return}
+//        let ref = Database.database().reference().child("User").child(uid).child("enrollment").child("course").childByAutoId()
+//        var key: String?
+//
+//    for item in allKeysRegisterCourses{
+//            if courseKey != item{
+//                key = courseKey
+//            }else{
+//                //self.showAlert(title: "Error", message: "You Are Already Registered in this Event", style: .alert)
+//                AlertController.showAlert(inViewController: self, title: "Important", message: "You Are Already Registered in this Event")
+//                self.registerBtn.isEnabled = false
+//
+////                self.showAlert(title: "Important", message: "You Are Already Registered in this Event", style: .alert) { (UIAlertAction) in
+////                    // self.navigationController?.popViewController(animated: true)
+////                    self.registerBtn.isEnabled = false
+////                }
+//                return
+//            }
+//        }
+//
+//        //        allKeysRegisterEvents.forEach { (data) in
+//        //            if data != eventKey{
+//        //                key = eventKey
+//        //            }else{
+//        //                print("is already exist")
+//        //                return
+//        //            }
+//        //        }
+//
+//        guard let courseK = key , !courseK.isEmpty else {return}
+//
+//    let courseKeyRegister  = ["courseId" : courseK]
+//
+//    ref.setValue(courseKeyRegister) { (err, ref) in
+//            if let error = err {
+//                print("failed to update/push data in Database", error.localizedDescription)
+//                return
+//            }else{
+//                print("suessfully update Data in DataBase")
+//                let courseTableView = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "ActivitiesViewController") as!
+//                ActivitiesViewController
+//                self.navigationController?.pushViewController(courseTableView, animated: true)
+//            }
+       // }
         
         //        ref.updateChildValues(wishListValue, withCompletionBlock: { (error, ref ) in
         //            if let error = error {

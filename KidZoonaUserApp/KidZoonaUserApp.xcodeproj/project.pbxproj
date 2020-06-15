@@ -37,6 +37,8 @@
 		17F67ECC246FDE8600A1F211 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17F67ECA246FDE8600A1F211 /* Main.storyboard */; };
 		17F67ECE246FDE9100A1F211 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17F67ECD246FDE9100A1F211 /* Assets.xcassets */; };
 		17F67ED1246FDE9100A1F211 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17F67ECF246FDE9100A1F211 /* LaunchScreen.storyboard */; };
+		5B51EFE32497001800A1F9B7 /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B51EFE12497001700A1F9B7 /* RoundedTextField.swift */; };
+		5B51EFE42497001800A1F9B7 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B51EFE22497001800A1F9B7 /* RoundedButton.swift */; };
 		5B598D022494527900ED24F6 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B598D012494527900ED24F6 /* AlertController.swift */; };
 		62EF5E6ADCD61C5B599BC24D /* Pods_KidZoonaUserApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A216C5BA0151B3063F21B1B /* Pods_KidZoonaUserApp.framework */; };
 		88092FB0247C1BBE00EB3B34 /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88092FAF247C1BBE00EB3B34 /* ActivitiesViewController.swift */; };
@@ -93,6 +95,8 @@
 		17F67ED0246FDE9100A1F211 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17F67ED2246FDE9100A1F211 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FBA4BADC316154081C96343 /* Pods-KidZoonaUserApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidZoonaUserApp.release.xcconfig"; path = "Target Support Files/Pods-KidZoonaUserApp/Pods-KidZoonaUserApp.release.xcconfig"; sourceTree = "<group>"; };
+		5B51EFE12497001700A1F9B7 /* RoundedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
+		5B51EFE22497001800A1F9B7 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		5B598D012494527900ED24F6 /* AlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		7A216C5BA0151B3063F21B1B /* Pods_KidZoonaUserApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KidZoonaUserApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88092FAF247C1BBE00EB3B34 /* ActivitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
@@ -209,6 +213,8 @@
 			isa = PBXGroup;
 			children = (
 				1725A43D24967CB000BFF018 /* Alert.swift */,
+				5B51EFE22497001800A1F9B7 /* RoundedButton.swift */,
+				5B51EFE12497001700A1F9B7 /* RoundedTextField.swift */,
 				1799A2202483B5FF00DE26EE /* UIColor+Customization.swift */,
 				17F67ECD246FDE9100A1F211 /* Assets.xcassets */,
 			);
@@ -495,6 +501,7 @@
 				0B415C67248D6E1F000319D0 /* Course.swift in Sources */,
 				88092FB4247C292100EB3B34 /* EditProfileViewController.swift in Sources */,
 				8899A7C12477C8F00077C872 /* DesignCourseList.swift in Sources */,
+				5B51EFE32497001800A1F9B7 /* RoundedTextField.swift in Sources */,
 				88263B1F247B152D00064461 /* DesignCourseDetails.swift in Sources */,
 				88DDAA0524847E6C003ADFBF /* AcademyListViewController.swift in Sources */,
 				1799A2182483B5C900DE26EE /* WishListVC.swift in Sources */,
@@ -516,6 +523,7 @@
 				1752DB9C2485DC05000F3213 /* ActivitiesForUserTabelCell.swift in Sources */,
 				888CD7652485E9E800C1CCC4 /* WishTableViewCell.swift in Sources */,
 				8899A7BF2477C3880077C872 /* CourseListViewController.swift in Sources */,
+				5B51EFE42497001800A1F9B7 /* RoundedButton.swift in Sources */,
 				88830B4C248BDE840065D6E9 /* EventTableViewController.swift in Sources */,
 				179D15EC2474AAE500D49CD0 /* HomeVC.swift in Sources */,
 				1799A21C2483B5C900DE26EE /* DesignReviewCell.swift in Sources */,

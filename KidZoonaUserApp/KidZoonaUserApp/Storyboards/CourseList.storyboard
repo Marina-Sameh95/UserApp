@@ -209,9 +209,6 @@
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="76G-v8-G53">
                                                 <rect key="frame" x="16.000000000000007" y="435" width="105.66666666666669" height="24"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="105.67" id="UyJ-N8-f5V"/>
-                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>

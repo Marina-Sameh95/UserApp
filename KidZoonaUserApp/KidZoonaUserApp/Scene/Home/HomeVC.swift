@@ -323,6 +323,10 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource {
                     
                 }
             }
+            else {
+                cell.eventImageInEventCollection.image = UIImage(named: "noimage")
+                
+            }
             
             
             return cell

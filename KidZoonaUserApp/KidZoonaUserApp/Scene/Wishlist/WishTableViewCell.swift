@@ -37,7 +37,11 @@ class WishTableViewCell: UITableViewCell {
                     self.courseImg.image = image
                     self.courseImg.kf.indicatorType = .activity
                 }
+            }   else {
+                courseImg.image = UIImage(named: "noimage")
+                
             }
+            
         }
     }
     

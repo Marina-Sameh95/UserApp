@@ -34,6 +34,9 @@ class CourseListCell: UITableViewCell {
                     self.courseImage.kf.indicatorType = .activity
                 }
             }
+            else {
+                courseImage.image = UIImage(named: "noImage")
+            }
         }
     }
     

@@ -101,6 +101,10 @@ extension AcademyProfileVC{
                 self.academyImage.kf.indicatorType = .activity
             }
         }
+        else {
+            academyImage.image = UIImage(named: "noimage")
+            
+        }
     }
     
     private func setUpCosmosUIView(){

@@ -51,28 +51,8 @@
                                     <constraint firstItem="Qkr-Gd-Kv1" firstAttribute="leading" secondItem="vLg-ye-5aX" secondAttribute="trailing" constant="20" id="ErN-f7-xOM"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="nSE-Z6-Y91">
-                                <rect key="frame" x="60" y="362" width="255" height="26"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green-get-direction-icon" translatesAutoresizingMaskIntoConstraints="NO" id="sdN-uf-ky8">
-                                        <rect key="frame" x="0.0" y="0.0" width="26" height="26"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="26" id="JHk-WQ-P3J"/>
-                                            <constraint firstAttribute="height" constant="26" id="ick-C6-Uca"/>
-                                        </constraints>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YFq-yU-ogP">
-                                        <rect key="frame" x="27" y="0.0" width="228" height="26"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="228" id="vwd-r0-GhF"/>
-                                            <constraint firstAttribute="height" constant="26" id="wco-4q-5kP"/>
-                                        </constraints>
-                                        <state key="normal" title="Get Direction"/>
-                                    </button>
-                                </subviews>
-                            </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MLd-gx-vEf">
-                                <rect key="frame" x="0.0" y="420.5" width="375" height="246.5"/>
+                                <rect key="frame" x="0.0" y="408.5" width="375" height="258.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReviewCell" rowHeight="85" id="dTh-8w-GEm" customClass="UserReviewCell" customModule="KidZoonaUserApp" customModuleProvider="target">
@@ -157,7 +137,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reviews" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZB-R7-ePJ">
-                                <rect key="frame" x="16" y="396" width="68" height="20.5"/>
+                                <rect key="frame" x="16" y="384" width="68" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="68" id="i99-gc-NND"/>
                                 </constraints>
@@ -184,23 +164,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="DON-z7-0gF" firstAttribute="top" secondItem="l16-8G-7Xt" secondAttribute="top" id="4QL-v0-f1q"/>
-                            <constraint firstItem="nSE-Z6-Y91" firstAttribute="centerX" secondItem="l16-8G-7Xt" secondAttribute="centerX" id="5j2-gL-aHm"/>
                             <constraint firstItem="pMX-mq-LyV" firstAttribute="centerX" secondItem="l16-8G-7Xt" secondAttribute="centerX" id="5pN-Zn-6eq"/>
                             <constraint firstItem="hOj-Re-IKS" firstAttribute="centerX" secondItem="DON-z7-0gF" secondAttribute="centerX" id="Api-uK-K5P"/>
                             <constraint firstAttribute="trailing" secondItem="MLd-gx-vEf" secondAttribute="trailing" id="DVn-tD-D52"/>
-                            <constraint firstItem="nSE-Z6-Y91" firstAttribute="top" secondItem="pMX-mq-LyV" secondAttribute="bottom" constant="8" id="EsX-ew-38X"/>
                             <constraint firstItem="YWO-c9-DtH" firstAttribute="centerX" secondItem="l16-8G-7Xt" secondAttribute="centerX" id="MYy-cZ-N6M"/>
                             <constraint firstItem="MLd-gx-vEf" firstAttribute="top" secondItem="yZB-R7-ePJ" secondAttribute="bottom" constant="4" id="NB2-MH-TKh"/>
-                            <constraint firstItem="yZB-R7-ePJ" firstAttribute="top" secondItem="nSE-Z6-Y91" secondAttribute="bottom" constant="8" id="SPb-lZ-dr4"/>
                             <constraint firstItem="MLd-gx-vEf" firstAttribute="bottom" secondItem="l16-8G-7Xt" secondAttribute="bottom" id="UCP-OZ-B18"/>
                             <constraint firstItem="VG0-HZ-1cP" firstAttribute="leading" secondItem="l16-8G-7Xt" secondAttribute="leading" constant="60" id="Wgx-Dq-MiE"/>
                             <constraint firstItem="pMX-mq-LyV" firstAttribute="top" secondItem="YWO-c9-DtH" secondAttribute="bottom" constant="8" id="Xzd-Gi-NbT"/>
                             <constraint firstItem="MLd-gx-vEf" firstAttribute="leading" secondItem="l16-8G-7Xt" secondAttribute="leading" id="Yez-uu-hfX"/>
-                            <constraint firstItem="nSE-Z6-Y91" firstAttribute="height" secondItem="pMX-mq-LyV" secondAttribute="height" id="aPe-lE-cMJ"/>
                             <constraint firstItem="MLd-gx-vEf" firstAttribute="width" secondItem="iqE-3Y-1da" secondAttribute="width" id="cXA-ir-rug"/>
                             <constraint firstItem="l16-8G-7Xt" firstAttribute="bottom" secondItem="VG0-HZ-1cP" secondAttribute="bottom" constant="20" id="dOU-Uv-qMb"/>
                             <constraint firstItem="hOj-Re-IKS" firstAttribute="top" secondItem="DON-z7-0gF" secondAttribute="bottom" constant="8" id="drJ-MA-a6c"/>
                             <constraint firstItem="DON-z7-0gF" firstAttribute="centerX" secondItem="l16-8G-7Xt" secondAttribute="centerX" id="eBu-gH-GGG"/>
+                            <constraint firstItem="yZB-R7-ePJ" firstAttribute="top" secondItem="Qkr-Gd-Kv1" secondAttribute="bottom" constant="30" id="fk5-9b-bjT"/>
                             <constraint firstItem="YWO-c9-DtH" firstAttribute="top" secondItem="hOj-Re-IKS" secondAttribute="bottom" constant="8" id="nJC-FH-4nQ"/>
                             <constraint firstItem="DON-z7-0gF" firstAttribute="leading" secondItem="l16-8G-7Xt" secondAttribute="leading" id="nYX-9q-5r3"/>
                             <constraint firstItem="yZB-R7-ePJ" firstAttribute="leading" secondItem="l16-8G-7Xt" secondAttribute="leading" constant="16" id="vdm-QC-J2l"/>
@@ -213,7 +190,6 @@
                         <outlet property="academyLocationLabel" destination="Qkr-Gd-Kv1" id="4ty-xz-MsI"/>
                         <outlet property="academyName" destination="hOj-Re-IKS" id="Sd7-Nh-Qbi"/>
                         <outlet property="academyReviewTableView" destination="MLd-gx-vEf" id="RzM-Ps-c8Z"/>
-                        <outlet property="getDirectionOfAcademyFromMapBtn" destination="YFq-yU-ogP" id="noh-wi-uOa"/>
                         <outlet property="ratingView" destination="YWO-c9-DtH" id="gh1-Bx-5Q4"/>
                     </connections>
                 </viewController>
@@ -329,7 +305,6 @@
     </scenes>
     <resources>
         <image name="academy tab bar" width="24" height="24"/>
-        <image name="green-get-direction-icon" width="26" height="26"/>
         <image name="green-location-icon" width="26" height="26"/>
     </resources>
 </document>

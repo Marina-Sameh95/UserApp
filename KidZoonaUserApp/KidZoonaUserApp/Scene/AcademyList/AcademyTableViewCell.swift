@@ -34,6 +34,10 @@ class AcademyTableViewCell: UITableViewCell {
                     self.academyImage.kf.indicatorType = .activity
                 }
             }
+            else {
+                academyImage.image = UIImage(named: "noimage")
+                
+            }
         }
     }
     

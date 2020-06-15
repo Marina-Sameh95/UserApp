@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="ewz-Yy-1OK">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ewz-Yy-1OK">
                                 <rect key="frame" x="50" y="60" width="275" height="164"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="164" id="rLu-AM-7M3"/>
@@ -106,29 +106,26 @@
             <objects>
                 <viewController id="z8s-bI-YrM" customClass="EditProfileViewController" customModule="KidZoonaUserApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="icB-3Z-JtP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Uq-vt-TK8">
-                                <rect key="frame" x="16" y="256" width="343" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Uq-vt-TK8" customClass="RoundedTextField" customModule="KidZoonaUserApp" customModuleProvider="target">
+                                <rect key="frame" x="16" y="378" width="343" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="cOP-lZ-EzU"/>
+                                    <constraint firstAttribute="height" constant="40" id="cOP-lZ-EzU"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="n4V-JC-sQ6">
-                                <rect key="frame" x="16" y="298" width="343" height="30"/>
+                                <rect key="frame" x="16" y="448" width="343" height="40"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green-date-icon" translatesAutoresizingMaskIntoConstraints="NO" id="i9u-UN-oKm">
-                                        <rect key="frame" x="0.0" y="0.0" width="35" height="30"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Birthdate" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="myQ-WC-bHI" customClass="RoundedTextField" customModule="KidZoonaUserApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="35" id="pIG-mg-jWO"/>
+                                            <constraint firstAttribute="height" constant="40" id="cRh-8E-Zra"/>
                                         </constraints>
-                                    </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Birthdate" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="myQ-WC-bHI">
-                                        <rect key="frame" x="51" y="0.0" width="292" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -136,7 +133,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XID-Pg-JL5">
-                                <rect key="frame" x="16" y="340" width="74" height="24"/>
+                                <rect key="frame" x="16" y="500" width="74" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="74" id="CQj-Pf-MdC"/>
                                 </constraints>
@@ -145,7 +142,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydz-VR-qH3">
-                                <rect key="frame" x="102" y="358" width="17" height="14"/>
+                                <rect key="frame" x="102" y="518" width="17" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="14" id="Zaz-LD-0aQ"/>
                                     <constraint firstAttribute="width" constant="17" id="xVf-lm-A0R"/>
@@ -157,7 +154,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Male" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6n-7a-6QV">
-                                <rect key="frame" x="127" y="352" width="43" height="24"/>
+                                <rect key="frame" x="127" y="512" width="43" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="43" id="dqr-Tb-lZY"/>
                                     <constraint firstAttribute="height" constant="24" id="qx4-Eq-Fw3"/>
@@ -167,7 +164,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Female" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yvv-2Z-ynZ">
-                                <rect key="frame" x="127" y="385" width="64" height="24"/>
+                                <rect key="frame" x="127" y="545" width="64" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="64" id="hOH-gK-Vhz"/>
                                     <constraint firstAttribute="height" constant="24" id="pXK-yo-7OW"/>
@@ -177,15 +174,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KZx-IC-uAn">
-                                <rect key="frame" x="102" y="388" width="17" height="14"/>
+                                <rect key="frame" x="102" y="548" width="17" height="14"/>
                                 <state key="normal" title="Button" image="empty"/>
                                 <state key="selected" image="fill"/>
                                 <connections>
                                     <action selector="female:" destination="z8s-bI-YrM" eventType="touchUpInside" id="Krd-gy-YuB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yR-7R-ol7">
-                                <rect key="frame" x="65" y="465" width="269" height="53"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yR-7R-ol7" customClass="RoundedBtn" customModule="KidZoonaUserApp" customModuleProvider="target">
+                                <rect key="frame" x="65" y="639" width="269" height="53"/>
                                 <color key="backgroundColor" red="0.96295267340000001" green="0.83730345959999997" blue="0.055017702279999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="53" id="Sf6-8f-Y8d"/>
@@ -199,14 +196,15 @@
                                     <action selector="saveEditUserInfo:" destination="z8s-bI-YrM" eventType="touchUpInside" id="cFL-dy-S8X"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userProfileImage" translatesAutoresizingMaskIntoConstraints="NO" id="sc6-v1-KJR">
-                                <rect key="frame" x="110" y="90" width="155" height="120"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="sc6-v1-KJR">
+                                <rect key="frame" x="82.666666666666686" y="180" width="210" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="1cd-oJ-13y"/>
+                                    <constraint firstAttribute="width" constant="210" id="eae-xR-TRi"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nwA-NW-5EF">
-                                <rect key="frame" x="265" y="218" width="94" height="30"/>
+                                <rect key="frame" x="140.66666666666666" y="308" width="94" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="94" id="oHa-WZ-ykl"/>
                                 </constraints>
@@ -218,22 +216,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="n4V-JC-sQ6" firstAttribute="top" secondItem="1Uq-vt-TK8" secondAttribute="bottom" constant="12" id="3EW-Am-iSN"/>
-                            <constraint firstItem="sc6-v1-KJR" firstAttribute="top" secondItem="icB-3Z-JtP" secondAttribute="top" constant="90" id="3TD-Fh-AUD"/>
+                            <constraint firstItem="sc6-v1-KJR" firstAttribute="top" secondItem="icB-3Z-JtP" secondAttribute="top" constant="180" id="3TD-Fh-AUD"/>
+                            <constraint firstItem="1Uq-vt-TK8" firstAttribute="top" secondItem="nwA-NW-5EF" secondAttribute="bottom" constant="40" id="4vu-i8-KSO"/>
                             <constraint firstItem="nwA-NW-5EF" firstAttribute="top" secondItem="sc6-v1-KJR" secondAttribute="bottom" constant="8" id="5B3-s7-amf"/>
                             <constraint firstItem="KZx-IC-uAn" firstAttribute="height" secondItem="ydz-VR-qH3" secondAttribute="height" id="5GP-wY-yPa"/>
                             <constraint firstItem="XID-Pg-JL5" firstAttribute="leading" secondItem="waf-ts-A0o" secondAttribute="leading" constant="16" id="5QM-dr-fYS"/>
-                            <constraint firstItem="5yR-7R-ol7" firstAttribute="top" secondItem="Yvv-2Z-ynZ" secondAttribute="bottom" constant="56" id="Agw-XG-5s9"/>
-                            <constraint firstItem="sc6-v1-KJR" firstAttribute="leading" secondItem="icB-3Z-JtP" secondAttribute="leading" constant="110" id="AyX-kF-YlD"/>
+                            <constraint firstItem="5yR-7R-ol7" firstAttribute="top" secondItem="Yvv-2Z-ynZ" secondAttribute="bottom" constant="70" id="Agw-XG-5s9"/>
                             <constraint firstItem="ydz-VR-qH3" firstAttribute="top" secondItem="myQ-WC-bHI" secondAttribute="bottom" constant="30" id="B9J-ju-7Yc"/>
-                            <constraint firstItem="1Uq-vt-TK8" firstAttribute="top" secondItem="sc6-v1-KJR" secondAttribute="bottom" constant="46" id="D3m-95-gNx"/>
-                            <constraint firstItem="waf-ts-A0o" firstAttribute="trailing" secondItem="nwA-NW-5EF" secondAttribute="trailing" constant="16" id="FM7-Yk-cUY"/>
                             <constraint firstItem="KZx-IC-uAn" firstAttribute="leading" secondItem="waf-ts-A0o" secondAttribute="leading" constant="102" id="G1B-pp-Gj5"/>
                             <constraint firstItem="XID-Pg-JL5" firstAttribute="top" secondItem="n4V-JC-sQ6" secondAttribute="bottom" constant="12" id="GPm-jg-hnl"/>
+                            <constraint firstItem="myQ-WC-bHI" firstAttribute="top" secondItem="1Uq-vt-TK8" secondAttribute="bottom" constant="30" id="LQs-II-RwV"/>
                             <constraint firstItem="1Uq-vt-TK8" firstAttribute="centerX" secondItem="waf-ts-A0o" secondAttribute="centerX" id="MxX-eh-WDI"/>
                             <constraint firstItem="ydz-VR-qH3" firstAttribute="leading" secondItem="waf-ts-A0o" secondAttribute="leading" constant="102" id="Nnk-gi-awp"/>
                             <constraint firstItem="1Uq-vt-TK8" firstAttribute="leading" secondItem="waf-ts-A0o" secondAttribute="leading" constant="16" id="O4f-7B-M88"/>
                             <constraint firstItem="n4V-JC-sQ6" firstAttribute="leading" secondItem="waf-ts-A0o" secondAttribute="leading" constant="16" id="OFK-GD-6jH"/>
+                            <constraint firstItem="nwA-NW-5EF" firstAttribute="centerX" secondItem="icB-3Z-JtP" secondAttribute="centerX" id="Zjr-cm-VUy"/>
                             <constraint firstItem="n4V-JC-sQ6" firstAttribute="width" secondItem="1Uq-vt-TK8" secondAttribute="width" id="bem-RF-HXM"/>
                             <constraint firstItem="Yvv-2Z-ynZ" firstAttribute="top" secondItem="e6n-7a-6QV" secondAttribute="bottom" constant="9" id="cJR-nB-Za8"/>
                             <constraint firstItem="Yvv-2Z-ynZ" firstAttribute="leading" secondItem="KZx-IC-uAn" secondAttribute="trailing" constant="8" id="daq-Pb-zFw"/>
@@ -265,7 +262,7 @@
             <objects>
                 <viewController id="hQb-Yq-bTL" customClass="ProfileDetailsViewController" customModule="KidZoonaUserApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vuP-nK-nog">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cY-zQ-g4Y">
@@ -304,7 +301,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0M4-24-Q7V">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0M4-24-Q7V" customClass="RoundedBtn" customModule="KidZoonaUserApp" customModuleProvider="target">
                                 <rect key="frame" x="50" y="398" width="275" height="36"/>
                                 <color key="backgroundColor" red="0.96295267340000001" green="0.83730345959999997" blue="0.055017702279999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -364,7 +361,7 @@
             <objects>
                 <viewController id="DUT-Oa-NyL" customClass="ActivitiesViewController" customModule="KidZoonaUserApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Cf-e2-7M7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DQ3-Le-I33">
@@ -458,7 +455,7 @@
             <objects>
                 <viewController storyboardIdentifier="EventTableViewController" id="IAj-Wi-blE" customClass="EventTableViewController" customModule="KidZoonaUserApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ktc-Rv-Kb9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xmx-ti-Uhd">
@@ -540,10 +537,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="course2" width="336" height="223.80000305175781"/>
+        <image name="course2" width="560" height="373"/>
         <image name="empty" width="980" height="980"/>
         <image name="fill" width="128" height="128"/>
-        <image name="green-date-icon" width="26" height="26"/>
-        <image name="userProfileImage" width="384" height="384"/>
+        <image name="profile" width="24" height="24"/>
     </resources>
 </document>

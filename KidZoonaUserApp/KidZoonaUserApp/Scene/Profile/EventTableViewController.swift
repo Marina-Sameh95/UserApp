@@ -35,7 +35,6 @@ class EventTableViewController: UIViewController , UITableViewDelegate, UITableV
     
     override func viewWillAppear(_ animated: Bool) {
         getEventKeys()
-
     }
     
     fileprivate func getEventKeys (){
@@ -59,30 +58,9 @@ class EventTableViewController: UIViewController , UITableViewDelegate, UITableV
         }
     }
     
-    /*
-     snapshot.children.forEach({ (data) in
-     // print(data)
-     let snap = data as! DataSnapshot
-     snap.children.forEach{ (dataEv) in
-     let snap2 = data as! DataSnapshot
-     //  print("Data2: \(snap2.key)")
-     snap2.children.forEach({ (data2) in
-     let snap = data2 as! DataSnapshot
-     print("Data3: \(snap.key)")
-     let dic = snap.value as! [String : Any]
-     let comment = dic["name"] as? String
-     //  print("name of academy :\(comment)")
-     })
-     
-     }
-     
-     })
-     */
-    
-    // -M9VZMjgg3anXJy4-cFn
-    
-    
+
     fileprivate func retriveDataFromAcadmeies(){
+        
         Database.database().reference().child("Academies").observe(.childAdded, with: { (snapshot) in
             snapshot.children.forEach { (data) in
                 let snap = data as! DataSnapshot

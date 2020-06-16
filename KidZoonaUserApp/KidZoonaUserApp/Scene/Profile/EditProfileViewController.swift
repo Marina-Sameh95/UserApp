@@ -23,6 +23,7 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var userImageOutLet: UIImageView!
     
     let datePicker = UIDatePicker()
+    var  gender : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,8 +50,11 @@ class EditProfileViewController: UIViewController {
     @IBAction func male(_ sender: UIButton) {
         if sender.isSelected{
             sender.isSelected = false
+            femaleBtn.isSelected = false
         } else {
             sender.isSelected = true
+            femaleBtn.isSelected = false
+            gender = "male"
         }
     }
     
@@ -58,8 +62,11 @@ class EditProfileViewController: UIViewController {
     @IBAction func female(_ sender: UIButton) {
         if sender.isSelected{
             sender.isSelected = false
+            maleBtn.isSelected = false
         } else {
             sender.isSelected = true
+            maleBtn.isSelected = false
+            gender = "female"
         }
     }
     
@@ -135,6 +142,7 @@ class EditProfileViewController: UIViewController {
         //updateFunBirthdate
         updateUserData()
         
+        
     }
     
     func updateUserData() {
@@ -163,12 +171,9 @@ class EditProfileViewController: UIViewController {
         }else{
             birthdate = userBirthDateTxt
         }
-        
         /////
-        
-        
-        
-        let birthDateTxt = ["birthDate" : birthdate, "UserName" : fullname]
+
+        let birthDateTxt: [String: Any] = ["birthDate" : birthdate, "UserName" : fullname, "gender": gender]
         
         print("birthDateTxt :  \(birthDateTxt)")
         
@@ -183,6 +188,8 @@ class EditProfileViewController: UIViewController {
                 self.userName.text = ""
             }
         })
+      
+        self.navigationController?.popViewController(animated: true)
     }
 }
 

@@ -186,10 +186,10 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lS2-SL-fTM">
-                                        <rect key="frame" x="40" y="693" width="334" height="45"/>
+                                        <rect key="frame" x="40" y="762" width="334" height="40"/>
                                         <color key="backgroundColor" red="0.96295267340000001" green="0.83730345959999997" blue="0.055017702279999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="DB2-6V-Ufx"/>
+                                            <constraint firstAttribute="height" constant="40" id="DB2-6V-Ufx"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <state key="normal" title="Register">
@@ -201,7 +201,6 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="lS2-SL-fTM" firstAttribute="top" secondItem="sKX-VX-YwY" secondAttribute="bottom" constant="32" id="7dB-iW-Onz"/>
                                     <constraint firstItem="dQC-gE-Fum" firstAttribute="leading" secondItem="gfs-mQ-fZ9" secondAttribute="leading" id="cAd-ca-iNf"/>
                                     <constraint firstAttribute="bottom" secondItem="dQC-gE-Fum" secondAttribute="bottom" id="lCE-1L-3To"/>
                                     <constraint firstItem="lS2-SL-fTM" firstAttribute="centerX" secondItem="dQC-gE-Fum" secondAttribute="centerX" id="n26-Uy-Mqa"/>
@@ -214,6 +213,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gfs-mQ-fZ9" firstAttribute="trailing" secondItem="kUj-u7-Qex" secondAttribute="trailing" id="29K-Fn-yiH"/>
+                            <constraint firstItem="kUj-u7-Qex" firstAttribute="bottom" secondItem="lS2-SL-fTM" secondAttribute="bottom" constant="16" id="IyX-ee-XNt"/>
                             <constraint firstItem="gfs-mQ-fZ9" firstAttribute="top" secondItem="kUj-u7-Qex" secondAttribute="top" id="cES-T1-3Q7"/>
                             <constraint firstItem="gfs-mQ-fZ9" firstAttribute="bottom" secondItem="kUj-u7-Qex" secondAttribute="bottom" id="o1m-h9-RyQ"/>
                             <constraint firstItem="dQC-gE-Fum" firstAttribute="width" secondItem="p8j-dP-ATc" secondAttribute="width" id="og0-XQ-BWp"/>

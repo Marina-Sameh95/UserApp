@@ -15,12 +15,8 @@ import FirebaseStorage
 class ProfileDetailsViewController: UIViewController {
 
     @IBOutlet weak var editBtn: UIButton!
-        
     @IBOutlet weak var birthDateLbl: UILabel!
-    
     @IBOutlet weak var genderLbl: UILabel!
-    
-    
     @IBOutlet weak var userEmailDetails: UILabel!
     
      var userData = [UserData]()
@@ -29,13 +25,12 @@ class ProfileDetailsViewController: UIViewController {
         super.viewDidLoad()
 
         editBtn.layer.cornerRadius = 15
-        
+     
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         retrieveData()
-
     }
     
    
@@ -57,7 +52,9 @@ class ProfileDetailsViewController: UIViewController {
             return
         }
             self.birthDateLbl.text = userBirthDate
-            
+           
+            guard let gender = self.userData.first?.gender else {return}
+            self.genderLbl.text = gender
           guard let useremail = self.userData.first?.email else {return}
             self.userEmailDetails.text = useremail
             

@@ -41,6 +41,7 @@ class EventViewController: UIViewController {
     var availableSeats: String = ""
     var eventKey: String = ""
     var allKeysRegisterEvents = [String]()
+    var code : String = ""
 
    
     
@@ -91,6 +92,11 @@ class EventViewController: UIViewController {
         }, withCancel: nil)
     }
     
+    func randomString(length: Int) -> String {
+        let letters = "0123456789"
+        return String((0...length-1).map{ _ in letters.randomElement()!})
+    }
+    
     
     fileprivate func createEvent() {
         
@@ -109,9 +115,7 @@ class EventViewController: UIViewController {
                     key = eventKey
                 }else{
                     //self.showAlert(title: "Error", message: "You Are Already Registered in this Event", style: .alert)
-                    self.showAlert(title: "Important", message: "You Are Already Registered in this Event", style: .alert) { (UIAlertAction) in
-                        // self.navigationController?.popViewController(animated: true)
-                        self.registerBtn.isEnabled = false
+                    self.showAlert(title: "Important", message: "You Are Already Registered in this Event and your register code #event\(self.code)", style: .alert) { (UIAlertAction) in
                     }
                     return
                 }
@@ -129,9 +133,12 @@ class EventViewController: UIViewController {
                 return
             }else{
                 print("suessfully update Data in DataBase")
-                let eventTableView = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "EventTableViewController") as!
-                EventTableViewController
-                self.navigationController?.pushViewController(eventTableView, animated: true)
+                self.code = self.randomString(length: 5)
+                let alert = UIAlertController(title: "Register Course", message: "Save your register code #event\(self.code)", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {(action) in }))
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: {(action) in }))
+                
+                self.present(alert, animated: true, completion: nil)
             }
         }
         

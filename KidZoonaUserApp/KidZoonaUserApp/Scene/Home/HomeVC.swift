@@ -10,6 +10,8 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 import Kingfisher
+import UserNotifications
+
 
 class HomeVC: UIViewController {
 
@@ -39,6 +41,8 @@ class HomeVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        UNUserNotificationCenter.current().delegate = self
+        notify()
         
         headerCollectionView.delegate = self
         headerCollectionView.dataSource = self
@@ -55,6 +59,26 @@ class HomeVC: UIViewController {
 
         retrieveData()
         getAcademiesData()
+        
+    }
+    
+    func notify(){
+        let center = UNUserNotificationCenter.current()
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Welcome"
+        content.body = "Welcome to Kidzoona let's start our journey"
+        content.sound = UNNotificationSound.default
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2.0, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: "reminder", content: content, trigger: trigger)
+        
+        center.add(request){(error) in
+            if error != nil {
+                print("Error = \(error?.localizedDescription ?? "error local notification")")
+            }
+        }
         
     }
     
@@ -346,8 +370,24 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource {
         
         if collectionView == offersCollectionView{
             let courseDetails = UIStoryboard(name: "CourseList", bundle: nil).instantiateViewController(withIdentifier: "CourseDetails") as! CourseDetailsViewController
-            
-            courseDetails.myCourse = courses[indexPath.row]
+            switch headerIndexArr {
+            case 0 :
+                courseDetails.myCourse = courses[indexPath.row]
+            case 1 :
+                courseDetails.myCourse = courseMusic[indexPath.row]
+            case 2 :
+                courseDetails.myCourse = courseDrawing[indexPath.row]
+            case 3 :
+                courseDetails.myCourse = courseRobotics[indexPath.row]
+            case 4 :
+                courseDetails.myCourse = courseChess[indexPath.row]
+            case 5 :
+                courseDetails.myCourse = courseScience[indexPath.row]
+
+            default:
+                courseDetails.myCourse = courses[indexPath.row]
+
+            }
             
             self.navigationController?.pushViewController(courseDetails, animated: true)
         }
@@ -373,3 +413,9 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource {
     
 }
 
+
+extension HomeVC : UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .badge, .sound])
+    }
+}

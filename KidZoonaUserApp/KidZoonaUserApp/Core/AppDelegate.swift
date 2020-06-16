@@ -12,6 +12,7 @@ import FirebaseAuth
 import GoogleSignIn
 import AppAuth
 import FBSDKCoreKit
+import UserNotifications
 
 
 @UIApplicationMain
@@ -41,6 +42,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 //let viewC = storyB.instantiateViewController(withIdentifier: "LaunchScreen")
                 let viewC = storyB.instantiateViewController(withIdentifier: "rootNavAuth")
                 self.window?.rootViewController = viewC
+            }
+        }
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) {(granted, error) in
+            if granted{
+                print("user give permissions")
             }
         }
         

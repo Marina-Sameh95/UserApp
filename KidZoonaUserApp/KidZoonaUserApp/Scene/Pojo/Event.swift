@@ -24,7 +24,7 @@ class Event {
         self.date = dictionary["date"] as? String ?? ""
         self.time = dictionary["time"] as? String ?? ""
         self.price = dictionary["price"] as? String ?? ""
-        self.descrption = dictionary["descrption"] as? String ?? ""
+        self.descrption = dictionary["description"] as? String ?? ""
         self.image = dictionary["image"] as? String ?? ""
         self.coach = dictionary["coach"]  as? String ?? ""
         self.location = dictionary["location"] as? String ?? ""

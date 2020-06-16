@@ -49,8 +49,10 @@ class EditProfileViewController: UIViewController {
     @IBAction func male(_ sender: UIButton) {
         if sender.isSelected{
             sender.isSelected = false
+            femaleBtn.isSelected = false
         } else {
             sender.isSelected = true
+            femaleBtn.isSelected = false
         }
     }
     
@@ -58,8 +60,10 @@ class EditProfileViewController: UIViewController {
     @IBAction func female(_ sender: UIButton) {
         if sender.isSelected{
             sender.isSelected = false
+            maleBtn.isSelected = false
         } else {
             sender.isSelected = true
+            maleBtn.isSelected = false
         }
     }
     
@@ -135,6 +139,7 @@ class EditProfileViewController: UIViewController {
         //updateFunBirthdate
         updateUserData()
         
+        
     }
     
     func updateUserData() {
@@ -183,6 +188,7 @@ class EditProfileViewController: UIViewController {
                 self.userName.text = ""
             }
         })
+        self.navigationController?.popViewController(animated: true)
     }
 }
 

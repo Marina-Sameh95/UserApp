@@ -346,8 +346,24 @@ extension HomeVC : UICollectionViewDelegate, UICollectionViewDataSource {
         
         if collectionView == offersCollectionView{
             let courseDetails = UIStoryboard(name: "CourseList", bundle: nil).instantiateViewController(withIdentifier: "CourseDetails") as! CourseDetailsViewController
-            
-            courseDetails.myCourse = courses[indexPath.row]
+            switch headerIndexArr {
+            case 0 :
+                courseDetails.myCourse = courses[indexPath.row]
+            case 1 :
+                courseDetails.myCourse = courseMusic[indexPath.row]
+            case 2 :
+                courseDetails.myCourse = courseDrawing[indexPath.row]
+            case 3 :
+                courseDetails.myCourse = courseRobotics[indexPath.row]
+            case 4 :
+                courseDetails.myCourse = courseChess[indexPath.row]
+            case 5 :
+                courseDetails.myCourse = courseScience[indexPath.row]
+
+            default:
+                courseDetails.myCourse = courses[indexPath.row]
+
+            }
             
             self.navigationController?.pushViewController(courseDetails, animated: true)
         }

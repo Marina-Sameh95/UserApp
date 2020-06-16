@@ -9,12 +9,12 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
+import Kingfisher
 
 class ActivitiesViewController: UIViewController , UITableViewDelegate, UITableViewDataSource{
    
 
     @IBOutlet weak var tableView: UITableView!
-     var dbRef : DatabaseReference?
     var name: NSArray = []
     var imgArr: NSArray = []
     var academyName: NSArray = []
@@ -39,6 +39,8 @@ class ActivitiesViewController: UIViewController , UITableViewDelegate, UITableV
     override func viewWillAppear(_ animated: Bool) {
         print("will appear")
         getCourseKeys()
+        self.courses = []
+
         
     }
     
@@ -67,9 +69,9 @@ class ActivitiesViewController: UIViewController , UITableViewDelegate, UITableV
     
    func retriveDataFromAcadmeies(){
     print("in retrieve in courses")
-    let academiesRef = dbRef?.child("Academies")
-    academiesRef?.queryLimited(toLast: 10).observe(.value, with: { [weak self] snapshot in
-        
+    let academiesRef = Database.database().reference().child("Academies")
+    academiesRef.observe(.value) { (snapshot) in
+        self.courses = []
         if let academiesList = snapshot.value as? [String : Any]{
             
             let academiesIds = academiesList.keys
@@ -88,19 +90,23 @@ class ActivitiesViewController: UIViewController , UITableViewDelegate, UITableV
                 let coursesIds = academyCoursesList!.keys
                  print("coursesKeys\(coursesIds)")
                 for courseId in coursesIds{
-                  let course = academyCoursesList![courseId] as? [String : Any]
-                  var courseInformation = course?["information"] as? [String : Any]
-                  courseInformation?["key"] = coursesIds
-                  let courseInfoDict = Course(dictionary: courseInformation!)
-                  self?.courses.append(courseInfoDict)
+                    if self.courseArr.contains(courseId){
+                        let course = academyCoursesList![courseId] as? [String : Any]
+                        var courseInformation = course?["information"] as? [String : Any]
+                        courseInformation?["key"] = coursesIds
+                        let courseInfoDict = Course(dictionary: courseInformation!)
+                        self.courses.append(courseInfoDict)
+                        
+                    }
+               
                 }
   
-            }
+            } // end of for
             
-            self?.tableView.reloadData()
+            self.tableView.reloadData()
         }
         
-    })
+    }
     
     
     
@@ -151,6 +157,14 @@ class ActivitiesViewController: UIViewController , UITableViewDelegate, UITableV
         cell.courseName.text! = courses[indexPath.row].name
         cell.academyName.text! = courses[indexPath.row].price
         cell.courseDate.text! = courses[indexPath.row].date
+        let url = URL(string: ((courses[indexPath.row].image)))
+        if let url = url as? URL{
+            KingfisherManager.shared.retrieveImage(with: url as Resource, options: nil, progressBlock: nil){ (image , error, cache, coursename) in
+                cell.courseImage.image = image
+                cell.courseImage.kf.indicatorType = .activity
+            }
+        }
+        
 //        let imagUrl = courses[indexPath.row].image
 //        
 //        cell.courseImage.sd_setImage(with: URL(string: imagUrl)!, placeholderImage: UIImage(named: "course4"))
